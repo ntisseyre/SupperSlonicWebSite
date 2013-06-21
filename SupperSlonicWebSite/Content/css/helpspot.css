@@ -1,0 +1,34 @@
+/* general */
+
+/* tab classes */
+body a.menu,
+body a.menu:link {
+position: fixed !important;
+top: 200px !important;
+display: block !important;
+width: 37px !important;
+height: 100px !important;
+margin: 0 !important;
+padding: 0 !important;
+z-index: 100001 !important;
+background-repeat: no-repeat !important;
+outline-style: none;
+background-position: top left !important; 
+background-color: #222222
+}
+
+body a.menu:hover {cursor: pointer;background-color:#222;}
+* html a.menu,
+* html a.menu:link {position: absolute !important;}
+
+#helpspot_widget_tab_close img {cursor:pointer;}
+
+div#helpspot_widget_tab_close{position: absolute;top: -15px;right: -15px;margin: 0px;padding: 0px;}
+div#helpspot_widget_tab_wrapper{width: 550px;height: 620px;margin: 0 auto;z-index:2;position:relative;}
+
+#helpspot_widget_tab_iframe{width: 100%;height: 100%;}
+#helpspot_widget_tab_overlay {top:0; left:0; width: 100%; height: 100%; position: fixed; _position: absolute; z-index: 100002;}
+#helpspot_widget_tab_overlay * { margin: 0; padding: 0; font-family: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif; font-style:normal; font-variant:normal;}
+#helpspot_widget_mask { top:0; left:0; z-index:1; width: 100%; position: absolute; background-color: #000; opacity: 0.45; filter:alpha(opacity=45); -moz-opacity: 0.45;}
+	
+	

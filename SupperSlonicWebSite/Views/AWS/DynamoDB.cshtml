@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "SupperSlonic DynamoDB";
+}
+
+<h1 class="first" id="descriptionAnchor">Description</h1>
+<p>When databases are maintained locally it is always very easy to make different versions of the same database running on different services for different environments: development, test or production environment.  Your software always knows the exact name of the table and it fields, the only thing you need to change is a connection string to switch between different services/environments.<br />
+But what about <strong>Dynamo DB</strong>? Is it possible to <strong>support different environments</strong> there?<br />
+Yes! And we provide a solution…</p>
+<p><div class="demo" style="width:534px"><img src="~/Content/img/dynamoDB.jpg" alt="classSchema"/></div></p>
+<h1>DynamoDBTable</h1>
+@Html.Partial("DownloadExampleWidget")
+<p>An abstract class. If you want your Dynamo DB table to support different environments, you should extend it and implement a method getTableNameTemplate. This method just returns a string with a placeholder for the environment name, e.g. “pinkElephant.%s”.</p>
+<h1>BaseDAL</h1>
+<p>Your DAL should extend this class to support different enviroments. It creates a configuration that defines an exact table name your application is working with. When making any query to Amazon, you should pass this configuration.</p>                    
+<h1>DynamoDBSchema</h1>
+<p>An abstract class. You can inherit from it if you want your table to support deployment functionality provided by a DeployDAL class.</p>
+<h1>DeployDAL</h1>
+<p>A ready to use DAL that allows you to create, delete DynamoDB tables on Amazon easily.</p>

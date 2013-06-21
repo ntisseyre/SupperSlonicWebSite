@@ -1,0 +1,57 @@
+body{background:black;color:#999;text-align:center;font:13px/19px 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif}
+
+strong,h1,h2,h3,h4,h5,h6,strong a,h1 a,h2 a,h3 a,h4 a,h5 a,h6 a {color:#fff;}
+h1,h2,h3,h4,h5,h6 {font-weight:normal;font-family:'Lucida Grande', 'Lucida Sans Unicode','Lucida Sans Regular','Trebuchet MS', Verdana, sans-serif;}
+h1 {font-size:18px;margin:30px 0 4px 0;}
+h1.first{margin-top:10px}
+strong{font-weight:normal;}
+
+div#body-bg {width:100%;display:block}
+div#body-wrap {width:910px;display:block;text-align:left;margin:0 auto}
+div#page {display:block;width:100%;background-color:#303030;
+border-top-right-radius:5px;-moz-border-radius-topright:5px;
+border-bottom-right-radius:5px;-moz-border-radius-bottomright:5px;
+border-bottom-left-radius:5px;-moz-border-radius-bottomleft:5px}
+div#header-logo a {height:369px;width:900px;display:block;text-indent:-5000px;background:transparent url(../img/header.jpg) 10px 10px no-repeat}
+div#content {display:inline-block;padding:0 0 10px 10px;width:890px}
+div.demo, div.download{background:#181818;border-radius:6px;-moz-border-radius:6px;display:block}
+div.demo{padding:15px 15px 15px 15px;margin:8px 20px 0 0}
+div.download{float:right;width:230px;padding:10px 10px 10px 10px;margin:13px 40px 0 0; vertical-align:middle}
+div.download a{text-decoration:none;color:#aaa;font-size:14px;}
+div.download a:hover{text-decoration:none;color:#fff;}
+
+ul#main-nav {
+	list-style:none;
+	width:100%;
+	height:31px;
+	padding:0;
+	margin:0
+}
+ul#main-nav li {
+	float:left;
+	margin:0 3px 0 0;
+	padding:0 0 0 7px;
+	height:31px;
+	line-height:31px;
+	background:transparent url(../img/bg_main_nav_tab.gif) no-repeat scroll 0 0;
+}
+ul#main-nav li a {
+	float:left;
+	display:block;
+	text-decoration:none;
+	font-weight:bold;
+	margin:0;
+	padding:0 9px 0px 2px;
+	font-family:'Lucida Grande', 'Trebuchet MS','Lucida Sans Unicode','Lucida Sans Regular', Verdana, sans-serif;
+	font-size:12px;
+	color:#aaa;
+	background:transparent url(../img/bg_main_nav_tab.gif) no-repeat scroll 100% 0;
+}
+ul#main-nav li.selected {background-image:url(../img/bg_main_nav_tab_selected.gif);}
+ul#main-nav li.selected a {background-image:url(../img/bg_main_nav_tab_selected.gif);color:#fff;}
+ul#main-nav li a:hover {text-decoration:none;color:#fff;}
+
+ul,ol{margin-bottom:20px;}
+ul  li, ol li{line-height:1.5;margin-bottom:5px;}
+ul.check-list {list-style:none;}
+ul.check-list li {padding-left:24px;color:#ddd;background:transparent url(../img/check16.png) 0 0 no-repeat;}
