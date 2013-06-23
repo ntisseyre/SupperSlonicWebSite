@@ -10,14 +10,14 @@ div.emrConfHeader {
     font-size:16px;font-weight:normal;font-family:'Lucida Grande', 'Lucida Sans Unicode','Lucida Sans Regular','Trebuchet MS', Verdana, sans-serif;
 }
 div.emrConfHeader div {display:table-cell;vertical-align:middle}
-div.emrConfHeader div:first-child {width:200px;padding-left:10px}
-div.emrConfHeader div:nth-child(2){width:440px;display:table-cell;vertical-align:middle}
+div.emrConfHeader div:first-child {width:220px;padding-left:10px}
+div.emrConfHeader div:nth-child(2){width:420px;display:table-cell;vertical-align:middle}
 div.emrConfHeader div:last-child {width:100px}
 
 div.emrConfSection{background-color:#10293B;color:#5FC0FE;height:22px;width:740px;padding:3px 0 0 10px;}
 
 div.emrConfRow {border-bottom:1px dotted #133147;display:table;width:100%}
 div.emrConfRow div {display:table-cell;vertical-align:middle}
-div.emrConfRow div:first-child {width:200px;color:#ddd;padding-left:15px}
+div.emrConfRow div:first-child {width:220px;color:#ddd;padding-left:15px}
 
 div.emrConfRequired{float:right;padding-right:55px}

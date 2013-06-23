@@ -63,7 +63,7 @@ This properties file describes a job flow and is called a <strong>job flow templ
         You can use it in a template as a placeholder <strong>${jobInstance}</strong>.It will be automatically replaced by a builder before sending a request to AWS;</li>
 	<li>An <strong>environment</strong>. This filed is used to indicate the working environment on Amazon, e.g. test, development, uat, production etc.<br/>You can use it in a template as a placeholder <strong>${awsEnviroment}</strong>.It will be automatically replaced by a builder before sending a request to AWS.</li>
 </ul>
-<h1 id="defaultConfAnchor">Default configuration</h1>
+<h1 id="templateStructureAnchor">Job flow template structure</h1>
 <p>We provide a default configuration for Hadoop instances and HBase. You can overwrite them in your job flow template.</p>
 
 <div class="emrConfig">
@@ -108,11 +108,58 @@ This properties file describes a job flow and is called a <strong>job flow templ
     <div class="emrConfSection">HBase Daemonds Configuration</div>
     <div class="emrConfRow"><div>HBaseDaemondsConf.Args.M1</div><div>--hbase-master-opts=-Xmx6140M -XX:NewSize=64m -XX:MaxNewSize=64m -XX:+HeapDumpOnOutOfMemoryError -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:ParallelGCThreads=8</div></div>
     <div class="emrConfRow"><div>HBaseDaemondsConf.Args.M2</div><div>--regionserver-opts=-Xmx6140M -XX:NewSize=64m -XX:MaxNewSize=64m -XX:+HeapDumpOnOutOfMemoryError -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:ParallelGCThreads=8</div></div>
-    
-    <!--div class="emrConfRow"><div>name</div><div>value</div></div>
-    <div class="emrConfRow"><div>name</div><div>value</div></div>
-    <div class="emrConfRow"><div>name</div><div>value</div></div>
-    <div class="emrConfRow"><div>name</div><div>value</div></div-->
+</div>
+
+<h1>Bootstrap actions structure</h1>
+<p>Example:</p>
+<div class="demo" style="width:600px">
+BootstrapActions.M1.Name=Upload libraries<br />
+BootstrapActions.M1.Path=s3://supperSlonic-bin/bootstrap/UploadLibraries.sh<br />
+BootstrapActions.M1.Args.M1=arg1<br />
+BootstrapActions.M1.Args.M2=my super arg2<br />
+BootstrapActions.M1.Args.M3=last arg3
+</div>
+<p>Structure:</p>
+<div class="emrConfig">
+    <div class="emrConfHeader">
+        <div>Name</div><div>Description</div><div>Required</div>
+    </div>
+    <div class="emrConfSection">Common Bootstrap Action</div>
+    <div class="emrConfRow"><div>BootstrapActions.M{i}.Name</div><div>Name of a bootstrap action</div><div class="emrConfRequired"><img src="~/Content/img/yes16.png" alt="yes" /></div></div>
+    <div class="emrConfRow"><div>BootstrapActions.M{i}.Path</div><div>Path to a script to be run</div><div class="emrConfRequired"><img src="~/Content/img/yes16.png" alt="yes" /></div></div>
+    <div class="emrConfRow"><div>BootstrapActions.M{i}.Args.M{i}</div><div>Argument to be passed to a bootstrap action</div></div>
+</div>
+
+<h1>Steps structure</h1>
+<p>Example:</p>
+<div class="demo" style="width:600px">
+Steps.M1.RestoreHBasePath=s3://supperSlonic-hbase/${jobInstance}<br /><br />
+Steps.M2.Name=Analyze text<br />
+Steps.M2.ActionOnFailure=TERMINATE_JOB_FLOW<br />
+Steps.M2.MainClass=supperSlonic.AmazonClient.TextAnalyzer<br/>
+Steps.M2.Jar=s3://supperSlonic-bin/jar/myCode.jar<br/>
+Steps.M2.Args.M1=s3://supperSlonic-data/input/part-m-00000<br/>
+Steps.M2.Args.M2=s3://supperSlonic-data/output/${jobInstance}<br/>
+Steps.M2.Args.M3=20.0<br /><br />
+Steps.M3.BackupHBasePath=s3://supperSlonic-hbase/${jobInstance}
+</div>
+<p>Structure:</p>
+<div class="emrConfig">
+    <div class="emrConfHeader">
+        <div>Name</div><div>Description</div><div>Required</div>
+    </div>
+    <div class="emrConfSection">Common Step</div>
+    <div class="emrConfRow"><div>Steps.M{i}.Name</div><div>Name of a step</div><div class="emrConfRequired"><img src="~/Content/img/yes16.png" alt="yes" /></div></div>
+    <div class="emrConfRow"><div>Steps.M{i}.Jar</div><div>Path to a jar-file to be run</div><div class="emrConfRequired"><img src="~/Content/img/yes16.png" alt="yes" /></div></div>
+    <div class="emrConfRow"><div>Steps.M{i}.ActionOnFailure</div><div>What action should EMR do if step fails</div></div>
+    <div class="emrConfRow"><div>Steps.M{i}.MainClass</div><div>Name of a main class in a jar-file</div></div>
+    <div class="emrConfRow"><div>Steps.M{i}.Args.M{i}</div><div>Argument to be passed to a step</div></div>
+
+    <div class="emrConfSection">HBase Restore Step</div>
+    <div class="emrConfRow"><div>Steps.M{i}. RestoreHBasePath</div><div>Path to a file to restore HBase</div></div>
+
+    <div class="emrConfSection">HBase Backup Step</div>
+    <div class="emrConfRow"><div>Steps.M{i}. BackupHBasePath</div><div>Path to a file to backup HBase</div></div>
 </div>
  @foreach (TabWidgetModel tabWidget in this.Model)
     { @Html.Partial("TabWidget", tabWidget) }
