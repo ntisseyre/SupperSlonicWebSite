@@ -5,7 +5,7 @@
 @{
     ViewBag.Title = "SupperSlonic EMR";
 }
-
+<link href="~/Content/css/emr.css" rel="stylesheet" type="text/css" />
 <h1 class="first" id="descriptionAnchor">Description</h1>
 <p>This application allows you to describe and create an <strong>Amazon EMR job flow</strong> in seconds! All you need is to create a simple properties file.<br/>
 This properties file describes a job flow and is called a <strong>job flow template</strong>. It can be reused as many times as needed creating different job flow instances with a unique name (<strong>job instance name</strong>).</p>
@@ -59,8 +59,60 @@ This properties file describes a job flow and is called a <strong>job flow templ
 <h1 id="placeHoldersAnchor">Placeholders in a template</h1>
 <p>When creating a <strong>JobFlowContext object</strong> you should specify:</p>
 <ul>
-	<li>A <strong>job instance name</strong>. This field is used as a marker of your job flow. You can use it in a template as a placeholder <strong>${jobInstance}</strong>.<br/>It will be automatically replaced by a builder before sending a request to AWS;</li>
+	<li>A <strong>job instance name</strong>. This field is used as a marker of your job flow. For example, you can have a job flow template "Make cookies" and specific instances' names like "Chocolate cookies", "Butter cookies" etc.<br/>
+        You can use it in a template as a placeholder <strong>${jobInstance}</strong>.It will be automatically replaced by a builder before sending a request to AWS;</li>
 	<li>An <strong>environment</strong>. This filed is used to indicate the working environment on Amazon, e.g. test, development, uat, production etc.<br/>You can use it in a template as a placeholder <strong>${awsEnviroment}</strong>.It will be automatically replaced by a builder before sending a request to AWS.</li>
 </ul>
+<h1 id="defaultConfAnchor">Default configuration</h1>
+<p>We provide a default configuration for Hadoop instances and HBase. You can overwrite them in your job flow template.</p>
+
+<div class="emrConfig">
+    <div class="emrConfHeader">
+        <div>Name</div><div>Default value</div><div>Required</div>
+    </div>
+    <div class="emrConfSection">Job Flow Section</div>
+    <div class="emrConfRow"><div>Name</div><div class="emrConfRequired"><img src="~/Content/img/yes16.png" alt="yes" /></div></div>
+    <div class="emrConfRow"><div>LogUri</div><div class="emrConfRequired"><img src="~/Content/img/yes16.png" alt="yes" /></div></div>
+    <div class="emrConfRow"><div>SecurityKeyPair</div><div class="emrConfRequired"><img src="~/Content/img/yes16.png" alt="yes" /></div></div>
+    <div class="emrConfRow"><div>HadoopVersion</div><div>1.0.3</div></div>
+    <div class="emrConfRow"><div>MasterType</div><div>c1.xlarge</div></div>
+    <div class="emrConfRow"><div>CoreType</div><div>cc1.4xlarge</div></div>
+    <div class="emrConfRow"><div>CoreCount</div><div>3</div></div>
+    <div class="emrConfRow"><div>KeepJobflowAliveWhenNoSteps</div><div>false</div></div>
+    <div class="emrConfRow"><div>TerminationProtected</div><div>true</div></div>
+    
+    <div class="emrConfSection">Debug Configuration</div>
+    <div class="emrConfRow"><div>Debug.Start</div><div>false</div></div>
+    <div class="emrConfRow"><div>DebugConf.Jar</div><div>s3://elasticmapreduce/libs/script-runner/script-runner.jar</div></div>
+
+    <div class="emrConfSection">Hadoop Configuration</div>
+    <div class="emrConfRow"><div>HadoopConf.Args.M1</div><div>mapred.tasktracker.map.tasks.maximum=5</div></div>
+    <div class="emrConfRow"><div>HadoopConf.Args.M2</div><div>mapred.tasktracker.reduce.tasks.maximum=5</div></div>
+    <div class="emrConfRow"><div>HadoopConf.Args.M3</div><div>dfs.datanode.max.xcievers=4096</div></div>
+    <div class="emrConfRow"><div>HadoopConf.Args.M4</div><div>dfs.namenode.handler.count=50</div></div>
+    <div class="emrConfRow"><div>HadoopConf.Args.M5</div><div>io.file.buffer.size=4194304</div></div>
+
+    <div class="emrConfSection">HBase Configuration</div>
+    <div class="emrConfRow"><div>HBase.Start</div><div>false</div></div>
+    <div class="emrConfRow"><div>HBaseConf.Jar</div><div>/home/hadoop/lib/hbase-0.92.0.jar</div></div>
+    <div class="emrConfRow"><div>HBaseConf.Args.M1</div><div>hbase.hregion.memstore.mslab.enabled=true</div></div>
+    <div class="emrConfRow"><div>HBaseConf.Args.M2</div><div>hbase.hregion.memstore.mslab.chunksize=2097152</div></div>
+    <div class="emrConfRow"><div>HBaseConf.Args.M3</div><div>hbase.hregion.memstore.mslab.max.allocation=262144</div></div>
+    <div class="emrConfRow"><div>HBaseConf.Args.M4</div><div>hbase.regionserver.globalMemcache.lowerLimit=.15</div></div>
+    <div class="emrConfRow"><div>HBaseConf.Args.M5</div><div>hbase.hregion.memstore.mslab.max.allocation=262144</div></div>
+    <div class="emrConfRow"><div>HBaseConf.Args.M6</div><div>hbase.zookeeper.property.maxClientCnxns=512</div></div>
+    <div class="emrConfRow"><div>HBaseConf.Args.M7</div><div>hbase.rpc.timeout=720000</div></div>
+    <div class="emrConfRow"><div>HBaseConf.Args.M8</div><div>hbase.master.assignment.timeoutmonitor.timeout=7200000</div></div>
+    <div class="emrConfRow"><div>HBaseConf.Args.M9</div><div>hbase.regionserver.lease.period=7200000</div></div>
+
+    <div class="emrConfSection">HBase Daemonds Configuration</div>
+    <div class="emrConfRow"><div>HBaseDaemondsConf.Args.M1</div><div>--hbase-master-opts=-Xmx6140M -XX:NewSize=64m -XX:MaxNewSize=64m -XX:+HeapDumpOnOutOfMemoryError -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:ParallelGCThreads=8</div></div>
+    <div class="emrConfRow"><div>HBaseDaemondsConf.Args.M2</div><div>--regionserver-opts=-Xmx6140M -XX:NewSize=64m -XX:MaxNewSize=64m -XX:+HeapDumpOnOutOfMemoryError -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:ParallelGCThreads=8</div></div>
+    
+    <!--div class="emrConfRow"><div>name</div><div>value</div></div>
+    <div class="emrConfRow"><div>name</div><div>value</div></div>
+    <div class="emrConfRow"><div>name</div><div>value</div></div>
+    <div class="emrConfRow"><div>name</div><div>value</div></div-->
+</div>
  @foreach (TabWidgetModel tabWidget in this.Model)
     { @Html.Partial("TabWidget", tabWidget) }

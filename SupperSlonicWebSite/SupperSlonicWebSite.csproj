@@ -122,6 +122,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\css\emr.css" />
     <Content Include="Content\css\helpspot.css" />
     <Content Include="Content\img\aws.png" />
     <Content Include="Content\img\bg_main_nav_tab.gif" />
@@ -137,7 +138,9 @@
     <Content Include="Content\img\questions.png" />
     <Content Include="Content\img\submit.png" />
     <Content Include="Content\css\main.css" />
+    <Content Include="Content\img\tableHeader.png" />
     <Content Include="Content\img\waiting.gif" />
+    <Content Include="Content\img\yes16.png" />
     <Content Include="Content\js\tabWidget.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
