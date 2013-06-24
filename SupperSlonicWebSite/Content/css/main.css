@@ -53,5 +53,7 @@ ul#main-nav li a:hover {text-decoration:none;color:#fff;}
 
 ul,ol{margin-bottom:20px;}
 ul  li, ol li{line-height:1.5;margin-bottom:5px;}
+ol li a {text-decoration:none;color:#ccc}
+ol li a:hover{text-decoration:none;color:#fff;}
 ul.check-list {list-style:none;}
 ul.check-list li {padding-left:24px;color:#ddd;background:transparent url(../img/check16.png) 0 0 no-repeat;}

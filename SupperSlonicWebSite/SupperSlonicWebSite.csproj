@@ -134,7 +134,7 @@
     <Content Include="Content\img\dynamoDB.jpg" />
     <Content Include="Content\img\header.jpg" />
     <Content Include="Content\img\howToUse.png" />
-    <Content Include="Content\img\placeHolders.png" />
+    <Content Include="Content\img\placeHoldersInTemplate.png" />
     <Content Include="Content\img\questions.png" />
     <Content Include="Content\img\submit.png" />
     <Content Include="Content\css\main.css" />

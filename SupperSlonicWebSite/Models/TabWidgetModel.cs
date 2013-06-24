@@ -28,7 +28,7 @@ namespace SupperSlonicWebSite.Models
 
         public String Href 
         {
-            get { return "#" + this.Id + "Anchor"; }
+            get { return "#" + this.Id; }
         }
     }
 }

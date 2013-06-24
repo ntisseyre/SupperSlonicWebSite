@@ -28,9 +28,10 @@ namespace SupperSlonicWebSite.Controllers
         public ActionResult ElasticMapReduce()
         {
             List<TabWidgetModel> model = new List<TabWidgetModel>();
-            model.Add(new TabWidgetModel("description", Alignment.Right, "200px"));
-            model.Add(new TabWidgetModel("howToUse", Alignment.Right, "301px"));
-            model.Add(new TabWidgetModel("placeHolders", Alignment.Right, "402px"));
+            model.Add(new TabWidgetModel("description", Alignment.Right, "100px"));
+            model.Add(new TabWidgetModel("howToUse", Alignment.Right, "201px"));
+            model.Add(new TabWidgetModel("placeHoldersInTemplate", Alignment.Right, "302px"));
+            model.Add(new TabWidgetModel("templateStructure", Alignment.Right, "403px"));
             return View(model);
         }
 
