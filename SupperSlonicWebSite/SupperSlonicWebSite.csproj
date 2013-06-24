@@ -139,6 +139,7 @@
     <Content Include="Content\img\submit.png" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\img\tableHeader.png" />
+    <Content Include="Content\img\templateStructure.png" />
     <Content Include="Content\img\waiting.gif" />
     <Content Include="Content\img\yes16.png" />
     <Content Include="Content\js\tabWidget.js" />
