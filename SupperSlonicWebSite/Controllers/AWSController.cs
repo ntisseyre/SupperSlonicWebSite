@@ -10,6 +10,7 @@ using System.Web.Helpers;
 using System.Configuration;
 using System.IO;
 using System.IO.Compression;
+using SupperSlonicWebSite.DomainLogic.DAL;
 
 namespace SupperSlonicWebSite.Controllers
 {
@@ -41,10 +42,13 @@ namespace SupperSlonicWebSite.Controllers
         }
 
         public FileResult DownloadExample(String id)
-        {
+        {            
             String downloadLink = ConfigurationManager.AppSettings[String.Format("{0}ExampleUrl", id)];
             if (downloadLink == null)
                 return null;
+
+            SourceCodeDownloadsDAL dal = new SourceCodeDownloadsDAL();
+            dal.InsertDownload(id);
 
             byte[] data;
             using (WebClient webClient = new WebClient())
