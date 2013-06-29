@@ -5,10 +5,25 @@
 <h1 class="first" id="descriptionAnchor">Description</h1>
 <p>When databases are maintained locally it is always very easy to make different versions of the same database running on different services for different environments: development, test or production environment.  Your software always knows the exact name of the table and it fields, the only thing you need to change is a connection string to switch between different services/environments.<br />
 But what about <strong>Dynamo DB</strong>? Is it possible to <strong>support different environments</strong> there?<br />
-Yes! And we provide a solution…</p>
-<p><div class="demo" style="width:534px"><img src="~/Content/img/dynamoDB.jpg" alt="classSchema"/></div></p>
-<h1>DynamoDBTable</h1>
+Yes!</p>
 @Html.Partial("DownloadExampleWidget")
+<p>Our solution is to make the table name configurable and variable depending on which environment application is running in. For this purpose, we created three main classes:</p>
+<ol>
+    <li><a href="@Url.Action("AmazonContext", "AWS")"><strong>AmazonContext</strong> – An analog of a connection string to AWS</a>;</li>
+    <li><strong>DynamodDBTable</strong> – An abstract class that represents a table in DynamoDB. This class knows the template name of a table, that varies depending on the environment;</li>
+    <li><strong>BaseDAL</strong> – A class that manipulates AmazonContext and DynamoDBTable, providing all the required logic to make requests to a proper instance of the table.</li>
+</ol>
+<p>To make it more clear, here is an example:<br />
+You have a table "PinkElephant". You create several instances of this table in DynamoDB:</p>
+<ul>
+    <li>PinkElephant.dev;</li>
+    <li>PinkElephant.test;</li>
+    <li>PinkElephant.production.</li>
+</ul>
+<p>When you run your application, you construct an AmazonContext object specifying, for instance, an environment name test. Then all the operations will be performed with a PinkElephant.test instance of a table.</p>
+<p>A schema of the relations between main classes in a package:</p>
+<div class="demo" style="width:534px"><img src="~/Content/img/dynamoDB.jpg" alt="classSchema"/></div>
+<h1>DynamoDBTable</h1>
 <p>An abstract class. If you want your Dynamo DB table to support different environments, you should extend it and implement a method getTableNameTemplate. This method just returns a string with a placeholder for the environment name, e.g. “pinkElephant.%s”.</p>
 <h1>BaseDAL</h1>
 <p>Your DAL should extend this class to support different enviroments. It creates a configuration that defines an exact table name your application is working with. When making any query to Amazon, you should pass this configuration.</p>                    
