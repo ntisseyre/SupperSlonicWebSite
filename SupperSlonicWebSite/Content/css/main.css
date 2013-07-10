@@ -1,10 +1,12 @@
 body{background:black;color:#999;text-align:center;font:13px/19px 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif}
 
-strong,h1,h2,h3,h4,h5,h6,strong a,h1 a,h2 a,h3 a,h4 a,h5 a,h6 a {color:#fff;}
-h1,h2,h3,h4,h5,h6 {font-weight:normal;font-family:'Lucida Grande', 'Lucida Sans Unicode','Lucida Sans Regular','Trebuchet MS', Verdana, sans-serif;}
+a.textLink {text-decoration:none;color:#ccc;border-bottom-width:1px;border-bottom-style:dotted}
+a.textLink:hover{text-decoration:none;color:#fff;}
+
+h1,h2,h3,h4,h5,h6 {color:#fff;font-weight:normal;font-family:'Lucida Grande', 'Lucida Sans Unicode','Lucida Sans Regular','Trebuchet MS', Verdana, sans-serif;}
 h1 {font-size:18px;margin:30px 0 4px 0;}
 h1.first{margin-top:10px}
-strong{font-weight:normal;}
+strong{color:#fff;font-weight:normal;}
 
 div#body-bg {width:100%;display:block}
 div#body-wrap {width:910px;display:block;text-align:left;margin:0 auto}
@@ -53,7 +55,5 @@ ul#main-nav li a:hover {text-decoration:none;color:#fff;}
 
 ul,ol{margin-bottom:20px;}
 ul  li, ol li{line-height:1.5;margin-bottom:5px;}
-ol li a {text-decoration:none;color:#ccc}
-ol li a:hover{text-decoration:none;color:#fff;}
 ul.check-list {list-style:none;}
 ul.check-list li {padding-left:24px;color:#ddd;background:transparent url(../img/check16.png) 0 0 no-repeat;}

@@ -38,7 +38,12 @@ namespace SupperSlonicWebSite.Controllers
 
         public ActionResult DynamoDB()
         {
-            return View();
+            List<TabWidgetModel> model = new List<TabWidgetModel>();
+            model.Add(new TabWidgetModel("description", Alignment.Right, "100px"));
+            model.Add(new TabWidgetModel("versioning", Alignment.Right, "201px"));
+            model.Add(new TabWidgetModel("deployment", Alignment.Right, "302px"));
+            model.Add(new TabWidgetModel("locking", Alignment.Right, "403px"));
+            return View(model);
         }
 
         public FileResult DownloadExample(String id)
