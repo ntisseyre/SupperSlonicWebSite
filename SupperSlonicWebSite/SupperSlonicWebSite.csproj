@@ -111,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AWSController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DomainLogic\DAL\SourceCodeDownloadsDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -138,6 +139,7 @@
     <Content Include="Content\img\howToUse.png" />
     <Content Include="Content\img\locking.png" />
     <Content Include="Content\img\lockInProgress.jpg" />
+    <Content Include="Content\img\me.jpg" />
     <Content Include="Content\img\placeHoldersInTemplate.png" />
     <Content Include="Content\img\questions.png" />
     <Content Include="Content\img\storage.png" />
@@ -169,7 +171,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\AWS\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -186,6 +188,7 @@
   <ItemGroup>
     <Content Include="Views\Shared\HelpSpotWidget.cshtml" />
     <Content Include="Views\Shared\DownloadExampleWidget.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
     <None Include="Views\Shared\TabWidget.cshtml" />
   </ItemGroup>
   <ItemGroup>

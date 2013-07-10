@@ -15,12 +15,7 @@ using SupperSlonicWebSite.DomainLogic.DAL;
 namespace SupperSlonicWebSite.Controllers
 {
     public class AWSController : Controller
-    {
-        public ActionResult Index()
-        {
-            return View();
-        }
-
+    {        
         public ActionResult AmazonContext()
         {
             return View();
@@ -44,11 +39,6 @@ namespace SupperSlonicWebSite.Controllers
             model.Add(new TabWidgetModel("deployment", Alignment.Right, "302px"));
             model.Add(new TabWidgetModel("locking", Alignment.Right, "403px"));
             return View(model);
-        }
-
-        public ActionResult About()
-        {
-            return View();
         }
 
         public FileResult DownloadExample(String id)

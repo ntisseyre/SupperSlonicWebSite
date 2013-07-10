@@ -14,14 +14,14 @@
 	<div id="body-bg">
 		<div id="body-wrap">
 			<ul id="main-nav">
-				<li id="Indexli">@Html.ActionLink("HOME", "Index", "AWS")</li>
+				<li id="Indexli">@Html.ActionLink("HOME", "Index", "Home")</li>
 				<li id="AmazonContextli">@Html.ActionLink("Amazon Context", "AmazonContext", "AWS")</li>
 				<li id="ElasticMapReduceli">@Html.ActionLink("Elastic Map Reduce", "ElasticMapReduce", "AWS")</li>
 				<li id="DynamoDBli">@Html.ActionLink("Dynamo DB", "DynamoDB", "AWS")</li>
-                <li id="Aboutli">@Html.ActionLink("About me", "About", "AWS")</li>
+                <li id="Aboutli">@Html.ActionLink("About me", "About", "Home")</li>
 			</ul>
 			<div id="page">
-				<div id="header-logo">@Html.ActionLink("home", "Index", "AWS")</div>
+				<div id="header-logo">@Html.ActionLink("home", "Index", "Home")</div>
 				<div id="content">@RenderBody()</div> <!-- page -->
 			</div>
 		</div> <!-- body-wrap -->
