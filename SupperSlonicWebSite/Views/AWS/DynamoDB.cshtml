@@ -6,15 +6,9 @@
     ViewBag.Title = "SupperSlonic DynamoDB";
 }
 
-<h1 class="first" id="descriptionAnchor">Description</h1>
-
-
-<p>A schema of the relations between main classes in a package:</p>
-<div class="demo" style="width:534px"><img src="~/Content/img/dynamoDB.jpg" alt="classSchema"/></div>
-<h1>DynamoDBTable</h1>
-<p>An abstract class. If you want your Dynamo DB table to support different environments, you should extend it and implement a method getTableNameTemplate. This method just returns a string with a placeholder for the environment name, e.g. “pinkElephant.%s”.</p>
-<h1>BaseDAL</h1>
-<p>Your DAL should extend this class to support different enviroments. It creates a configuration that defines an exact table name your application is working with. When making any query to Amazon, you should pass this configuration.</p>                    
+<h1 class="first" id="description">Description</h1>
+<p>Our package provides functionality to deploy your tables on DynamoDB easily, to run different versions of tables simultaneously, to lock records in a table for isolated serious of operations.</p>
+<p>You can find good code examples by downloading a provided demo package.</p>
 
 <h1 id="versioning">Versioning</h1>
 <p>When databases are maintained locally it is always very easy to make different versions of the same database running on different services for different environments: development, test or production environment.  Your software always knows the exact name of the table and it fields, the only thing you need to change is a connection string to switch between different services/environments.</p>
@@ -73,9 +67,9 @@ Amazon doesn't have a built-in locking mechanism.  And you can't use the standar
 <p>Then, use a conditional insert of a record into this “LockTable”. It means that you will only write a record into the table if it doesn't exist there. Otherwise, you should wait some time and try again.</p>
 <p>Imagine that you have a table "PinkElephant", and before writing a record into it you want to read the data first and make some verification with your code. And while you are verifying the data no one is allowed to update this record.</p>
 <p>This record has a field “Name” which is a unique identifier across the table. You can use this value as a key in your “LockTable”. You insert the record into you “LockTable” and perform the operations.</p>
-<div class="demo" style="width:681px"><img src="~/Content/img/getLock.jpg" alt="getLock"/></div>
+<div class="demo" style="width:550px"><img src="~/Content/img/getLock.jpg" alt="getLock"/></div>
 <p>If other users try to update this record they will see a record in the “LockTable” notifying them that someone is already working with it and they have to wait.</p>
-<div class="demo" style="float:left;width:383px;margin-top:0px"><img src="~/Content/img/lockInProgress.jpg" alt="getLock"/></div>
+<div class="demo" style="float:left;width:300px;margin-top:0px"><img src="~/Content/img/lockInProgress.jpg" alt="getLock"/></div>
 <p>After you have finished, you delete the record.</p>
 <p>The same approach applies to <strong>modifying files in S3</strong>. You can use a file name as a key in your “LockTable”.</p>
 <p>What is good about this idea is that everything is stored on AWS, you don't have to have an additional local Database.</p>

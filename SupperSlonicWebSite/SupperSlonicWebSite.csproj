@@ -133,7 +133,6 @@
     <Content Include="Content\img\deployment.png" />
     <Content Include="Content\img\description.png" />
     <Content Include="Content\img\download.png" />
-    <Content Include="Content\img\dynamoDB.jpg" />
     <Content Include="Content\img\getLock.jpg" />
     <Content Include="Content\img\header.jpg" />
     <Content Include="Content\img\howToUse.png" />
@@ -141,6 +140,7 @@
     <Content Include="Content\img\lockInProgress.jpg" />
     <Content Include="Content\img\placeHoldersInTemplate.png" />
     <Content Include="Content\img\questions.png" />
+    <Content Include="Content\img\storage.png" />
     <Content Include="Content\img\submit.png" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\img\tableHeader.png" />
