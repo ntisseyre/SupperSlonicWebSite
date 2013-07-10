@@ -7,14 +7,14 @@
 }
 
 <h1 class="first" id="description">Description</h1>
-<p>Our package provides functionality to deploy your tables on DynamoDB easily, to run different versions of tables simultaneously, to lock records in a table for isolated serious of operations.</p>
+<p>My package provides functionality to deploy your tables on DynamoDB easily, to run different versions of tables simultaneously, to lock records in a table for isolated serious of operations.</p>
 <p>You can find good code examples by downloading a provided demo package.</p>
 
 <h1 id="versioning">Versioning</h1>
 <p>When databases are maintained locally it is always very easy to make different versions of the same database running on different services for different environments: development, test or production environment.  Your software always knows the exact name of the table and it fields, the only thing you need to change is a connection string to switch between different services/environments.</p>
 <p>The problem with <strong>DynamoDB</strong> is that your connection is always the same; you can’t change the server name. The only solution is to change the table name. But in this case, you need to recompile your code which is not very convenient.</p>
 @Html.Partial("DownloadExampleWidget")
-<p>Our solution is to make the table name configurable and variable depending on which environment application is running in. For this purpose, we created three main classes:</p>
+<p>My solution is to make the table name configurable and variable depending on which environment application is running in. For this purpose, I created three main classes:</p>
 <ol>
     <li><a class="textLink" href="@Url.Action("AmazonContext", "AWS")"><strong>AmazonContext</strong> – An analog of a connection string to AWS</a>;</li>
     <li><strong>DynamodDBTable</strong> – An abstract class that represents a table in DynamoDB. This class knows the template name of a table, that varies depending on the environment;</li>
@@ -30,7 +30,7 @@ You have a table "PinkElephant". You create several instances of this table in D
 <p>When you run your application, you construct an AmazonContext object specifying, for instance, an environment name test. Then all the operations will be performed with a PinkElephant.test instance of a table.</p>
 
 <h1 id="deployment">Deployment</h1>
-<p>Our java package contains a ready to use <strong>DeployDAL</strong> that allows you to create, delete DynamoDB tables on Amazon easily.<br />
+<p>My java package contains a ready to use <strong>DeployDAL</strong> that allows you to create, delete DynamoDB tables on Amazon easily.<br />
 In order to use this DAL your class should extend an abstract class <strong>DynamoDBSchema</strong>.</p>
 <p>Example:</p>
 <div class="demo">
@@ -52,8 +52,8 @@ Amazon doesn't have a built-in locking mechanism.  And you can't use the standar
 
 <p>So, how can it be done?</p>
 
-<p>Our java package provides a <strong>pessimistic lock functionality</strong> to work with AWS. This prevents data from being corrupted or invalidated when multiple users try to write to DynamoDB or S3.</p>
-<p>There are two concepts at the heart of our locking mechanism:</p>
+<p>My java package provides a <strong>pessimistic lock functionality</strong> to work with AWS. This prevents data from being corrupted or invalidated when multiple users try to write to DynamoDB or S3.</p>
+<p>There are two concepts at the heart of my locking mechanism:</p>
 <ol>
     <li><strong>Pessimistic lock</strong>:<br />
         In pessimistic locking data is locked immediately when the lock is requested. This lock not only provides exclusivity to writes but also prevents reading of unfinished modifications.
