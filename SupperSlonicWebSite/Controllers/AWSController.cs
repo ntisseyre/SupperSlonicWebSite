@@ -46,6 +46,11 @@ namespace SupperSlonicWebSite.Controllers
             return View(model);
         }
 
+        public ActionResult About()
+        {
+            return View();
+        }
+
         public FileResult DownloadExample(String id)
         {            
             String downloadLink = ConfigurationManager.AppSettings[String.Format("{0}ExampleUrl", id)];

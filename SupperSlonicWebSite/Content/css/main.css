@@ -16,6 +16,7 @@ border-bottom-right-radius:5px;-moz-border-radius-bottomright:5px;
 border-bottom-left-radius:5px;-moz-border-radius-bottomleft:5px}
 div#header-logo a {height:369px;width:900px;display:block;text-indent:-5000px;background:transparent url(../img/header.jpg) 10px 10px no-repeat}
 div#content {display:inline-block;padding:0 0 10px 10px;width:890px}
+div.img{margin:12px 20px 0 0}
 div.demo, div.download{background:#181818;border-radius:6px;-moz-border-radius:6px;display:block}
 div.demo{padding:15px 15px 15px 15px;margin:8px 20px 0 0}
 div.download{float:right;width:230px;padding:10px 10px 10px 10px;margin:13px 40px 0 0; vertical-align:middle}
