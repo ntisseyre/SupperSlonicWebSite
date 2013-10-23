@@ -5,19 +5,18 @@
 		<link href="~/Content/css/helpspot.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" src="~/Content/js/tabWidget.js"></script>
         <script type="text/javascript">
-            function setCurrentMenuItem(actionName) {
-                document.getElementById(actionName + 'li').className = "selected";
+            function setCurrentMenuItem(controllerName) {
+                document.getElementById(controllerName + "li").className = "selected";
             }
         </script>
 	</head>
-<body onload="javascript:setCurrentMenuItem('@ViewContext.RouteData.Values["action"]');">
+<body onload="javascript:setCurrentMenuItem('@Html.Raw(ViewContext.RouteData.Values["action"].ToString() == "About" ? "About" : ViewContext.RouteData.Values["controller"])');">
 	<div id="body-bg">
 		<div id="body-wrap">
 			<ul id="main-nav">
-				<li id="Indexli">@Html.ActionLink("HOME", "Index", "Home")</li>
-				<li id="AmazonContextli">@Html.ActionLink("Amazon Context", "AmazonContext", "AWS")</li>
-				<li id="ElasticMapReduceli">@Html.ActionLink("Elastic Map Reduce", "ElasticMapReduce", "AWS")</li>
-				<li id="DynamoDBli">@Html.ActionLink("Dynamo DB", "DynamoDB", "AWS")</li>
+				<li id="Homeli">@Html.ActionLink("HOME", "Index", "Home")</li>
+                <li id="WebDevli">@Html.ActionLink("Web Development", "Index", "WebDev")</li>
+				<li id="AWSli">@Html.ActionLink("Amazon Web Services", "Index", "AWS")</li>
                 <li id="Aboutli">@Html.ActionLink("About me", "About", "Home")</li>
 			</ul>
 			<div id="page">

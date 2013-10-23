@@ -8,13 +8,18 @@ namespace SupperSlonicWebSite.Models
 {
     public class TabWidgetModel
     {
-        public TabWidgetModel(String id, Alignment alignment, String top)
+        public TabWidgetModel(String id, Alignment alignment, String top) :
+            this(id, alignment, top, "#" + id)
+        {
+        }
+
+        public TabWidgetModel(String id, Alignment alignment, String top, String href)
         {
             this.Id = "tab" + id;
             this.Alignment = alignment;
             this.Top = top;
             this.TabImage = "~/Content/img/" + id + ".png";
-            this.Href = "#" + id;
+            this.Href = href;
         }
 
         public String Id { get; private set; }

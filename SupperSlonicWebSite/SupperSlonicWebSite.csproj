@@ -112,6 +112,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AWSController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\WebDevController.cs" />
     <Compile Include="DomainLogic\DAL\SourceCodeDownloadsDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -189,7 +190,9 @@
     <Content Include="Views\Shared\HelpSpotWidget.cshtml" />
     <Content Include="Views\Shared\DownloadExampleWidget.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\AWS\Index.cshtml" />
     <None Include="Views\Shared\TabWidget.cshtml" />
+    <Content Include="Views\WebDev\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\HelpSpot.htm" />

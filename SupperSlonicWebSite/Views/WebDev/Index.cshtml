@@ -1,0 +1,6 @@
+﻿@using SupperSlonicWebSite.Models;
+
+@model IList<TabWidgetModel>
+
+@foreach (TabWidgetModel tabWidget in this.Model)
+{ @Html.Partial("TabWidget", tabWidget) }
