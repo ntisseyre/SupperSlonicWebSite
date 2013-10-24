@@ -1,23 +1,46 @@
-﻿<html>
+<html>
 	<head>
 		<title>SupperSlonic</title>
 		<link href="~/Content/css/main.css" rel="stylesheet" type="text/css" />
 		<link href="~/Content/css/helpspot.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" src="~/Content/js/tabWidget.js"></script>
         <script type="text/javascript">
-            function setCurrentMenuItem(controllerName) {
-                document.getElementById(controllerName + "li").className = "selected";
+            function setCurrentMenu(controllerName)
+            {
+                document.getElementById("menu" + controllerName).className = "selected";
+            }
+            function showSubMenu(menuId)
+            {
+                document.getElementById(menuId + "Items").style.display = "block";
+            }
+            function hideSubMenu(menuId) {
+                document.getElementById(menuId + "Items").style.display = "none";
             }
         </script>
 	</head>
-<body onload="javascript:setCurrentMenuItem('@Html.Raw(ViewContext.RouteData.Values["action"].ToString() == "About" ? "About" : ViewContext.RouteData.Values["controller"])');">
+<body onload="javascript:setCurrentMenu('@Html.Raw(ViewContext.RouteData.Values["action"].ToString() == "About" ? "About" : ViewContext.RouteData.Values["controller"])');">
 	<div id="body-bg">
 		<div id="body-wrap">
 			<ul id="main-nav">
-				<li id="Homeli">@Html.ActionLink("HOME", "Index", "Home")</li>
-                <li id="WebDevli">@Html.ActionLink("Web Development", "Index", "WebDev")</li>
-				<li id="AWSli">@Html.ActionLink("Amazon Web Services", "Index", "AWS")</li>
-                <li id="Aboutli">@Html.ActionLink("About me", "About", "Home")</li>
+				<li id="menuHome">@Html.ActionLink("HOME", "Index", "Home")</li>
+                <li id="menuWebDev" onmouseover="javascript:showSubMenu(this.id);" onmouseout="javascript:hideSubMenu(this.id);">@Html.ActionLink("Web Development", "Index", "WebDev")
+                    <div id="menuWebDevItems" class="submenu">
+                        <ul>
+                            <li>@Html.ActionLink("Lala 1", "AmazonContext", "WebDev")</li>
+                            <li>@Html.ActionLink("Lala 2", "AmazonContext", "WebDev")</li>
+                        </ul>
+                    </div>
+                </li>
+				<li id="menuAWS" onmouseover="javascript:showSubMenu(this.id);" onmouseout="javascript:hideSubMenu(this.id);">@Html.ActionLink("Amazon Web Services", "Index", "AWS")
+                    <div id="menuAWSItems" class="submenu">
+                         <ul>
+                            <li>@Html.ActionLink("Amazon Context", "AmazonContext", "AWS")</li>
+                            <li>@Html.ActionLink("Elastic Map Reduce", "ElasticMapReduce", "AWS")</li>
+                            <li>@Html.ActionLink("DynamoDB", "DynamoDB", "AWS")</li>
+                        </ul>
+                    </div>
+				</li>
+                <li id="menuAbout">@Html.ActionLink("About me", "About", "Home")</li>
 			</ul>
 			<div id="page">
 				<div id="header-logo">@Html.ActionLink("home", "Index", "Home")</div>

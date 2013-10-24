@@ -1,8 +1,4 @@
-﻿@using SupperSlonicWebSite.Models;
-
-@model IList<TabWidgetModel>
-
-<div class="demo" style="width:178px;float:left;"><img src="~/Content/img/aws.png" alt="awsLogo"/></div>
+﻿<div class="demo" style="width:178px;float:left;"><img src="~/Content/img/aws.png" alt="awsLogo"/></div>
 <p>I wrote a <strong>Java package</strong> that allows to work with <strong>Amazon Web Services</strong> in a more convenient fashion.</p>
 <p>This package is provided as a <strong>Maven dependency</strong>. You can find code examples on this web site.</p><br/><br/>
 <div class="demo" style="width:250px;float:right;margin-right:60px;margin-top:0">
@@ -32,6 +28,3 @@ A very good feature of the oozie workflow is that you can describe all the steps
 </ul>
 <p>This package already has a set of <strong>predefined bootstrap actions and steps</strong> to start HBase or debug mode, so you just need to set up corresponding Boolean properties.</p>
 <p>Next release will support an XML version of a job flow template too.</p>
-
-@foreach (TabWidgetModel tabWidget in this.Model)
-{ @Html.Partial("TabWidget", tabWidget) }

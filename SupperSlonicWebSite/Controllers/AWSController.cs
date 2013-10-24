@@ -18,11 +18,7 @@ namespace SupperSlonicWebSite.Controllers
     {
         public ActionResult Index()
         {
-            List<TabWidgetModel> model = new List<TabWidgetModel>();
-            model.Add(new TabWidgetModel("description", Alignment.Right, "100px", Url.Action("AmazonContext", "AWS")));
-            model.Add(new TabWidgetModel("howToUse", Alignment.Right, "201px", Url.Action("ElasticMapReduce", "AWS")));
-            model.Add(new TabWidgetModel("placeHoldersInTemplate", Alignment.Right, "302px", Url.Action("DynamoDB", "AWS")));
-            return View(model);
+            return View();
         }
  
         public ActionResult AmazonContext()
