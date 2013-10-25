@@ -11,10 +11,17 @@ namespace SupperSlonicWebSite.Controllers
     {
         public ActionResult Index()
         {
-            List<TabWidgetModel> model = new List<TabWidgetModel>();
-            model.Add(new TabWidgetModel("description", Alignment.Right, "100px", Url.Action("VerticalTabs", "WebDev")));
-            model.Add(new TabWidgetModel("howToUse", Alignment.Right, "201px", Url.Action("ScheduleTable", "WebDev")));
-            return View(model);
+            return View();
+        }
+
+        public ActionResult VerticalTabs()
+        {
+            return View();
+        }
+
+        public ActionResult WeeklySchedule()
+        {
+            return View();
         }
     }
 }

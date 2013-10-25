@@ -148,6 +148,7 @@
     <Content Include="Content\css\main.css" />
     <Content Include="Content\img\tableHeader.png" />
     <Content Include="Content\img\templateStructure.png" />
+    <Content Include="Content\img\underConstruction.jpg" />
     <Content Include="Content\img\versioning.png" />
     <Content Include="Content\img\waiting.gif" />
     <Content Include="Content\img\yes16.png" />
@@ -193,6 +194,8 @@
     <Content Include="Views\AWS\Index.cshtml" />
     <None Include="Views\Shared\TabWidget.cshtml" />
     <Content Include="Views\WebDev\Index.cshtml" />
+    <Content Include="Views\WebDev\VerticalTabs.cshtml" />
+    <Content Include="Views\WebDev\WeeklySchedule.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\HelpSpot.htm" />
