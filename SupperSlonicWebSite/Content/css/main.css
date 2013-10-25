@@ -40,7 +40,9 @@ ul#main-nav > li
 	padding:0 0 0 7px;
 	height:31px;
 	line-height:31px;
-	background:transparent url(../img/bg_main_nav_tab.gif) no-repeat scroll 0 0;
+    background-color:#3F3F3F;
+    border-top-right-radius:3px;-moz-border-radius-topright:3px;
+    border-top-left-radius:3px;-moz-border-radius-topleft:3px
 }
 ul#main-nav > li a
 {
@@ -49,19 +51,18 @@ ul#main-nav > li a
 	padding:0 9px 0px 2px;
 	font-family:'Lucida Grande', 'Trebuchet MS','Lucida Sans Unicode','Lucida Sans Regular', Verdana, sans-serif;
 	font-size:12px;
-	color:#aaa
+	color:#aaa;
+    background-color:transparent
 }
 ul#main-nav > li > a
 { 
     float:left;
 	display:block;
-    font-weight:bold;
-    background:transparent url(../img/bg_main_nav_tab.gif) no-repeat scroll 100% 0;
+    font-weight:bold
 }
-ul#main-nav > li.selected {background-image:url(../img/bg_main_nav_tab_selected.gif);}
-ul#main-nav > li.selected > a {background-image:url(../img/bg_main_nav_tab_selected.gif);color:#fff;}
 ul#main-nav > li a:hover {text-decoration:none;color:#fff;}
-ul#main-nav > li a:active {background-color:transparent}
+ul#main-nav > li.selected {background-color:#303030}
+ul#main-nav > li.selected > a {color:#fff;}
 
 /*---------------- Sub main menu ----------------*/
 div.submenu{display:none;z-index: 100001 !important;background:rgba(63, 63, 63, 0.8);

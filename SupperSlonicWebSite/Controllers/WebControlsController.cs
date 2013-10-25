@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace SupperSlonicWebSite.Controllers
 {
-    public class WebDevController : Controller
+    public class WebControlsController : Controller
     {
         public ActionResult Index()
         {

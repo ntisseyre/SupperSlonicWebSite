@@ -26,11 +26,11 @@
 		<div id="body-wrap">
 			<ul id="main-nav">
 				<li id="mnHome">@Html.ActionLink("HOME", "Index", "Home")</li>
-                <li id="mnWebDev" onmouseover="javascript:showSubMenu(this.id);" onmouseout="javascript:hideSubMenu(this.id);">@Html.ActionLink("Web Development", "Index", "WebDev")
-                    <div id="mnWebDevItems" class="submenu">
+                <li id="mnWebControls" style="width:120px" onmouseover="javascript:showSubMenu(this.id);" onmouseout="javascript:hideSubMenu(this.id);">@Html.ActionLink("Web Controls", "Index", "WebControls")
+                    <div id="mnWebControlsItems" class="submenu">
                         <ul>
-                            <li>@Html.ActionLink("Vertical Tabs", "VerticalTabs", "WebDev")</li>
-                            <li>@Html.ActionLink("Weekly Schedule", "WeeklySchedule", "WebDev")</li>
+                            <li>@Html.ActionLink("Vertical Tabs", "VerticalTabs", "WebControls")</li>
+                            <li>@Html.ActionLink("Weekly Schedule", "WeeklySchedule", "WebControls")</li>
                         </ul>
                     </div>
                 </li>

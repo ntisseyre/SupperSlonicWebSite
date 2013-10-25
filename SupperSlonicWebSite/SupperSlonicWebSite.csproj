@@ -112,7 +112,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AWSController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\WebDevController.cs" />
+    <Compile Include="Controllers\WebControlsController.cs" />
     <Compile Include="DomainLogic\DAL\SourceCodeDownloadsDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -128,8 +128,6 @@
     <Content Include="Content\css\emr.css" />
     <Content Include="Content\css\helpspot.css" />
     <Content Include="Content\img\aws.png" />
-    <Content Include="Content\img\bg_main_nav_tab.gif" />
-    <Content Include="Content\img\bg_main_nav_tab_selected.gif" />
     <Content Include="Content\img\check16.png" />
     <Content Include="Content\img\close.png" />
     <Content Include="Content\img\deployment.png" />
@@ -193,9 +191,9 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\AWS\Index.cshtml" />
     <None Include="Views\Shared\TabWidget.cshtml" />
-    <Content Include="Views\WebDev\Index.cshtml" />
-    <Content Include="Views\WebDev\VerticalTabs.cshtml" />
-    <Content Include="Views\WebDev\WeeklySchedule.cshtml" />
+    <Content Include="Views\WebControls\Index.cshtml" />
+    <Content Include="Views\WebControls\VerticalTabs.cshtml" />
+    <Content Include="Views\WebControls\WeeklySchedule.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\HelpSpot.htm" />
