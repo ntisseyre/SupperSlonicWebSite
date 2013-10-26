@@ -136,6 +136,7 @@
     <Content Include="Content\img\getLock.jpg" />
     <Content Include="Content\img\header.jpg" />
     <Content Include="Content\img\howToUse.png" />
+    <Content Include="Content\img\idea.png" />
     <Content Include="Content\img\locking.png" />
     <Content Include="Content\img\lockInProgress.jpg" />
     <Content Include="Content\img\me.jpg" />

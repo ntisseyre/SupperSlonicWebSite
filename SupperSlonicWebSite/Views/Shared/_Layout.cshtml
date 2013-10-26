@@ -5,12 +5,38 @@
 		<link href="~/Content/css/helpspot.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" src="~/Content/js/tabWidget.js"></script>
         <script type="text/javascript">
-            function setCurrentMenu(controllerName, actionName)
+            var menuItems = ['mnWebControls', 'mnAWS'];
+            function onLoadHandler(controllerName, actionName)
             {
+                //Set current menu tab
                 if (actionName == "About")
                     controllerName = "About";
 
                 document.getElementById("mn" + controllerName).className = "selected";
+
+                //Bind onmouse events
+                var menuItem = document.getElementById("mnWebControls");
+                if ("ontouchstart" in window || "ontouch" in window)
+                {
+                    for(var c = 0; c < menuItems.length; c++)
+                        bindIOSEvents(document.getElementById(menuItems[c]));
+                }
+                else
+                {
+                    for (var c = 0; c < menuItems.length; c++)
+                        bindClassicEvents(document.getElementById(menuItems[c]));
+                }
+                
+            }
+            function bindIOSEvents(menuItem)
+            {
+                menuItem.ontouchstart = function () { showSubMenu(this.id); };
+                menuItem.touchcancel = function () { hideSubMenu(this.id); };
+            }
+            function bindClassicEvents(menuItem)
+            {
+                menuItem.onmouseover = function () { showSubMenu(this.id); };
+                menuItem.onmouseout = function () { hideSubMenu(this.id); };
             }
             function showSubMenu(menuId)
             {
@@ -21,12 +47,12 @@
             }
         </script>
 	</head>
-<body onload="javascript:setCurrentMenu('@ViewContext.RouteData.Values["controller"]', '@ViewContext.RouteData.Values["action"]');">
+<body onload="javascript:onLoadHandler('@ViewContext.RouteData.Values["controller"]', '@ViewContext.RouteData.Values["action"]');">
 	<div id="body-bg">
 		<div id="body-wrap">
 			<ul id="main-nav">
 				<li id="mnHome">@Html.ActionLink("HOME", "Index", "Home")</li>
-                <li id="mnWebControls" style="width:120px" onmouseover="javascript:showSubMenu(this.id);" onmouseout="javascript:hideSubMenu(this.id);">@Html.ActionLink("Web Controls", "Index", "WebControls")
+                <li id="mnWebControls" style="width:120px">@Html.ActionLink("Web Controls", "Index", "WebControls")
                     <div id="mnWebControlsItems" class="submenu">
                         <ul>
                             <li>@Html.ActionLink("Vertical Tabs", "VerticalTabs", "WebControls")</li>
@@ -34,7 +60,7 @@
                         </ul>
                     </div>
                 </li>
-				<li id="mnAWS" onmouseover="javascript:showSubMenu(this.id);" onmouseout="javascript:hideSubMenu(this.id);">@Html.ActionLink("Amazon Web Services", "Index", "AWS")
+				<li id="mnAWS">@Html.ActionLink("Amazon Web Services", "Index", "AWS")
                     <div id="mnAWSItems" class="submenu">
                          <ul>
                             <li>@Html.ActionLink("Amazon Context", "AmazonContext", "AWS")</li>
