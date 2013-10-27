@@ -146,6 +146,10 @@
     <Content Include="Content\img\submit.png" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\img\tableHeader.png" />
+    <Content Include="Content\img\tabWidgetController.jpg" />
+    <Content Include="Content\img\tabWidgetModel.jpg" />
+    <Content Include="Content\img\tabWidgetUsage.jpg" />
+    <Content Include="Content\img\tabWidgetView.jpg" />
     <Content Include="Content\img\templateStructure.png" />
     <Content Include="Content\img\underConstruction.jpg" />
     <Content Include="Content\img\versioning.png" />
