@@ -130,6 +130,7 @@
     <Content Include="Content\img\aws.png" />
     <Content Include="Content\img\check16.png" />
     <Content Include="Content\img\close.png" />
+    <Content Include="Content\img\controller.png" />
     <Content Include="Content\img\deployment.png" />
     <Content Include="Content\img\description.png" />
     <Content Include="Content\img\download.png" />
@@ -140,6 +141,7 @@
     <Content Include="Content\img\locking.png" />
     <Content Include="Content\img\lockInProgress.jpg" />
     <Content Include="Content\img\me.jpg" />
+    <Content Include="Content\img\model.png" />
     <Content Include="Content\img\placeHoldersInTemplate.png" />
     <Content Include="Content\img\questions.png" />
     <Content Include="Content\img\storage.png" />
@@ -153,6 +155,7 @@
     <Content Include="Content\img\templateStructure.png" />
     <Content Include="Content\img\underConstruction.jpg" />
     <Content Include="Content\img\versioning.png" />
+    <Content Include="Content\img\view.png" />
     <Content Include="Content\img\waiting.gif" />
     <Content Include="Content\img\yes16.png" />
     <Content Include="Content\js\tabWidget.js" />

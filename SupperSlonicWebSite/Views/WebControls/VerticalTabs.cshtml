@@ -1,6 +1,11 @@
-﻿<h1 class="first">Vertical Tabs Control</h1>
+﻿@using SupperSlonicWebSite.Models;
+
+@model IList<TabWidgetModel>
+
+<h1 class="first">Vertical Tabs Control</h1>
 <p>I wrote for my web site a pretty control, based on a <strong>ASP.Net MVC Partial View</strong>, which allows you to place vertical tabs on your web page easily with no JavaScript and minimum CSS.</p>
-<h1>Model</h1>
+@Html.Partial("DownloadExampleWidget")
+<h1 id="model">Model</h1>
 <p>Everything begins with a model that describes a tab control. This model has the following properties:</p>
 <ul>
     <li><strong>Id</strong> – a unique identifier of the element;</li>
@@ -10,11 +15,15 @@
     <li><strong>TabImage</strong> – for this tab control, image should be used as a background. This property is resolved automatically by searching for an image with name equal to the ID property. For instance, “~/Content/img/description.png”. You can change this behavior, for me it was just convenient.</li>
 </ul>
 <div class="code" style="width:602px"><img src="~/Content/img/tabWidgetModel.jpg" /></div>
-<h1>Partial View</h1>
+<h1 id="view">Partial View</h1>
 <p>All common styles for tabs are stored in a CSS file. All styles particular for the specific tab are automatically generated in a view:</p>
 <div class="code" style="width:730px"><img src="~/Content/img/tabWidgetView.jpg" /></div>
-<h1>How to use</h1>
+<h1 id="controller">Controller</h1>
 <p>Populate a list of required tabs in a controller:</p>
 <div class="code" style="width:696px"><img src="~/Content/img/tabWidgetController.jpg" /></div>
+<h1 id="howToUse">How to use</h1>
 <p>Generate an HTML for the tabs in any place of you view using a Partial View:</p>
 <div class="code" style="width:593px"><img src="~/Content/img/tabWidgetUsage.jpg" /></div>
+
+ @foreach (TabWidgetModel tabWidget in this.Model)
+    { @Html.Partial("TabWidget", tabWidget) }
