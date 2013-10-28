@@ -1,4 +1,5 @@
 ﻿using SupperSlonicWebSite.DomainLogic.DAL;
+using SupperSlonicWebSite.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -71,6 +72,14 @@ namespace SupperSlonicWebSite.Controllers
             }
 
             return Json("Success");
+        }
+
+        public ActionResult DownloadsInfo()
+        {
+            SourceCodeDownloadsDAL dal = new SourceCodeDownloadsDAL();
+            IList<DownloadInfoModel> model = dal.GetDownloadsInfo();
+
+            return View(model);
         }
     }
 }

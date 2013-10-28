@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SupperSlonicWebSite.Models;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -18,7 +19,6 @@ namespace SupperSlonicWebSite.DomainLogic.DAL
                 cmd.Parameters.Add("name", SqlDbType.VarChar, 255).Value = name;
                 connection.Open();
                 cmd.ExecuteNonQuery();
-                connection.Close();
             }
         }
 
@@ -31,8 +31,32 @@ namespace SupperSlonicWebSite.DomainLogic.DAL
                 cmd.CommandType = CommandType.StoredProcedure;
                 connection.Open();
                 cmd.ExecuteNonQuery();
-                connection.Close();
             }
+        }
+
+        public IList<DownloadInfoModel> GetDownloadsInfo()
+        {
+            IList<DownloadInfoModel> result = new List<DownloadInfoModel>();
+
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MidgaardDB"].ConnectionString))
+            using (SqlCommand cmd = new SqlCommand("select * from dbo.HowManyDownloads order by Name", connection))
+            {
+                connection.Open();
+                using (SqlDataReader sqlDataReader = cmd.ExecuteReader())
+                {
+                    while (sqlDataReader.Read())
+                    {
+                        DownloadInfoModel info = new DownloadInfoModel();
+                        info.Name = sqlDataReader.GetString(0);
+                        info.TotalDownloads = sqlDataReader.GetInt32(1);
+                        info.LatestDownload = sqlDataReader.GetDateTime(2);
+
+                        result.Add(info);
+                    }
+                }
+            }
+
+            return result;
         }
     }
 }

@@ -118,6 +118,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Alignment.cs" />
+    <Compile Include="Models\DownloadInfoModel.cs" />
     <Compile Include="Models\TabWidgetModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -125,6 +126,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\css\downloadsInfo.css" />
     <Content Include="Content\css\emr.css" />
     <Content Include="Content\css\helpspot.css" />
     <Content Include="Content\img\aws.png" />
@@ -198,6 +200,8 @@
     <Content Include="Views\Shared\DownloadExampleWidget.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\AWS\Index.cshtml" />
+    <Content Include="Views\Home\DownloadsInfo.cshtml" />
+    <Content Include="Views\Shared\DownloadInfo.cshtml" />
     <None Include="Views\Shared\TabWidget.cshtml" />
     <Content Include="Views\WebControls\Index.cshtml" />
     <Content Include="Views\WebControls\VerticalTabs.cshtml" />

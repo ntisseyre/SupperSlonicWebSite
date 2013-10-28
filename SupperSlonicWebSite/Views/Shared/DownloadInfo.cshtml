@@ -1,0 +1,11 @@
+﻿@model SupperSlonicWebSite.Models.DownloadInfoModel
+
+<div class="downloadsInfoSection">@Model.Name</div>
+<div class="downloadsInfoRow">
+    <div>Total downloads</div>
+    <div>@Model.TotalDownloads</div>
+</div>
+<div class="downloadsInfoRow">
+    <div>Latest download</div>
+    <div>@Model.LatestDownload.ToString("dd MMM yyyy hh:mm:ss")</div>
+</div>

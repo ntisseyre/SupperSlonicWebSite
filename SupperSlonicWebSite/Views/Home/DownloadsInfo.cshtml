@@ -1,0 +1,15 @@
+﻿@using SupperSlonicWebSite.Models;
+
+@model IList<DownloadInfoModel>
+
+@{
+    ViewBag.Title = "SupperSlonic Downloads Info";
+}
+<link href="~/Content/css/downloadsInfo.css" rel="stylesheet" type="text/css" />
+<h1 class="first">Download information</h1>
+<div class="downloadsInfo">
+    <div class="downloadsInfoHeader">&nbsp;</div>
+
+    @foreach (DownloadInfoModel downloadInfo in this.Model)
+        { @Html.Partial("DownloadInfo", downloadInfo) }
+</div>
