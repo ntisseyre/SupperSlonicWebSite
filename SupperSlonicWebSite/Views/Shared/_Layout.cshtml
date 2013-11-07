@@ -12,7 +12,9 @@
                 if (actionName == "About")
                     controllerName = "About";
 
-                document.getElementById("mn" + controllerName).className = "selected";
+                var currentMenuItem = document.getElementById("mn" + controllerName);
+                if(currentMenuItem != null)
+                    currentMenuItem.className = "selected";
 
                 //Bind onmouse events
                 var menuItem = document.getElementById("mnWebControls");
