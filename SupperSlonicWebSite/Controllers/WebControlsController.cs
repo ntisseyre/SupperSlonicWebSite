@@ -26,7 +26,9 @@ namespace SupperSlonicWebSite.Controllers
 
         public ActionResult WeeklySchedule()
         {
-            return View();
+            List<TabWidgetModel> model = new List<TabWidgetModel>(4);
+            model.Add(new TabWidgetModel("model", Alignment.Right, "100px"));
+            return View(model);
         }
     }
 }

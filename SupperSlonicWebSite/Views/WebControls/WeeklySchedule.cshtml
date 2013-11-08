@@ -1,2 +1,35 @@
-﻿<div class="demo" style="float:left;width:422px"><img src="~/Content/img/underConstruction.jpg" /></div>
+﻿@using SupperSlonicWebSite.Models;
+
+@model IList<TabWidgetModel>
+
+<div class="demo" style="width:422px"><img src="~/Content/img/underConstruction.jpg" /></div>
+
 <h1 class="first" id="description">Weekly Schedule Control</h1>
+<p>I wrote a control using <strong>ASP.Net MVC</strong> to display and edit a <strong>weekly schedule</strong>. Most of the logic is in <strong>JavaScript</strong> and <strong>CSS</strong>, so I think that it can be interesting not only to .Net developers =).</p>
+@Html.Partial("DownloadExampleWidget")
+<p>This control allows you to set working types for each day of a week.<br />
+Working type can have on of 3 possible values:</p>
+<ol>
+	<li><strong>Day-off</strong> – not a working day;</li>
+	<li><strong>Round the clock</strong> – 24 hours working day;</li>
+	<li><strong>Working hours</strong> – the time when work stars and finishes.</li>
+</ol>
+<p>Working types “round the clock” and “working hours” can have <strong>breaks</strong>. For example, a break for lunch during working hours is from 12:00 till 13:00. You can easily register it with this control. The number of breaks is unlimited.</p>
+<p>You can easily change this logic: code is very easy to read and I have added lots of comments.</p>
+<p>The main features of this control are the following:</p>
+<ul class="check-list">
+	<li>Model is serialized/deserialized to/from XML on the server side;</li>
+	<li>There is an XSD schema to validate an XML;</li>
+	<li>A JavaScript function to disable control (read-only mode);</li>
+	<li>A JavaScript function to validate control;</li>
+	<li>A JavaScript function to get JSON format of a control’s data;</li>
+	<li>Control inherits jQuery UI styles, so you can easily switch between jQuery UI Themes;</li>
+    <li>There is a separate dialog to edit breaks. If a user doesn’t want to confirm her changes, she can press “Cancel” and the changes will not take an affect;</li>
+	<li>When a user sets a working type for Monday, it is automatically applied to days from Tuesday to Friday. This is useful, because in real life all these days usually have the same working hours and it saves user’s time to enter data.</li>
+</ul>
+<h1 id="model">Model</h1>
+<p><strong>WeekModel</strong> class describes a model for a weekly schedule. This class supports Xml serialization and deserialization.</p>
+<div class="demo" style="width:594px"><img src="~/Content/img/weeklyScheduleModel.jpg" alt="getLock"/></div>
+
+ @foreach (TabWidgetModel tabWidget in this.Model)
+    { @Html.Partial("TabWidget", tabWidget) }
