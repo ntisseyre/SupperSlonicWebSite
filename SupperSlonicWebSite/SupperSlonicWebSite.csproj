@@ -159,6 +159,7 @@
     <Content Include="Content\img\verticalTabView.jpg" />
     <Content Include="Content\img\view.png" />
     <Content Include="Content\img\waiting.gif" />
+    <Content Include="Content\img\weeklyScheduleModel.jpg" />
     <Content Include="Content\img\yes16.png" />
     <Content Include="Content\js\tabWidget.js" />
     <Content Include="Global.asax" />
