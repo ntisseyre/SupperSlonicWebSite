@@ -5,16 +5,16 @@
 <h1 class="first" id="description">Weekly Schedule Control</h1>
 <p>I wrote a control using <strong>ASP.Net MVC</strong> to display and edit a <strong>weekly schedule</strong>. Most of the logic is in <strong>JavaScript</strong> and <strong>CSS</strong>, so I think that it can be interesting not only to .Net developers =).</p>
 @Html.Partial("DownloadExampleWidget")
-<p>This control allows you to set working types for each day of a week.<br />
-Working type can have on of 3 possible values:</p>
+<p>This control allows you to set working times for each day of the week.<br />
+Working time can have on of 3 possible values:</p>
 <ol>
 	<li><strong>Day-off</strong> – not a working day;</li>
 	<li><strong>Round the clock</strong> – 24 hours working day;</li>
 	<li><strong>Working hours</strong> – the time when work stars and finishes.</li>
 </ol>
-<div class="demo" style="width:542px"><img src="~/Content/img/weeklyScheduleDemo.jpg" alt="getLock"/></div>
-<p>Working types “round the clock” and “working hours” can have <strong>breaks</strong>. For example, a break for lunch during working hours is from 12:00 till 13:00. You can easily register it with this control. The number of breaks is unlimited.</p>
-<div class="demo" style="width:208px;float:right"><img src="~/Content/img/weeklyScheduleBreaksDemo.jpg" alt="getLock"/></div>
+<div class="demo" style="width:552px"><img src="~/Content/img/weeklyScheduleDemo.jpg" alt="weeklyScheduleDemo"/></div>
+<p>Working times “round the clock” and “working hours” can have <strong>breaks</strong>. For example, a break for lunch during working hours is from 12:00 till 13:00. You can easily register it with this control. The number of breaks is unlimited.</p>
+<div class="demo" style="width:208px;float:right"><img src="~/Content/img/weeklyScheduleBreaksDemo.jpg" alt="weeklyScheduleBreaksDemo"/></div>
 <p>You can easily change this logic: code is very easy to read and I have added lots of comments.</p>
 <p>The main features of this control are the following:</p>
 <ul class="check-list">
@@ -25,11 +25,21 @@ Working type can have on of 3 possible values:</p>
 	<li>A JavaScript function to get JSON format of a control’s data;</li>
 	<li>Control inherits jQuery UI styles, so you can easily switch between jQuery UI Themes;</li>
     <li>There is a separate dialog to edit breaks. If a user doesn’t want to confirm her changes, she can press “Cancel” and the changes will not take an affect;</li>
-	<li>When a user sets a working type for Monday, it is automatically applied to days from Tuesday to Friday. This is useful, because in real life all these days usually have the same working hours and it saves user’s time to enter data.</li>
+	<li>When a user sets a working time for Monday, it is automatically applied to days from Tuesday to Friday. This is useful, because in real life all these days usually have the same working hours and it saves user’s time to enter data.</li>
 </ul>
 <h1 id="model">Model</h1>
 <p><strong>WeekModel</strong> class describes a model for a weekly schedule. This class supports Xml serialization and deserialization.</p>
-<div class="demo" style="width:594px"><img src="~/Content/img/weeklyScheduleModel.jpg" alt="getLock"/></div>
+<div class="code" style="width:495px;float:right"><img src="~/Content/img/weeklyScheduleSerialization.jpg" /></div>
+<p>Project contains an <strong>XSD schema</strong> to validate an XML. Moreover, WeekModel alread has an implemented equility operations.</p>
+<p>The structure of the model is pretty straightforward. Class <strong>WeekModel</strong> has an instance of <strong>DayOfTheWeek</strong> class for each day of the week: Monday, Tuesday, Wednesday etc.</p>
+<p>Each <strong>DayOfTheWeek</strong> class contains:</p>
+<ul>
+    <li><strong>DayOfWeek</strong>-enum value to identify a name of a weekday;</li>
+    <li><strong>WorkingTime</strong>-enum value to identify a working time during a weekday;</li>
+    <li><strong>WorkHours</strong>-class which is populated only for working time “WorkHours”;</li>
+    <li><strong>A list of breaks</strong> which can be empty or has an unlimited number of breaks. For working time “Closed” it is null.</li>
+</ul>
+<div class="demo" style="width:594px"><img src="~/Content/img/weeklyScheduleModel.jpg" alt="weeklyScheduleModel"/></div>
 
  @foreach (TabWidgetModel tabWidget in this.Model)
     { @Html.Partial("TabWidget", tabWidget) }
