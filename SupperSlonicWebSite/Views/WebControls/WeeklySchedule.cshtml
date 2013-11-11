@@ -41,5 +41,42 @@ Working time can have on of 3 possible values:</p>
 </ul>
 <div class="demo" style="width:594px"><img src="~/Content/img/weeklyScheduleModel.jpg" alt="weeklyScheduleModel"/></div>
 
+<h1 id="view">View</h1>
+<p>Control consists of 3 display templates and 1 editor template.</p>
+<p>Display templates:</p>
+<ul>
+    <li><strong>Schedule</strong> – the main template which is called by the client code. Displays the whole model and generates Html for the timePicker control;</li>
+    <li><strong>WorkingTime</strong> – a template which is used internally to display working time for each day of the week;</li>
+    <li><strong>Breaks</strong> – a template which is used internally to display a list of breaks and allows editing of this list.</li>   
+</ul>
+<div class="demo" style="float:right;width:542px"><img src="~/Content/img/weeklyScheduleTimePickerModel.jpg" alt="weeklyScheduleDemo"/></div>
+<p>Editor template:</p>
+<ul>
+    <li><strong>Time</strong> – generates the input-control for time.</li>
+</ul>
+<p>All these templates are pretty simple and small.</p>
+<p>For the client-side support there are two .js files and two .css files:</p>
+<div style="display:table-row">
+    <div style="display:table-cell">
+        <ul>
+            <li><strong>schedule.js</strong></li>
+            <li><strong>timePicker.js</strong></li>
+        </ul>
+    </div>
+    <div style="display:table-cell">
+        <ul>
+            <li><strong>schedule.css</strong></li>
+            <li><strong>timePicker.css</strong></li>
+        </ul>
+    </div>
+</div>
+
+<h1 id="controller">Controller</h1>
+<p>There is no controller for this control, but there is an extension to HtmlHelper class to minimize logic in views and to provide an ability for the test-coverage: <strong>WeeklyScheduleHtmlHelper</strong> class.</p>
+
+<h1 id="howToUse">How to use</h1>
+<p>Generate an HTML for the weekly schedule in any place of you view using a Display Template:</p>
+<div class="code" style="width:733px"><img src="~/Content/img/weeklyScheduleUsage.jpg" /></div>
+
  @foreach (TabWidgetModel tabWidget in this.Model)
     { @Html.Partial("TabWidget", tabWidget) }

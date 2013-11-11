@@ -165,6 +165,7 @@
     <Content Include="Content\img\weeklyScheduleDemo.jpg" />
     <Content Include="Content\img\weeklyScheduleModel.jpg" />
     <Content Include="Content\img\weeklyScheduleSerialization.jpg" />
+    <Content Include="Content\img\weeklyScheduleUsage.jpg" />
     <Content Include="Content\img\yes16.png" />
     <Content Include="Content\js\tabWidget.js" />
     <Content Include="Global.asax" />
