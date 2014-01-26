@@ -1,18 +1,18 @@
 ﻿<style>
 body a#questions, body a#questions:link
-{left: 0;top:200px !important;margin-left: -5px !important;background-image: url(@Url.Content("~/Content/img/questions.png"));}
+{left: 0;top:200px !important;margin-left: -5px !important;background-image: url(@Url.Content("~/Content/img/helpSpot/questions.png"));}
 
 body a#questions:hover
 { margin-left: -3px !important; }
 
 * html a#questions, * html a#questions:link
-{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='@Url.Content("~/Content/img/questions.png")'); }
+{ filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='@Url.Content("~/Content/img/helpSpot/questions.png")'); }
 
 </style>
 <a id="questions" class="menu" href="javascript:TabWidget.Tab.open();"></a>
 <div id="helpspot_widget_tab_overlay" style="display:none">
 	<div id="helpspot_widget_tab_wrapper">
-		<div id="helpspot_widget_tab_close"><img src="@Url.Content("~/Content/img/close.png")" onclick="TabWidget.Tab.close();return false" alt="close" /></div>
+		<div id="helpspot_widget_tab_close"><img src="@Url.Content("~/Content/img/helpSpot/close.png")" onclick="TabWidget.Tab.close();return false" alt="close" /></div>
 			<iframe src="@Url.Content("~/Content/HelpSpot.htm")" name="helpspot_widget_tab_iframe" id="helpspot_widget_tab_iframe" allowTransparency="true" scrolling="no" frameborder="0" class=""></iframe>
 		</div>
 		<div id="helpspot_widget_mask" onclick="TabWidget.Tab.close();return false">

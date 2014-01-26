@@ -1,0 +1,36 @@
+﻿@using SupperSlonicWebSite.Models;
+
+@model IList<TabWidgetModel>
+
+<h1 class="first" id="description">Agile Release Cycle Control</h1>
+<p>This control allows you to display and edit an <strong>agile release cycle</strong>. As usual it has minimum of server-side logic and everything is implemented using <strong>JavaScript</strong> and <strong>CSS</strong>, so it can be useful for all web developers.</p>
+@Html.Partial("DownloadExampleWidget")
+<p>Control contains a <strong>monthly calendar</strong> to display the following items:</p>
+<ol>
+	<li><strong>Planning</strong> – only one per release cycle;</li>
+	<li><strong>Sprints</strong> – any number of sprints, but should be at least one;</li>
+	<li><strong>Holidays</strong> – any number of holidays;</li>
+    <li><strong>Team members’ vacations</strong> – any number of vacations.</li>
+</ol>
+<div class="demo" style="width:572px;float:left"><img src="~/Content/img/agileCalendar/calendarDemo.jpg" alt="agileCalendarDemo"/></div>
+<p style="margin-top:40px" ><strong>Each date contains a short description</strong> which is displayed on mouse over event.</p>
+<p style="margin-top:40px"><strong>The first day of the week is a configured property</strong>. You can easily switch to Monday or Sunday, or even Friday. =)</p>
+<p style="margin-top:40px"><strong>Dates in a calendar are selectable</strong>. You can bind any event handler to the "Select date(s)" event.</p>
+<p style="margin-top:40px"><strong>You can customize colors</strong> for each agile item: planning, sprints, holidays – everything can have its own color.</p>
+<p style="margin-top:40px"><strong>You can customize icons</strong> of your team members. If a team member has a vacation, his icon will be displayed in a calendar for the vacation period.</p>
+<p style="margin-top:60px">An addition to the calendar there are also two templates to display agile release cycle in <strong>read-only mode</strong> and <strong>editing mode</strong>.<br />
+Read-only mode is very simple: just displays the list of planning, sprints, holidays and vacations.<br />
+Editing mode also displays all items in lists, but it allows you to:</p>
+<div class="demo" style="width:371px;float:right"><img src="~/Content/img/agileCalendar/editingDemo.jpg" alt="editingDemo"/></div>
+<ul class="check-list">
+    <li>Add new items;</li>
+    <li>Delete items by dragging them to the trash;</li>
+    <li>Select colors with a pretty color-Picker;</li>
+    <li>Select team members with a cool team-Member-Picker.</li>
+</ul>
+<div class="demo" style="width:272px;margin-left:40px;margin-top:40px"><img src="~/Content/img/agileCalendar/teamMemberPickerDemo.jpg" alt="teamMemberPickerDemo"/></div>
+
+<div class="demo" style="width:422px;margin-top:200px"><img src="~/Content/img/underConstruction.jpg" alt="underConstruction"/></div>
+
+@foreach (TabWidgetModel tabWidget in this.Model)
+    { @Html.Partial("TabWidget", tabWidget) }

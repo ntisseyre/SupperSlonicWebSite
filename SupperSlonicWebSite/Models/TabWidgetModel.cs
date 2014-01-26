@@ -18,7 +18,7 @@ namespace SupperSlonicWebSite.Models
             this.Id = "tab" + id;
             this.Alignment = alignment;
             this.Top = top;
-            this.TabImage = "~/Content/img/" + id + ".png";
+            this.TabImage = "~/Content/img/tabs/" + id + ".png";
             this.Href = href;
         }
 

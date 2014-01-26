@@ -14,16 +14,16 @@
     <li><strong>Href</strong> – specifies where the browser should navigate on a click event. If not specified, will automatically generate an anchor based on the ID value, for instance, “#description”. You can override it with any custom URL;</li>
     <li><strong>TabImage</strong> – for this tab control, image should be used as a background. This property is resolved automatically by searching for an image with name equal to the ID property. For instance, “~/Content/img/description.png”. You can change this behavior, for me it was just convenient.</li>
 </ul>
-<div class="code" style="width:600px"><img src="~/Content/img/verticalTabModel.jpg" /></div>
+<div class="code" style="width:600px"><img src="~/Content/img/verticalTab/model.jpg" /></div>
 <h1 id="view">Partial View</h1>
 <p>All common styles for tabs are stored in a CSS file. All styles particular for the specific tab are automatically generated in a view:</p>
-<div class="code" style="width:733px"><img src="~/Content/img/verticalTabView.jpg" /></div>
+<div class="code" style="width:733px"><img src="~/Content/img/verticalTab/view.jpg" /></div>
 <h1 id="controller">Controller</h1>
 <p>Populate a list of required tabs in a controller:</p>
-<div class="code" style="width:714px"><img src="~/Content/img/verticalTabController.jpg" /></div>
+<div class="code" style="width:714px"><img src="~/Content/img/verticalTab/controller.jpg" /></div>
 <h1 id="howToUse">How to use</h1>
 <p>Generate an HTML for the tabs in any place of you view using a Partial View:</p>
-<div class="code" style="width:607px"><img src="~/Content/img/verticalTabUsage.jpg" /></div>
+<div class="code" style="width:607px"><img src="~/Content/img/verticalTab/usage.jpg" /></div>
 
  @foreach (TabWidgetModel tabWidget in this.Model)
     { @Html.Partial("TabWidget", tabWidget) }

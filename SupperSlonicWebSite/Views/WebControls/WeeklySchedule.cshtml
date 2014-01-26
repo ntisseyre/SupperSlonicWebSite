@@ -12,9 +12,9 @@ Working time can have on of 3 possible values:</p>
 	<li><strong>Round the clock</strong> – 24 hours working day;</li>
 	<li><strong>Working hours</strong> – the time when work stars and finishes.</li>
 </ol>
-<div class="demo" style="width:552px"><img src="~/Content/img/weeklyScheduleDemo.jpg" alt="weeklyScheduleDemo"/></div>
+<div class="demo" style="width:552px"><img src="~/Content/img/weeklySchedule/demo.jpg" alt="weeklyScheduleDemo"/></div>
 <p>Working times “round the clock” and “working hours” can have <strong>breaks</strong>. For example, a break for lunch during working hours is from 12:00 till 13:00. You can easily register it with this control. The number of breaks is unlimited.</p>
-<div class="demo" style="width:208px;float:right"><img src="~/Content/img/weeklyScheduleBreaksDemo.jpg" alt="weeklyScheduleBreaksDemo"/></div>
+<div class="demo" style="width:208px;float:right"><img src="~/Content/img/weeklySchedule/breaksDemo.jpg" alt="weeklyScheduleBreaksDemo"/></div>
 <p>You can change this logic without any problems: code is very easy to read and I have added lots of comments.</p>
 <p>The main features of this control are the following:</p>
 <ul class="check-list">
@@ -29,7 +29,7 @@ Working time can have on of 3 possible values:</p>
 </ul>
 <h1 id="model">Model</h1>
 <p><strong>WeekModel</strong> class describes a model for a weekly schedule. This class supports Xml serialization and deserialization.</p>
-<div class="code" style="width:495px;float:right"><img src="~/Content/img/weeklyScheduleSerialization.jpg" /></div>
+<div class="code" style="width:495px;float:right"><img src="~/Content/img/weeklySchedule/serialization.jpg" /></div>
 <p>Project contains an <strong>XSD schema</strong> to validate an XML. Moreover, WeekModel alread has an implemented equility operations.</p>
 <p>The structure of the model is pretty straightforward. Class <strong>WeekModel</strong> has an instance of <strong>DayOfTheWeek</strong> class for each day of the week: Monday, Tuesday, Wednesday etc.</p>
 <p>Each <strong>DayOfTheWeek</strong> class contains:</p>
@@ -39,7 +39,7 @@ Working time can have on of 3 possible values:</p>
     <li><strong>WorkHours</strong>-class which is populated only for working time “WorkHours”;</li>
     <li><strong>A list of breaks</strong> which can be empty or has an unlimited number of breaks. For working time “Closed” it is null.</li>
 </ul>
-<div class="demo" style="width:594px"><img src="~/Content/img/weeklyScheduleModel.jpg" alt="weeklyScheduleModel"/></div>
+<div class="demo" style="width:594px"><img src="~/Content/img/weeklySchedule/model.jpg" alt="weeklyScheduleModel"/></div>
 
 <h1 id="view">View</h1>
 <p>Control consists of 3 display templates and 1 editor template.</p>
@@ -49,7 +49,7 @@ Working time can have on of 3 possible values:</p>
     <li><strong>WorkingTime</strong> – a template which is used internally to display working time for each day of the week;</li>
     <li><strong>Breaks</strong> – a template which is used internally to display a list of breaks and allows editing of this list.</li>   
 </ul>
-<div class="demo" style="float:right;width:542px"><img src="~/Content/img/weeklyScheduleTimePickerModel.jpg" alt="weeklyScheduleDemo"/></div>
+<div class="demo" style="float:right;width:542px"><img src="~/Content/img/weeklySchedule/timePickerModel.jpg" alt="weeklyScheduleDemo"/></div>
 <p>Editor template:</p>
 <ul>
     <li><strong>Time</strong> – generates the input-control for time.</li>
@@ -76,7 +76,7 @@ Working time can have on of 3 possible values:</p>
 
 <h1 id="howToUse">How to use</h1>
 <p>Generate an HTML for the weekly schedule in any place of you view using a Display Template:</p>
-<div class="code" style="width:733px"><img src="~/Content/img/weeklyScheduleUsage.jpg" /></div>
+<div class="code" style="width:733px"><img src="~/Content/img/weeklySchedule/usage.jpg" /></div>
 
  @foreach (TabWidgetModel tabWidget in this.Model)
     { @Html.Partial("TabWidget", tabWidget) }
