@@ -130,8 +130,10 @@
     <Content Include="Content\css\emr.css" />
     <Content Include="Content\css\helpspot.css" />
     <Content Include="Content\img\agileCalendar\calendarDemo.jpg" />
+    <Content Include="Content\img\agileCalendar\calendarFactory.jpg" />
     <Content Include="Content\img\agileCalendar\editingDemo.jpg" />
     <Content Include="Content\img\agileCalendar\teamMemberPickerDemo.jpg" />
+    <Content Include="Content\img\agileCalendar\xml.jpg" />
     <Content Include="Content\img\aws\logo.png" />
     <Content Include="Content\img\check16.png" />
     <Content Include="Content\img\helpSpot\close.png" />
