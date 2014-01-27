@@ -52,6 +52,21 @@ This allows you to reuse the calendar's rendering logic for any other purposes, 
 <p>For an agile calendar an <strong>AgileDateFactory class</strong> exists which creates view model based on domain model.</p>
 <div class="code" style="width:750px"><img src="~/Content/img/agileCalendar/calendarFactory.jpg" /></div>
 
+<h1 id="view">View</h1>
+<p>There 3 main views to display data:</p>
+<ul class="check-list">
+	<li>Monthly calendar view;</li>
+	<li>Read-only view;</li>
+	<li>Edit view.</li>
+</ul>
+<p><strong>Monthly calendar view</strong> operates over its own data model, abstracted from the agile release cycle. As already mentioned, this allows you to reuse this template for any other entities easily.</p>
+<div class="demo" style="width:271px;float:right;margin-top:-20px"><img src="~/Content/img/agileCalendar/readOnlyDemo.jpg" alt="readOnlyDemo"/></div>
+<p><strong>Read-only view</strong> displays agile release cycle in a simple and easy-to-read way.</p>
+<p><strong>Edit view</strong> displays data the same way as a read-only view, but allows data editing.<br />
+There is a dynamically added template row to enter new data: new sprints, holidays or vacations.<br />
+View has a color-Picker to set custom colors of the items; a team-member-Picker to edit vacations.<br />
+There is a JavaScript function to validate control and to get JSON representation of the agile release cycle.
+</p>
 <div class="demo" style="width:422px;margin-top:40px"><img src="~/Content/img/underConstruction.jpg" alt="underConstruction"/></div>
 
 @foreach (TabWidgetModel tabWidget in this.Model)
