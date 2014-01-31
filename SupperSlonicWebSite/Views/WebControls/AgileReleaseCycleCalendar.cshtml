@@ -52,6 +52,7 @@ This allows you to reuse the calendar's rendering logic for any other purposes, 
 <p>For an agile calendar an <strong>AgileDateFactory class</strong> exists which creates view model based on domain model.</p>
 <div class="code" style="width:750px"><img src="~/Content/img/agileCalendar/calendarFactory.jpg" /></div>
 
+
 <h1 id="view">View</h1>
 <p>There 3 main views to display data:</p>
 <ul class="check-list">
@@ -60,14 +61,43 @@ This allows you to reuse the calendar's rendering logic for any other purposes, 
 	<li>Edit view.</li>
 </ul>
 <p><strong>Monthly calendar view</strong> operates over its own data model, abstracted from the agile release cycle. As already mentioned, this allows you to reuse this template for any other entities easily.</p>
-<div class="demo" style="width:271px;float:right;margin-top:-20px"><img src="~/Content/img/agileCalendar/readOnlyDemo.jpg" alt="readOnlyDemo"/></div>
 <p><strong>Read-only view</strong> displays agile release cycle in a simple and easy-to-read way.</p>
-<p><strong>Edit view</strong> displays data the same way as a read-only view, but allows data editing.<br />
-There is a dynamically added template row to enter new data: new sprints, holidays or vacations.<br />
-View has a color-Picker to set custom colors of the items; a team-member-Picker to edit vacations.<br />
-There is a JavaScript function to validate control and to get JSON representation of the agile release cycle.
-</p>
-<div class="demo" style="width:422px;margin-top:40px"><img src="~/Content/img/underConstruction.jpg" alt="underConstruction"/></div>
+<div class="demo" style="width:271px;float:left;margin-top:1px"><img src="~/Content/img/agileCalendar/readOnlyDemo.jpg" alt="readOnlyDemo"/></div>
+<p style="margin-top:35px"><strong>Edit view</strong> displays data the same way as a read-only view, but allows data editing:</p>
+<p>There is a <strong>dynamically added template row to enter new data</strong>: new sprints, holidays or vacations;</p>
+<p>View has <strong>a color-Picker to set custom colors</strong> of the items;</p>
+<p><strong>A team-member-Picker</strong> to edit vacations;</p>
+<p>There is a <strong>JavaScript function to validate control and to get JSON</strong> representation of the agile release cycle.</p>
+
+<p style="margin-top:55px">There are also some templates that are used internally in the main views.
+For the client-side support there are four .js files and four .css files:</p>
+<div style="display:table-row">
+    <div style="display:table-cell">
+        <ul>
+            <li><strong>agileReleaseCycle.js</strong></li>
+            <li><strong>calendar.js</strong></li>
+            <li><strong>colorPicker.js</strong></li>
+            <li><strong>teamMemberPicker.js</strong></li>
+        </ul>
+    </div>
+    <div style="display:table-cell">
+        <ul>
+            <li><strong>agileReleaseCycle.css</strong></li>
+            <li><strong>calendar.css</strong></li>
+            <li><strong>colorPicker.css</strong></li>
+            <li><strong>teamMemberPicker.css</strong></li>
+        </ul>
+    </div>
+</div>
+<h1 id="controller">Controller</h1>
+<p>Control doesn't have server-side logic. Only small examples of how to serialize/deserialize data and build a monthly calendar.</p>
+
+<h1 id="howToUse">How to use</h1>
+<p>Read-only mode and monthly calendar:</p>
+<div class="code" style="width:642px"><img src="~/Content/img/agileCalendar/displayTemplate.jpg" /></div>
+
+<p>Edit mode:</p>
+<div class="code" style="width:705px"><img src="~/Content/img/agileCalendar/editTemplate.jpg" /></div>
 
 @foreach (TabWidgetModel tabWidget in this.Model)
     { @Html.Partial("TabWidget", tabWidget) }
