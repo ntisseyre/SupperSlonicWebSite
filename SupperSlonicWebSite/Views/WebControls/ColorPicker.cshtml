@@ -16,14 +16,15 @@
 }
 
 <h1 class="first" id="description">Color Picker Control</h1>
+@Html.Partial("DownloadExampleWidget")
 <p>Lightweight extendable colorPicker with abstract color-themes.</p>
 <p>To my mind, when a user enters the data, he wants to make it as quickly and simple as possible. Why should he spend time on creating new colors? It is much easier to select an existing template.</p>
-<p style="margin-bottom:-5px">Example:</p>
-<div class="colorPickerDemo demo" style="width:200px">
+<p>So for this purpose I created a colorpicker control which has a list of predefined colors. This control is very simple – just a clickable grid with colors.</p>
+<p style="margin-bottom:-5px">Demo:</p>
+<div class="colorPickerDemo demo" style="width:200px;height:40px;padding-top:30px;padding-left:30px">
     <div>Please, select a color:</div>
     <div class="slonic-calendar-colors-brownRed">&nbsp;</div>
 </div>
-<p>So for this purpose I created a colorpicker control which has a list of predefined colors. This control is very simple – just a clickable grid with colors.</p>
 <p><strong>Colors have abstract names</strong> which are defined in a separate <strong>css file</strong>.<br />
 This allows you to add new colors easily or update all colors according to the design requirements of you web site without corrupting the model data.</p>
 <p>There is a <strong>"colorSelected" event</strong> which contains the following event arguments:</p>
