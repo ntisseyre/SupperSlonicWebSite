@@ -1,8 +1,5 @@
 ﻿using SupperSlonicWebSite.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace SupperSlonicWebSite.Controllers
@@ -44,6 +41,11 @@ namespace SupperSlonicWebSite.Controllers
             model.Add(new TabWidgetModel("controller", Alignment.Right, "403px"));
             model.Add(new TabWidgetModel("howToUse", Alignment.Right, "504px"));
             return View(model);
+        }
+
+        public ActionResult ColorPicker()
+        {
+            return View();
         }
     }
 }

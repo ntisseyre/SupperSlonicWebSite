@@ -1,0 +1,34 @@
+﻿@section CSS
+{
+    <link href="@Url.Content("~/Content/css/webControls/colorPicker.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/webControls/colorPickerDemo.css")" rel="stylesheet" type="text/css" />
+}
+
+@section Scripts
+{
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/webControls/colorPicker.js")"></script>
+    <script>
+        $(document).ready(function () {
+            initColorPicker($("div.colorPickerDemo > div[class^=\"slonic-calendar-colors\"]"));
+        });
+    </script>
+}
+
+<h1 class="first" id="description">Color Picker Control</h1>
+<p>Lightweight extendable colorPicker with abstract color-themes.</p>
+<p>To my mind, when a user enters the data, he wants to make it as quickly and simple as possible. Why should he spend time on creating new colors? It is much easier to select an existing template.</p>
+<p style="margin-bottom:-5px">Example:</p>
+<div class="colorPickerDemo demo" style="width:200px">
+    <div>Please, select a color:</div>
+    <div class="slonic-calendar-colors-brownRed">&nbsp;</div>
+</div>
+<p>So for this purpose I created a colorpicker control which has a list of predefined colors. This control is very simple – just a clickable grid with colors.</p>
+<p><strong>Colors have abstract names</strong> which are defined in a separate <strong>css file</strong>.<br />
+This allows you to add new colors easily or update all colors according to the design requirements of you web site without corrupting the model data.</p>
+<p>There is a <strong>"colorSelected" event</strong> which contains the following event arguments:</p>
+<ul class="check-list">
+    <li><strong>selectedForControl</strong> – an object for which a color was selected;</li>
+    <li><strong>value</strong> – selected color name.</li>
+</ul>
+@Html.Partial("ColorsGrid")

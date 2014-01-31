@@ -129,6 +129,8 @@
     <Content Include="Content\css\downloadsInfo.css" />
     <Content Include="Content\css\emr.css" />
     <Content Include="Content\css\helpspot.css" />
+    <Content Include="Content\css\webControls\colorPicker.css" />
+    <Content Include="Content\css\webControls\colorPickerDemo.css" />
     <Content Include="Content\img\agileCalendar\calendarDemo.jpg" />
     <Content Include="Content\img\agileCalendar\calendarFactory.jpg" />
     <Content Include="Content\img\agileCalendar\displayTemplate.jpg" />
@@ -176,6 +178,7 @@
     <Content Include="Content\img\weeklySchedule\serialization.jpg" />
     <Content Include="Content\img\weeklySchedule\usage.jpg" />
     <Content Include="Content\img\yes16.png" />
+    <Content Include="Content\js\webControls\colorPicker.js" />
     <Content Include="Content\js\tabWidget.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -218,11 +221,13 @@
     <Content Include="Views\AWS\Index.cshtml" />
     <Content Include="Views\Home\DownloadsInfo.cshtml" />
     <Content Include="Views\Shared\DownloadInfo.cshtml" />
+    <Content Include="Views\Shared\ColorsGrid.cshtml" />
     <None Include="Views\Shared\TabWidget.cshtml" />
     <Content Include="Views\WebControls\Index.cshtml" />
     <Content Include="Views\WebControls\VerticalTabs.cshtml" />
     <Content Include="Views\WebControls\WeeklySchedule.cshtml" />
     <Content Include="Views\WebControls\AgileReleaseCycleCalendar.cshtml" />
+    <Content Include="Views\WebControls\ColorPicker.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\HelpSpot.htm" />

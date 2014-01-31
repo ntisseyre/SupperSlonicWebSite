@@ -3,6 +3,7 @@
 		<title>SupperSlonic</title>
 		<link href="~/Content/css/main.css" rel="stylesheet" type="text/css" />
 		<link href="~/Content/css/helpspot.css" rel="stylesheet" type="text/css" />
+        @RenderSection("CSS", false)
 		<script type="text/javascript" src="~/Content/js/tabWidget.js"></script>
         <script type="text/javascript">
             var menuItems = ['mnWebControls', 'mnAWS'];
@@ -48,6 +49,7 @@
                 document.getElementById(menuId + "Items").style.display = "none";
             }
         </script>
+        @RenderSection("Scripts", false)
 	</head>
 <body onload="javascript:onLoadHandler('@ViewContext.RouteData.Values["controller"]', '@ViewContext.RouteData.Values["action"]');">
 	<div id="body-bg">
@@ -58,6 +60,7 @@
                     <div id="mnWebControlsItems" class="submenu">
                         <ul>
                             <li>@Html.ActionLink("Vertical Tabs", "VerticalTabs", "WebControls")</li>
+                            <li>@Html.ActionLink("Colors Picker", "ColorPicker", "WebControls")</li>
                             <li>@Html.ActionLink("Weekly Schedule", "WeeklySchedule", "WebControls")</li>
                             <li>@Html.ActionLink("Agile Release Cycle Calendar", "AgileReleaseCycleCalendar", "WebControls")</li>
                         </ul>

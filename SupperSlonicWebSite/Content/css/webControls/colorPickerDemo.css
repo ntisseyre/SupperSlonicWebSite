@@ -1,0 +1,12 @@
+﻿div.colorPickerDemo{display:table;}
+div.colorPickerDemo > div { display:inline;vertical-align:middle;}
+div.colorPickerDemo > div:first-of-type {font-size:14px;color:#ccc}
+div.colorPickerDemo > div:last-of-type
+{
+    display:inline-block;
+    border:1px solid #222222;
+    outline:none;
+    cursor:pointer;
+    margin-left:10px;
+    width:24px;height:24px
+}
