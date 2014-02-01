@@ -50,6 +50,14 @@ Factory returns an <strong>abstract class CalendarDateBase</strong> which repres
 <div class="demo" style="width:568px;float:left"><img src="~/Content/img/agileCalendar/calendarBuilder.jpg" alt="calendarBuilder"/></div>
 <p style="margin-top:50px">This allows you to reuse the calendar's rendering logic for any other purposes:<br /><strong>display any custom dates</strong>,<br />extend and cover it with tests easily.</p>
 <div class="code" style="width:764px;margin-top:200px"><img src="~/Content/img/agileCalendar/calendarBuilderCode.jpg" alt="calendarBuilderCode"/></div>
+<p>There are three <strong>Iterators</strong> used inside the calendar’s build logic.</p>
+<ol>
+    <li>AlignStartOfTheMonthIterator;</li>
+    <li>AlignEndOfTheMonthIterator;</li>
+    <li>MonthPeriodIterator.</li>
+</ol>
+<p>First two iterators align the beginning and the end of the month with the days of the week, by generating “empty cells”.<br />
+The third iterator provides calendar’s dates from the factory and is used internally to indicate the beginning of the new month.</p>
 <p>For an agile calendar an <strong>AgileDateFactory class</strong> exists which creates view model based on domain model.</p>
 <div class="code" style="width:750px"><img src="~/Content/img/agileCalendar/calendarFactory.jpg" /></div>
 
