@@ -46,12 +46,11 @@ An XML structure of the model is very simple, also project contains an <strong>X
 <p>View model is used only to display agile release cycle in a <strong>monthly calendar</strong>.</p>
 <p>The calendar rendering logic is decoupled from the agile data model and operates only with abstract classes.<br />
 There is a <strong>CalendarBuilder class</strong> which uses an <strong>abstract factory CalendarDateFactoryBase</strong> to render Html.
-Factory returns an <strong>abstract class CalendarDateBase</strong> which represents a calendar's date.<br />
-This allows you to reuse the calendar's rendering logic for any other purposes, extend and cover it with tests easily.
-</p>
-<p>For an agile calendar an <strong>AgileDateFactory class</strong> exists which creates view model based on domain model.</p>
+Factory returns an <strong>abstract class CalendarDateBase</strong> which represents a calendar's date.</p>
+<div class="demo" style="width:568px;float:left"><img src="~/Content/img/agileCalendar/calendarBuilder.jpg" alt="calendarBuilder"/></div>
+<p style="margin-top:40px">This allows you to reuse the calendar's rendering logic for any other purposes:<br /><strong>display any custom dates</strong>,<br />extend and cover it with tests easily.</p>
+<p style="margin-top:210px">For an agile calendar an <strong>AgileDateFactory class</strong> exists which creates view model based on domain model.</p>
 <div class="code" style="width:750px"><img src="~/Content/img/agileCalendar/calendarFactory.jpg" /></div>
-
 
 <h1 id="view">View</h1>
 <p>There 3 main views to display data:</p>
