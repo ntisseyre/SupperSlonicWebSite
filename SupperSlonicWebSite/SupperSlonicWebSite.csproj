@@ -132,6 +132,7 @@
     <Content Include="Content\css\webControls\colorPicker.css" />
     <Content Include="Content\css\webControls\colorPickerDemo.css" />
     <Content Include="Content\img\agileCalendar\calendarBuilder.jpg" />
+    <Content Include="Content\img\agileCalendar\calendarBuilderCode.jpg" />
     <Content Include="Content\img\agileCalendar\calendarDemo.jpg" />
     <Content Include="Content\img\agileCalendar\calendarFactory.jpg" />
     <Content Include="Content\img\agileCalendar\displayTemplate.jpg" />
