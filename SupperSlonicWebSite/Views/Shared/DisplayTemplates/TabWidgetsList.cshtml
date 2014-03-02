@@ -1,0 +1,9 @@
+﻿@using SupperSlonicWebSite
+@using SupperSlonicWebSite.Models
+
+@model IList<TabWidgetModel>
+
+@foreach (MvcHtmlString htmlString in Html.GetTabWidgets(100))
+{
+    @Html.Raw(htmlString); 
+}

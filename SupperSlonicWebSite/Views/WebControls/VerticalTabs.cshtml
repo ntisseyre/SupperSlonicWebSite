@@ -25,5 +25,4 @@
 <p>Generate an HTML for the tabs in any place of you view using a Partial View:</p>
 <div class="code" style="width:607px"><img src="~/Content/img/verticalTab/usage.jpg" /></div>
 
- @foreach (TabWidgetModel tabWidget in this.Model)
-    { @Html.Partial("TabWidget", tabWidget) }
+@Html.DisplayForModel("TabWidgetsList")

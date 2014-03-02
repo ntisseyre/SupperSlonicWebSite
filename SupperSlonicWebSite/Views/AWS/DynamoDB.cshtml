@@ -72,5 +72,5 @@ Amazon doesn't have a built-in locking mechanism.  And you can't use the standar
 <p>But you should be careful with using the same locking table for different purposes as the throughput can be significantly increased.</p>
 <p>This package has a built-in DAL for managing lock-records: <strong>LockDAL</strong>. And a built-in lock-table: <strong>SimpleLockTable</strong>,  but you can use your own tables, they just need to extend the <strong>DynamoDBTable class</strong> and implement an <strong>interface ILockTable</strong>.</p>
 <p>Please find the example code above.</p>
- @foreach (TabWidgetModel tabWidget in this.Model)
-    { @Html.Partial("TabWidget", tabWidget) }
+
+@Html.DisplayForModel("TabWidgetsList")

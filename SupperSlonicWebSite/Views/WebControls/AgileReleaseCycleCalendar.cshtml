@@ -107,5 +107,4 @@ For the client-side support there are four .js files and four .css files:</p>
 <p>Edit mode:</p>
 <div class="code" style="width:705px"><img src="~/Content/img/agileCalendar/editTemplate.jpg" /></div>
 
-@foreach (TabWidgetModel tabWidget in this.Model)
-    { @Html.Partial("TabWidget", tabWidget) }
+@Html.DisplayForModel("TabWidgetsList")

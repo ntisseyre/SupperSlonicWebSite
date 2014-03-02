@@ -117,6 +117,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HtmlHelperExtension.cs" />
     <Compile Include="Models\Alignment.cs" />
     <Compile Include="Models\DownloadInfoModel.cs" />
     <Compile Include="Models\TabWidgetModel.cs" />
@@ -127,7 +128,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Content\css\downloadsInfo.css" />
-    <Content Include="Content\css\emr.css" />
     <Content Include="Content\css\helpspot.css" />
     <Content Include="Content\css\webControls\colorPicker.css" />
     <Content Include="Content\css\webControls\colorPickerDemo.css" />
@@ -143,7 +143,10 @@
     <Content Include="Content\img\agileCalendar\xml.jpg" />
     <Content Include="Content\img\aws\logo.png" />
     <Content Include="Content\img\check16.png" />
+    <Content Include="Content\img\emrWorkflow\api.jpg" />
+    <Content Include="Content\img\emrWorkflow\jobFlowXml.jpg" />
     <Content Include="Content\img\helpSpot\close.png" />
+    <Content Include="Content\img\tabs\api.png" />
     <Content Include="Content\img\tabs\controller.png" />
     <Content Include="Content\img\tabs\deployment.png" />
     <Content Include="Content\img\tabs\description.png" />
@@ -156,13 +159,11 @@
     <Content Include="Content\img\dynamoDB\lockInProgress.jpg" />
     <Content Include="Content\img\me.jpg" />
     <Content Include="Content\img\tabs\model.png" />
-    <Content Include="Content\img\tabs\placeHoldersInTemplate.png" />
     <Content Include="Content\img\helpSpot\questions.png" />
     <Content Include="Content\img\aws\storage.png" />
     <Content Include="Content\img\helpSpot\submit.png" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\img\tableHeader.png" />
-    <Content Include="Content\img\tabs\templateStructure.png" />
     <Content Include="Content\img\underConstruction.jpg" />
     <Content Include="Content\img\tabs\versioning.png" />
     <Content Include="Content\img\verticalTab\controller.jpg" />
@@ -179,7 +180,6 @@
     <Content Include="Content\img\weeklySchedule\model.jpg" />
     <Content Include="Content\img\weeklySchedule\serialization.jpg" />
     <Content Include="Content\img\weeklySchedule\usage.jpg" />
-    <Content Include="Content\img\yes16.png" />
     <Content Include="Content\js\webControls\colorPicker.js" />
     <Content Include="Content\js\tabWidget.js" />
     <Content Include="Global.asax" />
@@ -208,10 +208,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\AWS\AmazonContext.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\AWS\ElasticMapReduce.cshtml" />
+    <Content Include="Views\AWS\EmrWorklfow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\AWS\DynamoDB.cshtml" />
@@ -224,12 +221,13 @@
     <Content Include="Views\Home\DownloadsInfo.cshtml" />
     <Content Include="Views\Shared\DownloadInfo.cshtml" />
     <Content Include="Views\Shared\ColorsGrid.cshtml" />
-    <None Include="Views\Shared\TabWidget.cshtml" />
+    <None Include="Views\Shared\DisplayTemplates\TabWidget.cshtml" />
     <Content Include="Views\WebControls\Index.cshtml" />
     <Content Include="Views\WebControls\VerticalTabs.cshtml" />
     <Content Include="Views\WebControls\WeeklySchedule.cshtml" />
     <Content Include="Views\WebControls\AgileReleaseCycleCalendar.cshtml" />
     <Content Include="Views\WebControls\ColorPicker.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\TabWidgetsList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\HelpSpot.htm" />

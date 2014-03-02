@@ -1,0 +1,68 @@
+﻿@using SupperSlonicWebSite.Models;
+
+@model IList<TabWidgetModel>
+
+<h1 class="first" id="description">Description</h1>
+<p>This project provides an <strong>API to describe, run</strong> and <strong>manage</strong> a custom <strong>workflow</strong> for the <strong>Amazon Elastic Map/Reduce Service</strong>.</p>
+
+<p>With this API you can:</p>
+@Html.Partial("DownloadExampleWidget")
+<ul class="check-list">
+	<li>start and configure new EMR jobs;</li>
+	<li>add steps to a running job;</li>
+	<li>rerun steps if required;</li>
+	<li>control and change the sequence of the steps at runtime;</li>
+	<li>control the lifetime of the cluster.</li>
+</ul>
+<p>Moreover, it allows you to store the job flow’s template in <strong>xml-files</strong>, similar to the <strong>oozie-workflow</strong>.<br />
+Also, it supports <strong>placeholders</strong> which are resolved at runtime.</p>
+
+<p>This solution is a .NET assembly written on <strong>Microsoft .NET Framework 4.5</strong>. The solution that you can download here includes three projects:</p>
+<ol>
+    <li>an AwsEmrWorkflow.dll which exposes an API mentioned above;</li>
+    <li>a unit tests’ project for the API;</li>
+    <li>a demo project for the API.</li>
+</ol>
+
+<h1 id="model">Data model</h1>
+<p>For the description of an EMR Job flow an API provides:</p>
+<ul>
+    <li><strong>Object-model</strong> – a collection of classes that describes an EMR Job;</li>
+    <li><strong>Xsd schema</strong> for the XML-model.</li>
+</ul>
+<p>They are both interchangeable and easily extendable.<br />
+Object-model can be serialized into the xml-model and xml-model can be deserialized into the object-model.<br />
+You can also use the hybrid of two by building you final object like “Lego” from different pieces: xml files or objects.</p>
+<div class="code" style="width:429px;float:left"><img src="~/Content/img/emrWorkflow/jobFlowXml.jpg" alt="jobFlowXml"/></div>
+<p style="margin-top:15px">Model contains the following sections:</p>
+<p style="margin-top:20px"><strong>Job flow description</strong> where you can set job's name, log's location, instances' types, tags etc.</p>
+<p style="margin-top:20px"><strong>Configuration description</strong> where you can configure your Hadoop, HBase and Debug settings.<br />
+The following configurations are supported:</p>
+<ul class="check-list" style="margin-left:450px">
+    <li>Hadoop configuration;</li>
+    <li>HBase configuration;</li>
+    <li>HBase Daemons configuration;</li>
+    <li>Debug configuration.</li>
+</ul>
+<p style="margin-top:20px"><strong>Bootstrap actions</strong> where you can specify any number of custom bootstrap actions.</p>
+<p style="margin-top:20px"><strong>Jar steps</strong> where you can specify any number of steps. The following types are supported:</p>
+<ul class="check-list" style="margin-left:450px">
+    <li>Custom jar step;</li>
+    <li>Restore HBase step;</li>
+    <li>Backup HBase step;</li>
+</ul>
+
+<h1 style="margin-top:120px">Placeholders</h1>
+<p>Model also supports any custom placeholders that are resolved during the runtime.<br />
+In order to do this, a user must define a placeholders’ replacement by populating the instance of the <strong>class BuilderSettings</strong> which is used during a building stage of any EMR Service request.</p>
+<p>There are two reserved settings:</p>
+<ul>
+    <li><strong>jobFlowId</strong> – used to identify the current job.<br />
+Populated either automatically during the job start or manually by a user.</li>
+    <li><strong>hBaseJarPath</strong> – used to specify the current HBase version.<br />
+Populated either automatically from the HBase configuration information or manually by a user.</li>
+</ul>
+
+<h1 id="api">API structure</h1>
+<div class="demo" style="width:780px"><img src="~/Content/img/emrWorkflow/api.jpg" alt="api"/></div>
+@Html.DisplayForModel("TabWidgetsList")

@@ -78,5 +78,4 @@ Working time can have on of 3 possible values:</p>
 <p>Generate an HTML for the weekly schedule in any place of you view using a Display Template:</p>
 <div class="code" style="width:733px"><img src="~/Content/img/weeklySchedule/usage.jpg" /></div>
 
- @foreach (TabWidgetModel tabWidget in this.Model)
-    { @Html.Partial("TabWidget", tabWidget) }
+@Html.DisplayForModel("TabWidgetsList")

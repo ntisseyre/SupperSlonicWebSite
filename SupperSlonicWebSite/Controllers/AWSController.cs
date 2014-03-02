@@ -16,29 +16,23 @@ namespace SupperSlonicWebSite.Controllers
         {
             return View();
         }
- 
-        public ActionResult AmazonContext()
-        {
-            return View();
-        }
 
-        public ActionResult ElasticMapReduce()
+        public ActionResult EmrWorklfow()
         {
             List<TabWidgetModel> model = new List<TabWidgetModel>(4);
-            model.Add(new TabWidgetModel("description", Alignment.Right, "100px"));
-            model.Add(new TabWidgetModel("howToUse", Alignment.Right, "201px"));
-            model.Add(new TabWidgetModel("placeHoldersInTemplate", Alignment.Right, "302px"));
-            model.Add(new TabWidgetModel("templateStructure", Alignment.Right, "403px"));
+            model.Add(new TabWidgetModel("description"));
+            model.Add(new TabWidgetModel("model"));
+            model.Add(new TabWidgetModel("api"));
             return View(model);
         }
 
         public ActionResult DynamoDB()
         {
             List<TabWidgetModel> model = new List<TabWidgetModel>(4);
-            model.Add(new TabWidgetModel("description", Alignment.Right, "100px"));
-            model.Add(new TabWidgetModel("versioning", Alignment.Right, "201px"));
-            model.Add(new TabWidgetModel("deployment", Alignment.Right, "302px"));
-            model.Add(new TabWidgetModel("locking", Alignment.Right, "403px"));
+            model.Add(new TabWidgetModel("description"));
+            model.Add(new TabWidgetModel("versioning"));
+            model.Add(new TabWidgetModel("deployment"));
+            model.Add(new TabWidgetModel("locking"));
             return View(model);
         }
     }
