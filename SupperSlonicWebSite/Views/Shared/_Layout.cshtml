@@ -4,54 +4,11 @@
 		<link href="~/Content/css/main.css" rel="stylesheet" type="text/css" />
 		<link href="~/Content/css/helpspot.css" rel="stylesheet" type="text/css" />
         @RenderSection("CSS", false)
+        <script type="text/javascript" src="~/Content/js/menu.js"></script>
 		<script type="text/javascript" src="~/Content/js/tabWidget.js"></script>
-        <script type="text/javascript">
-            var menuItems = ['mnWebControls', 'mnAWS'];
-            function onLoadHandler(controllerName, actionName)
-            {
-                //Set current menu tab
-                if (actionName == "About")
-                    controllerName = "About";
-
-                var currentMenuItem = document.getElementById("mn" + controllerName);
-                if(currentMenuItem != null)
-                    currentMenuItem.className = "selected";
-
-                //Bind onmouse events
-                var menuItem = document.getElementById("mnWebControls");
-                if ("ontouchstart" in window || "ontouch" in window)
-                {
-                    for(var c = 0; c < menuItems.length; c++)
-                        bindIOSEvents(document.getElementById(menuItems[c]));
-                }
-                else
-                {
-                    for (var c = 0; c < menuItems.length; c++)
-                        bindClassicEvents(document.getElementById(menuItems[c]));
-                }
-                
-            }
-            function bindIOSEvents(menuItem)
-            {
-                menuItem.ontouchstart = function () { showSubMenu(this.id); };
-                menuItem.touchcancel = function () { hideSubMenu(this.id); };
-            }
-            function bindClassicEvents(menuItem)
-            {
-                menuItem.onmouseover = function () { showSubMenu(this.id); };
-                menuItem.onmouseout = function () { hideSubMenu(this.id); };
-            }
-            function showSubMenu(menuId)
-            {
-                document.getElementById(menuId + "Items").style.display = "block";
-            }
-            function hideSubMenu(menuId) {
-                document.getElementById(menuId + "Items").style.display = "none";
-            }
-        </script>
         @RenderSection("Scripts", false)
 	</head>
-<body onload="javascript:onLoadHandler('@ViewContext.RouteData.Values["controller"]', '@ViewContext.RouteData.Values["action"]');">
+<body onload="javascript:onBodyLoadHandler('@ViewContext.RouteData.Values["controller"]', '@ViewContext.RouteData.Values["action"]');">
 	<div id="body-bg">
 		<div id="body-wrap">
 			<ul id="main-nav">
@@ -66,10 +23,10 @@
                         </ul>
                     </div>
                 </li>
-				<li id="mnAWS">@Html.ActionLink("Amazon Web Services", "Index", "AWS")
+				<li id="mnAWS" style="width:170px">@Html.ActionLink("Amazon Web Services", "Index", "AWS")
                     <div id="mnAWSItems" class="submenu">
                          <ul>
-                            <li>@Html.ActionLink("EMR workflow", "EmrWorklfow", "AWS")</li>
+                            <li>@Html.ActionLink("Elastic MapReduce workflow", "EmrWorklfow", "AWS")</li>
                             <li>@Html.ActionLink("DynamoDB", "DynamoDB", "AWS")</li>
                         </ul>
                     </div>

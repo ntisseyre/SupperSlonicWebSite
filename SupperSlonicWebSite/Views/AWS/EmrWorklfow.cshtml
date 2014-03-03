@@ -65,4 +65,61 @@ Populated either automatically from the HBase configuration information or manua
 
 <h1 id="api">API structure</h1>
 <div class="demo" style="width:780px"><img src="~/Content/img/emrWorkflow/api.jpg" alt="api"/></div>
+<p><a class="textLink" href="#runner">Runner</a> – operates on the list of strategies provided by the user and verifies the current status of the job.</p>
+<p><a class="textLink" href="#strategy">Strategy</a> – sends a specific request to the Amazon EMR Service.</p>
+<p><a class="textLink" href="#builder">Builder</a> – builds a specific request for the Amazon EMR Service based on the object-model provided.</p>
+<p><a class="textLink" href="#visitor">Visitor</a> – the main layer of abstraction between EMR data-model and API’s data-model. Visitor separates an algorithm of building a specific request from the API’s object-model’s structure.</p>
+
+<h1>Serialization implementation</h1>
+<p>All the serialization support is implemented in the <strong>base class EmrWorkflowItemBase</strong> which exposes some virtual methods for concrete implementation according to the requirements of the specific object.</p>
+<p>There are also several xml factories that can serialize/deserialize collections of objects:</p>
+<ul>
+    <li>StepsXmlFactory;</li>
+    <li>ConfigsXmlFactory;</li>
+    <li>BootstrapActionsXmlFactory;</li>
+    <li>TagsXmlFactory.</li>
+</ul>
+
+<h1 id="visitor">Visitor implementation</h1>
+<p>A visitor design pattern was selected to process API’s data-model structure. That allows a full decoupling of any processing algorithm from the objects’ structure and allows an effortless extension if required. Visitor implements an <strong>interface IEmrWorkflowItemVisitor</strong> which is accepted by each object in the API’s data-model.</p>
+<p><strong>BuildRequestVisitor class</strong> is a concrete implementation of the IEmrWorkflowItemVisitor interface which creates parts of the EMR Service request based on the visited data. It is entirely decoupled from the request-building process. It just notifies the observers by raising a particular event that some part of the request was created.</p>
+<p>The following events are supported:</p>
+<ul>
+    <li>OnRunJobFlowRequestCreated;</li>
+    <li>OnJobFlowInstancesConfigCreated;</li>
+    <li>OnTagCreated;</li>
+    <li>OnBootstrapActionConfigCreated;</li>
+    <li>OnStepConfigCreated.</li>
+</ul>
+<p><strong>BuildRequestVisitor class</strong> is also responsible for the <strong>placeholders’ replacement</strong> while creating the EMR Service request.</p>
+
+<h1 id="builder">Builder implementation</h1>
+<p>Builder is responsible for building the final EMR Service request. Internally, it uses a visitor to visit the provided object’s structure. It is subscribed to the visitor’s events to build the final EMR Service request.</p>
+<p>API contains two builders:</p>
+<ul>
+    <li><strong>RunJobFlowRequestBuilder</strong> – builds a request to start and configure an EMR job based on the JobFlow-class instance;</li>
+    <li><strong>AddJobFlowStepsRequestBuilder</strong> – builds a request to add new steps to a running job based on the list of StepBase-class instances.</li>
+</ul>
+
+<h1 id="strategy">Strategy implementation</h1>
+<p>To send different types of requests to the EMR Service a strategy design pattern is used. The <strong>strategy EmrActivityStrategy</strong> hides behind the algorithm of building and sending the specific request for the EMR.</p>
+<p>This approach allows splitting the job flow into logical pieces (<strong>activities</strong>) that gives you more control over the job flow’s sequence and its behavior. No matter what type of the activity is used, all of them are treated uniformly and are interchangeable. So the user can focus more on the design part of the workflow rather than on implementation of it.</p>
+<div class="code" style="width:667px"><img src="~/Content/img/emrWorkflow/startClusterStrategy.jpg" alt="startClusterStrategy"/></div>
+<p>Inside each EmrActivityStrategy all the requests are sent using a <strong>task-based asynchronous pattern</strong>. This allows a thread not to be blocked and immediately returned to the tread-pool to pick up a new pending work.<br />
+To learn more about the task-based asynchronous pattern, please see <a class="textLink" href="http://msdn.microsoft.com/en-us/library/hh873175(v=vs.110).aspx">Task-based Asynchronous Pattern (TAP) on MSDN</a>.</p>
+
+<h1 id="runner">Runner implementation</h1>
+<p><strong>EmrJobRunner class</strong> is responsible for orchestrating the emr-activities and checking the status of a job.</p>
+<p>To iterate through the list of the activities it is using an <strong>abstract class EmrActivitiesEnumerator</strong>. A user should implement two methods of this class:</p>
+<ul>
+    <li><strong>GetNormalFlow</strong> – returns a list of activities to be executed in a normal flow;</li>
+    <li><strong>GetFailedFlow</strong> – returns a list of activities to be executed if an error has occurred.</li>
+</ul>
+<p>The list of activities can be either a predefined sequence of activities or any complex logic of selecting a next activity.<br />
+A switch to the failed flow happens automatically when EmrJobRunner notifies the iterator that there was an error, but it is still up to a user to decide what to do: run an alternative sequence of activities or just stop iterating and terminate the job.</p>
+<div class="code" style="width:654px"><img src="~/Content/img/emrWorkflow/activitiesIterator.jpg" alt="activitiesIterator"/></div>
+<p>Internally, EmrJobRunner is using a <strong>System.Threading.Timer</strong> to call the <strong>CheckStatus</strong> method for checking the job’s status and pushing new activities if required. This method is <strong>thread-safe</strong>: only one thread at a time is guaranteed to be executing it. There is a primitive user-mode synchronization construction at the entrance of the method which simply rejects other threads until the current call is done.</p>
+<p>The timer is done on purpose to avoid a construction like "... while(checkStatus) thread.sleep ..."<br />
+Thread.sleep is good for demo purposes when you don’t care about resources but not for the architectural design solution. Because even if the timesheduler doesn’t give your thread a CPU time it is still not efficient: instead of doing some other work you put your thread to “sleep” and you force the thread-pool to create new working threads which at some moment can result into many running threads with constant context switching.</p>
+
 @Html.DisplayForModel("TabWidgetsList")

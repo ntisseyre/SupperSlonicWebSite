@@ -143,8 +143,10 @@
     <Content Include="Content\img\agileCalendar\xml.jpg" />
     <Content Include="Content\img\aws\logo.png" />
     <Content Include="Content\img\check16.png" />
+    <Content Include="Content\img\emrWorkflow\activitiesIterator.jpg" />
     <Content Include="Content\img\emrWorkflow\api.jpg" />
     <Content Include="Content\img\emrWorkflow\jobFlowXml.jpg" />
+    <Content Include="Content\img\emrWorkflow\startClusterStrategy.jpg" />
     <Content Include="Content\img\helpSpot\close.png" />
     <Content Include="Content\img\tabs\api.png" />
     <Content Include="Content\img\tabs\controller.png" />
@@ -180,6 +182,7 @@
     <Content Include="Content\img\weeklySchedule\model.jpg" />
     <Content Include="Content\img\weeklySchedule\serialization.jpg" />
     <Content Include="Content\img\weeklySchedule\usage.jpg" />
+    <Content Include="Content\js\menu.js" />
     <Content Include="Content\js\webControls\colorPicker.js" />
     <Content Include="Content\js\tabWidget.js" />
     <Content Include="Global.asax" />
