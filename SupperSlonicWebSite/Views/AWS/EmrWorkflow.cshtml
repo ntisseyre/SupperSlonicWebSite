@@ -112,8 +112,8 @@ To learn more about the task-based asynchronous pattern, please see <a class="te
 <p><strong>EmrJobRunner class</strong> is responsible for orchestrating the emr-activities and checking the status of a job.</p>
 <p>To iterate through the list of the activities it is using an <strong>abstract class EmrActivitiesEnumerator</strong>. A user should implement two methods of this class:</p>
 <ul>
-    <li><strong>GetNormalFlow</strong> – returns a list of activities to be executed in a normal flow;</li>
-    <li><strong>GetFailedFlow</strong> – returns a list of activities to be executed if an error has occurred.</li>
+    <li><strong>GetNormalFlow</strong> – method returns a list of activities to be executed in a normal flow;</li>
+    <li><strong>GetFailedFlow</strong> – method is optional. Returns an alternative list of activities to be executed if an error has occurred.</li>
 </ul>
 <p>The list of activities can be either a predefined sequence of activities or any complex logic of selecting a next activity.<br />
 A switch to the failed flow happens automatically when EmrJobRunner notifies the iterator that there was an error, but it is still up to a user to decide what to do: run an alternative sequence of activities or just stop iterating and terminate the job.</p>
@@ -122,4 +122,11 @@ A switch to the failed flow happens automatically when EmrJobRunner notifies the
 <p>The timer is done on purpose to avoid a construction like "... while(checkStatus) thread.sleep ..."<br />
 Thread.sleep is good for demo purposes when you don’t care about resources but not for the architectural design solution. Because even if the timesheduler doesn’t give your thread a CPU time it is still not efficient: instead of doing some other work you put your thread to “sleep” and you force the thread-pool to create new working threads which at some moment can result into many running threads with constant context switching.</p>
 
+<h1 id="howToUse">How to use</h1>
+<p>To use the API user should do two things:</p>
+<ol>
+    <li>Define a sequence of activities by implementing an abstract class EmrActivitiesEnumerator;</li>
+    <li>Call EmrJobRunner to run the activities.</li>
+</ol>
+<div class="code" style="width:662px"><img src="~/Content/img/emrWorkflow/howToUse.jpg" alt="howToUse"/></div>
 @Html.DisplayForModel("TabWidgetsList")

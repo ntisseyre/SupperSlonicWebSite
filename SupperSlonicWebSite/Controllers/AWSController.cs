@@ -23,6 +23,7 @@ namespace SupperSlonicWebSite.Controllers
             model.Add(new TabWidgetModel("description"));
             model.Add(new TabWidgetModel("model"));
             model.Add(new TabWidgetModel("api"));
+            model.Add(new TabWidgetModel("howToUse"));
             return View(model);
         }
 
