@@ -211,7 +211,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\AWS\EmrWorklfow.cshtml" />
+    <Content Include="Views\AWS\EmrWorkflow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\AWS\DynamoDB.cshtml" />

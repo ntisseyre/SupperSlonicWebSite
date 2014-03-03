@@ -17,7 +17,7 @@ namespace SupperSlonicWebSite.Controllers
             return View();
         }
 
-        public ActionResult EmrWorklfow()
+        public ActionResult EmrWorkflow()
         {
             List<TabWidgetModel> model = new List<TabWidgetModel>(4);
             model.Add(new TabWidgetModel("description"));
