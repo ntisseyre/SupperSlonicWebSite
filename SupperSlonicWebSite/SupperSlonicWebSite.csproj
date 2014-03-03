@@ -163,7 +163,7 @@
     <Content Include="Content\img\me.jpg" />
     <Content Include="Content\img\tabs\model.png" />
     <Content Include="Content\img\helpSpot\questions.png" />
-    <Content Include="Content\img\aws\storage.png" />
+    <Content Include="Content\img\aws\cloudAPI.png" />
     <Content Include="Content\img\helpSpot\submit.png" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\img\tableHeader.png" />
