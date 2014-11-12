@@ -24,7 +24,7 @@ body a.menu:hover {cursor: pointer;background-color:#222;}
 #helpspot_widget_tab_close img {cursor:pointer;}
 
 div#helpspot_widget_tab_close{position: absolute;top: -15px;right: -15px;margin: 0px;padding: 0px;}
-div#helpspot_widget_tab_wrapper{width: 550px;height: 620px;margin: 0 auto;z-index:2;position:relative;}
+div#helpspot_widget_tab_wrapper{width: 550px;height: 355px;margin: 0 auto;z-index:2;position:relative;}
 
 #helpspot_widget_tab_iframe{width: 100%;height: 100%;}
 #helpspot_widget_tab_overlay {top:0; left:0; width: 100%; height: 100%; position: fixed; _position: absolute; z-index: 100002;}
