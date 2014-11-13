@@ -149,6 +149,7 @@
     <Content Include="Content\img\emrWorkflow\jobFlowXml.jpg" />
     <Content Include="Content\img\emrWorkflow\startClusterStrategy.jpg" />
     <Content Include="Content\img\helpSpot\close.png" />
+    <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\tabs\api.png" />
     <Content Include="Content\img\tabs\controller.png" />
     <Content Include="Content\img\tabs\deployment.png" />
