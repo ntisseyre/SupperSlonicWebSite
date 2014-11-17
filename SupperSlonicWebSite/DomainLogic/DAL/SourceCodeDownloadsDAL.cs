@@ -23,8 +23,8 @@ namespace SupperSlonicWebSite.DomainLogic.DAL
                         DownloadInfoModel info = new DownloadInfoModel();
                         info.Name = (string)sqlDataReader["Name"];
                         info.TotalDownloads = (int)sqlDataReader["TotalDownloads"];
-                        info.LatestDownload = (DateTime)sqlDataReader["LatestDownload"];
-
+                        info.LatestDownload = sqlDataReader.GetValueOrNull<DateTime>("LatestDownload");
+                        
                         result.Add(info);
                     }
                 }

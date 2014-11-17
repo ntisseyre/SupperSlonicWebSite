@@ -11,6 +11,6 @@ namespace SupperSlonicWebSite.Models
 
         public int TotalDownloads { get; set; }
 
-        public DateTime LatestDownload { get; set; }
+        public DateTime? LatestDownload { get; set; }
     }
 }

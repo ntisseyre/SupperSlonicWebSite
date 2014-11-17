@@ -37,24 +37,6 @@ namespace SupperSlonicWebSite.DomainLogic.DAL
             }
         }
 
-        internal static object ToSqlNullable<T>(T value)
-        {
-            if (value == null)
-                return DBNull.Value;
-            else
-                return value;
-        }
-
-        internal static T GetObjectOrNull<T>(object value) where T : class
-        {
-            return (value is DBNull) ? (T)null : (T)value;
-        }
-
-        internal static Nullable<T> GetValueOrNull<T>(object value) where T : struct
-        {
-            return (value is DBNull) ? (Nullable<T>)null : (T)value;
-        }
-
         private static SqlConnection CreateSqlConnection()
         {
             return new SqlConnection(ConfigurationManager.ConnectionStrings["MidgaardDB"].ConnectionString);

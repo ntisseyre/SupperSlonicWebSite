@@ -122,6 +122,7 @@
     <Compile Include="Controllers\SocialNetworksController.cs" />
     <Compile Include="Controllers\WebControlsController.cs" />
     <Compile Include="DomainLogic\DAL\BaseDAL.cs" />
+    <Compile Include="DomainLogic\DAL\Helper.cs" />
     <Compile Include="DomainLogic\DAL\IBaseDAL.cs" />
     <Compile Include="DomainLogic\DAL\ISourceCodeDownloadsDAL.cs" />
     <Compile Include="DomainLogic\DAL\SourceCodeDownloadsDAL.cs" />

@@ -7,5 +7,5 @@
 </div>
 <div class="downloadsInfoRow">
     <div>Latest download</div>
-    <div>@Model.LatestDownload.ToString("dd MMM yyyy hh:mm:ss")</div>
+    <div>@Html.Raw(Model.LatestDownload.HasValue ? Model.LatestDownload.Value.ToString("dd MMM yyyy hh:mm:ss") : "")</div>
 </div>
