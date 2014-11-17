@@ -1,5 +1,7 @@
 ﻿using SupperSlonicWebSite.DomainLogic.Logic;
 using SupperSlonicWebSite.Models;
+using SupperSlonicWebSite.Models.Email;
+using SupperSlonicWebSite.Providers;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -45,30 +47,13 @@ namespace SupperSlonicWebSite.Controllers
         [HttpPost]
         public JsonResult SendEmail(String email, String message)
         {
-            String from = "info@supperslonic.com";
-            String displayNameFrom = "SupperSlonic Web site";
-            String to = "natalia.a.zelenskaya@gmail.com";
-
-            using (SmtpClient client = new SmtpClient("relay-hosting.secureserver.net"))
+            var model = new HelpMe()
             {
-                //client.Credentials = new NetworkCredential(from, "bebebe");
-                //client.Port = 3535;
+                From = email,
+                Message = message
+            };
 
-                //client.DeliveryMethod = SmtpDeliveryMethod.Network;
-
-                client.Port = 25;
-
-                MailMessage mailMessage = new MailMessage();
-                mailMessage.From = new MailAddress(from, displayNameFrom);
-                mailMessage.ReplyToList.Add(from);
-                mailMessage.To.Add(to);
-
-                mailMessage.Subject = "Help me!";
-                mailMessage.Body = String.Format("From:{0}<br/>{1}", email, message);
-                mailMessage.IsBodyHtml = true;
-
-                client.Send(mailMessage);
-            }
+            new EmailProvider().SendHelpMeAsync(model);
 
             return Json("Success");
         }
