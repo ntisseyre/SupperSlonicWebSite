@@ -1,4 +1,4 @@
-﻿var menuItems = ['mnWebControls', 'mnAWS'];
+﻿var menuItems = ['mnWebControls', 'mnSocialNetworks', 'mnAWS'];
 
 function onBodyLoadHandler(controllerName, actionName)
 {

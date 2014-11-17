@@ -1,7 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupperSlonicWebSite", "SupperSlonicWebSite\SupperSlonicWebSite.csproj", "{5F982EEF-7AF1-4DE5-8220-6D0A26E56AB9}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SupperSlonicDB", "SupperSlonicDB\SupperSlonicDB.sqlproj", "{3C40BD37-5C0C-45CA-B8D4-9647CBDF8095}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +17,12 @@ Global
 		{5F982EEF-7AF1-4DE5-8220-6D0A26E56AB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F982EEF-7AF1-4DE5-8220-6D0A26E56AB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F982EEF-7AF1-4DE5-8220-6D0A26E56AB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C40BD37-5C0C-45CA-B8D4-9647CBDF8095}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C40BD37-5C0C-45CA-B8D4-9647CBDF8095}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C40BD37-5C0C-45CA-B8D4-9647CBDF8095}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3C40BD37-5C0C-45CA-B8D4-9647CBDF8095}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C40BD37-5C0C-45CA-B8D4-9647CBDF8095}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C40BD37-5C0C-45CA-B8D4-9647CBDF8095}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

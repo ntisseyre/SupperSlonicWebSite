@@ -1,12 +1,11 @@
-﻿using SupperSlonicWebSite.DomainLogic.DAL;
+﻿using SupperSlonicWebSite.DomainLogic.Logic;
 using SupperSlonicWebSite.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
 using System.Net;
 using System.Net.Mail;
-using System.Web;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace SupperSlonicWebSite.Controllers
@@ -29,8 +28,8 @@ namespace SupperSlonicWebSite.Controllers
             if (downloadLink == null)
                 return null;
 
-            SourceCodeDownloadsDAL dal = new SourceCodeDownloadsDAL();
-            dal.InsertDownload(id);
+            SourceCodeDownloadsManager manager = new SourceCodeDownloadsManager();
+            manager.CreateDownloadAsync(id);
 
             byte[] data;
             using (WebClient webClient = new WebClient())
@@ -74,10 +73,10 @@ namespace SupperSlonicWebSite.Controllers
             return Json("Success");
         }
 
-        public ActionResult DownloadsInfo()
+        public async Task<ActionResult> DownloadsInfo()
         {
-            SourceCodeDownloadsDAL dal = new SourceCodeDownloadsDAL();
-            IList<DownloadInfoModel> model = dal.GetDownloadsInfo();
+            SourceCodeDownloadsManager manager = new SourceCodeDownloadsManager();
+            IList<DownloadInfoModel> model = await manager.GetDownloadsInfoAsync();
 
             return View(model);
         }

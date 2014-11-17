@@ -23,6 +23,14 @@
                         </ul>
                     </div>
                 </li>
+                <li id="mnSocialNetworks" style="width:150px">
+                    @Html.ActionLink("Social Networks", "Index", "SocialNetworks")
+                    <div id="mnSocialNetworksItems" class="submenu">
+                        <ul>
+                            <li>@Html.ActionLink("Owin authentication", "OwinAuthentication", "SocialNetworks")</li>
+                        </ul>
+                    </div>
+                </li>
 				<li id="mnAWS" style="width:170px">@Html.ActionLink("Amazon Web Services", "Index", "AWS")
                     <div id="mnAWSItems" class="submenu">
                          <ul>
