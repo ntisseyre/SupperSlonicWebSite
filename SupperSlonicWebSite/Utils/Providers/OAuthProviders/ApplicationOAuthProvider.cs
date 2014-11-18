@@ -1,7 +1,7 @@
 ﻿using Microsoft.Owin.Security.Infrastructure;
 using Microsoft.Owin.Security.OAuth;
 using SupperSlonicDomain.Models.Account;
-using SupperSlonicWebSite.Resources;
+using SupperSlonicWebSite.Utils.Resources;
 using System;
 using System.Collections.Generic;
 using System.Net;

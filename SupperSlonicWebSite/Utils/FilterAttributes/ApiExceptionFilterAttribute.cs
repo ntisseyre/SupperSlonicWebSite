@@ -2,7 +2,7 @@
 using SupperSlonicDomain;
 using SupperSlonicWebSite.Controllers;
 using SupperSlonicWebSite.Models;
-using SupperSlonicWebSite.Resources;
+using SupperSlonicWebSite.Utils.Resources;
 using System.Linq;
 using System.Net;
 using System.Net.Http;

@@ -32,6 +32,7 @@ namespace SupperSlonicWebSite
 
             //Filter Attribtes
             config.Filters.Add(new ApiExceptionFilterAttribute());
+            config.Filters.Add(new AuthorizeAndCheckAttribute());
 
             //Razor Engine layout support
             RazorLayouts.AddNotificationLayout();

@@ -1,5 +1,5 @@
 ﻿using SupperSlonicWebSite.Providers;
-using SupperSlonicWebSite.Resources;
+using SupperSlonicWebSite.Utils.Resources;
 using System.Net;
 using System.Net.Http;
 using System.Security.Claims;

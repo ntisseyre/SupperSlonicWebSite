@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using SupperSlonicWebSite.Models.Account;
 
 namespace SupperSlonicWebSite.Models
 {
@@ -47,6 +48,21 @@ namespace SupperSlonicWebSite.Models
         public NotificationResult(string email)
         {
             this.Email = email;
+        }
+    }
+
+    public class RegistrationResult : SuccessResult
+    {
+        [JsonProperty("user")]
+        public UserViewModel User { get; set; }
+
+        [JsonProperty("accessToken")]
+        public AccessToken AccessToken { get; set; }
+
+        public RegistrationResult(UserViewModel user, AccessToken accessToken)
+        {
+            User = user;
+            AccessToken = accessToken;
         }
     }
 }

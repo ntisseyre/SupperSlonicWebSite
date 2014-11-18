@@ -7,7 +7,7 @@ using Microsoft.Owin.Security.MicrosoftAccount;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using SupperSlonicWebSite.Providers.OAuthProviders;
-using SupperSlonicWebSite.Resources;
+using SupperSlonicWebSite.Utils.Resources;
 using System;
 
 namespace SupperSlonicWebSite

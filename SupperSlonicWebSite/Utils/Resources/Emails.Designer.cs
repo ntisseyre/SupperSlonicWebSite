@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SupperSlonicWebSite.Resources {
+namespace SupperSlonicWebSite.Utils.Resources {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace SupperSlonicWebSite.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Credentials {
+    internal class Emails {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Credentials() {
+        internal Emails() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace SupperSlonicWebSite.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SupperSlonicWebSite.Resources.Credentials", typeof(Credentials).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SupperSlonicWebSite.Utils.Resources.Emails", typeof(Emails).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,56 +61,38 @@ namespace SupperSlonicWebSite.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to SupperSlonic deletion confirmation.
         /// </summary>
-        internal static string Facebook_Id {
+        internal static string DeleteConfirmation {
             get {
-                return ResourceManager.GetString("Facebook_Id", resourceCulture);
+                return ResourceManager.GetString("DeleteConfirmation", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Help me!.
         /// </summary>
-        internal static string Facebook_Secret {
+        internal static string HelpMe {
             get {
-                return ResourceManager.GetString("Facebook_Secret", resourceCulture);
+                return ResourceManager.GetString("HelpMe", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to SupperSlonic registration confirmation.
         /// </summary>
-        internal static string Google_Id {
+        internal static string RegistrationConfirmation {
             get {
-                return ResourceManager.GetString("Google_Id", resourceCulture);
+                return ResourceManager.GetString("RegistrationConfirmation", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to SupperSlonic registration confirmed.
         /// </summary>
-        internal static string Google_Secret {
+        internal static string RegistrationConfirmed {
             get {
-                return ResourceManager.GetString("Google_Secret", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string Microsoft_Id {
-            get {
-                return ResourceManager.GetString("Microsoft_Id", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string Microsoft_Secret {
-            get {
-                return ResourceManager.GetString("Microsoft_Secret", resourceCulture);
+                return ResourceManager.GetString("RegistrationConfirmed", resourceCulture);
             }
         }
     }
