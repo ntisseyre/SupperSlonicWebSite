@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace SupperSlonicWebSite.DomainLogic.Models.Account
+namespace SupperSlonicDomain.Models.Account
 {
     [JsonConverter(typeof(StringEnumConverter))]
     public enum ExternalLoginProvider : byte

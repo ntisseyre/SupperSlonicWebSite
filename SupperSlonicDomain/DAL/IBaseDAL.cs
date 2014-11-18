@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 
-namespace SupperSlonicWebSite.DomainLogic.DAL
+namespace SupperSlonicDomain.DAL
 {
     public interface IBaseDAL
     {

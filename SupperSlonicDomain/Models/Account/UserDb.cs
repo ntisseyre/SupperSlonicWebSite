@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace SupperSlonicWebSite.DomainLogic.Models.Account
+namespace SupperSlonicDomain.Models.Account
 {
     public class UserDb : User
     {

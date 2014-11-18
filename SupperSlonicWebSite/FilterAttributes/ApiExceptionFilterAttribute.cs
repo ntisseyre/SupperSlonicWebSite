@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
+using SupperSlonicDomain;
 using SupperSlonicWebSite.Controllers;
-using SupperSlonicWebSite.DomainLogic;
 using SupperSlonicWebSite.Models;
 using SupperSlonicWebSite.Resources;
 using System.Linq;

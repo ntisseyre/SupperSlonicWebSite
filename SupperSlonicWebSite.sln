@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupperSlonicWebSite", "Supp
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SupperSlonicDB", "SupperSlonicDB\SupperSlonicDB.sqlproj", "{3C40BD37-5C0C-45CA-B8D4-9647CBDF8095}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupperSlonicDomain", "SupperSlonicDomain\SupperSlonicDomain.csproj", "{1A3CFD76-704F-4159-96EE-729A9F3FEDA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{3C40BD37-5C0C-45CA-B8D4-9647CBDF8095}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C40BD37-5C0C-45CA-B8D4-9647CBDF8095}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3C40BD37-5C0C-45CA-B8D4-9647CBDF8095}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1A3CFD76-704F-4159-96EE-729A9F3FEDA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A3CFD76-704F-4159-96EE-729A9F3FEDA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A3CFD76-704F-4159-96EE-729A9F3FEDA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A3CFD76-704F-4159-96EE-729A9F3FEDA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

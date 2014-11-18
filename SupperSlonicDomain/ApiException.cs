@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SupperSlonicWebSite.DomainLogic
+namespace SupperSlonicDomain
 {
     public class ApiException : Exception
     {

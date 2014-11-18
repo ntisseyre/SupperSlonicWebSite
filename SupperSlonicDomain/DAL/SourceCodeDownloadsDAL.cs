@@ -1,16 +1,16 @@
-﻿using SupperSlonicWebSite.Models;
+﻿using SupperSlonicDomain.Models.SourceCodeDownload;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace SupperSlonicWebSite.DomainLogic.DAL
+namespace SupperSlonicDomain.DAL
 {
     class SourceCodeDownloadsDAL : ISourceCodeDownloadsDAL
     {
-        public IList<DownloadInfoModel> GetDownloadsInfo(SqlTransaction transaction)
+        public IList<DownloadInfo> GetDownloadsInfo(SqlTransaction transaction)
         {
-            IList<DownloadInfoModel> result = new List<DownloadInfoModel>();
+            var result = new List<DownloadInfo>();
 
             using (SqlCommand cmd = new SqlCommand("[dbo].[spGetDownloadsInfo]", transaction.Connection, transaction))
             {
@@ -20,7 +20,7 @@ namespace SupperSlonicWebSite.DomainLogic.DAL
                 {
                     while (sqlDataReader.Read())
                     {
-                        DownloadInfoModel info = new DownloadInfoModel();
+                        var info = new DownloadInfo();
                         info.Name = (string)sqlDataReader["Name"];
                         info.TotalDownloads = (int)sqlDataReader["TotalDownloads"];
                         info.LatestDownload = sqlDataReader.GetValueOrNull<DateTime>("LatestDownload");

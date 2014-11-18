@@ -3,7 +3,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace SupperSlonicWebSite.DomainLogic.DAL
+namespace SupperSlonicDomain.DAL
 {
     class BaseDAL : IBaseDAL
     {

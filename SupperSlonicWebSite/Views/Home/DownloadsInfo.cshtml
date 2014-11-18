@@ -1,6 +1,6 @@
-﻿@using SupperSlonicWebSite.Models;
+﻿@using SupperSlonicDomain.Models.SourceCodeDownload;
 
-@model IList<DownloadInfoModel>
+@model IList<DownloadInfo>
 
 @{
     ViewBag.Title = "SupperSlonic Downloads Info";
@@ -10,6 +10,6 @@
 <div class="downloadsInfo">
     <div class="downloadsInfoHeader">&nbsp;</div>
 
-    @foreach (DownloadInfoModel downloadInfo in this.Model)
+    @foreach (DownloadInfo downloadInfo in this.Model)
         { @Html.Partial("DownloadInfo", downloadInfo) }
 </div>

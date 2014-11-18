@@ -1,5 +1,5 @@
 ﻿
-namespace SupperSlonicWebSite.DomainLogic.Models.Account
+namespace SupperSlonicDomain.Models.Account
 {
     public class ExternalLoginInfo
     {

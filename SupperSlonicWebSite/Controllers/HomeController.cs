@@ -1,12 +1,11 @@
-﻿using SupperSlonicWebSite.DomainLogic.Logic;
-using SupperSlonicWebSite.Models;
+﻿using SupperSlonicDomain.Logic;
+using SupperSlonicDomain.Models.SourceCodeDownload;
 using SupperSlonicWebSite.Models.Email;
 using SupperSlonicWebSite.Providers;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Net;
-using System.Net.Mail;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
@@ -61,7 +60,7 @@ namespace SupperSlonicWebSite.Controllers
         public async Task<ActionResult> DownloadsInfo()
         {
             SourceCodeDownloadsManager manager = new SourceCodeDownloadsManager();
-            IList<DownloadInfoModel> model = await manager.GetDownloadsInfoAsync();
+            IList<DownloadInfo> model = await manager.GetDownloadsInfoAsync();
 
             return View(model);
         }

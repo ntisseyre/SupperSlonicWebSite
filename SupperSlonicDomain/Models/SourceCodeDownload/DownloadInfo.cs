@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
-namespace SupperSlonicWebSite.Models
+namespace SupperSlonicDomain.Models.SourceCodeDownload
 {
-    public class DownloadInfoModel
+    public class DownloadInfo
     {
         public String Name { get; set; }
 

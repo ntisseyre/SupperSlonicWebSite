@@ -1,10 +1,10 @@
-﻿using SupperSlonicWebSite.DomainLogic.DAL;
-using SupperSlonicWebSite.Models;
+﻿using SupperSlonicDomain.DAL;
+using SupperSlonicDomain.Models.SourceCodeDownload;
 using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
 
-namespace SupperSlonicWebSite.DomainLogic.Logic
+namespace SupperSlonicDomain.Logic
 {
     public class SourceCodeDownloadsManager
     {
@@ -17,9 +17,9 @@ namespace SupperSlonicWebSite.DomainLogic.Logic
             this.Dal = new SourceCodeDownloadsDAL();
         }
 
-        public Task<IList<DownloadInfoModel>> GetDownloadsInfoAsync()
+        public Task<IList<DownloadInfo>> GetDownloadsInfoAsync()
         {
-            return Task<IList<DownloadInfoModel>>.Factory.StartNew(() =>
+            return Task<IList<DownloadInfo>>.Factory.StartNew(() =>
             {
                 return this.BaseDal.Execute(IsolationLevel.ReadCommitted,
                 (tran) =>

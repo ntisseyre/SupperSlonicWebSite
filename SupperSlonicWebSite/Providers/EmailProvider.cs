@@ -1,5 +1,5 @@
 ﻿using Mvc.Mailer;
-using SupperSlonicWebSite.DomainLogic.Models.Account;
+using SupperSlonicDomain.Models.Account;
 using SupperSlonicWebSite.Models.Email;
 using SupperSlonicWebSite.Resources;
 using System;

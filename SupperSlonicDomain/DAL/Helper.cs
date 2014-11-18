@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 
-namespace SupperSlonicWebSite.DomainLogic.DAL
+namespace SupperSlonicDomain.DAL
 {
     public static class Helper
     {
@@ -16,7 +16,12 @@ namespace SupperSlonicWebSite.DomainLogic.DAL
         public static T GetObjectOrNull<T>(this SqlDataReader sqlDataReader, string columnName) where T : class
         {
             var columnValue = sqlDataReader[columnName];
-            return (columnValue is DBNull) ? (T)null : (T)columnValue;
+            return GetObjectOrNull<T>(columnValue);
+        }
+
+        public static T GetObjectOrNull<T>(object value) where T : class
+        {
+            return (value is DBNull) ? (T)null : (T)value;
         }
 
         public static Nullable<T> GetValueOrNull<T>(this SqlDataReader sqlDataReader, string columnName) where T : struct

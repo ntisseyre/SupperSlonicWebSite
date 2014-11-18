@@ -22,14 +22,14 @@ namespace SupperSlonicWebSite.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Exceptions {
+    internal class Credentials {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Exceptions() {
+        internal Credentials() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace SupperSlonicWebSite.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SupperSlonicWebSite.Resources.Exceptions", typeof(Exceptions).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SupperSlonicWebSite.Resources.Credentials", typeof(Credentials).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,38 +61,56 @@ namespace SupperSlonicWebSite.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Failed to retrieve external login info.
+        ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string ExternalLoginNotFound {
+        internal static string Facebook_Id {
             get {
-                return ResourceManager.GetString("ExternalLoginNotFound", resourceCulture);
+                return ResourceManager.GetString("Facebook_Id", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [{0}]: Internal server error. Please try again later..
+        ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string InternalServerError {
+        internal static string Facebook_Secret {
             get {
-                return ResourceManager.GetString("InternalServerError", resourceCulture);
+                return ResourceManager.GetString("Facebook_Secret", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The user name or password is incorrect.
+        ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string InvalidGrant {
+        internal static string Google_Id {
             get {
-                return ResourceManager.GetString("InvalidGrant", resourceCulture);
+                return ResourceManager.GetString("Google_Id", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User&apos;s data has been changed, please sign-in again.
+        ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string UserDataChanged {
+        internal static string Google_Secret {
             get {
-                return ResourceManager.GetString("UserDataChanged", resourceCulture);
+                return ResourceManager.GetString("Google_Secret", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Microsoft_Id {
+            get {
+                return ResourceManager.GetString("Microsoft_Id", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Microsoft_Secret {
+            get {
+                return ResourceManager.GetString("Microsoft_Secret", resourceCulture);
             }
         }
     }

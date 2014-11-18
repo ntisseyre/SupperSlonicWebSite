@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SupperSlonicWebSite.Resources {
+namespace SupperSlonicDomain.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace SupperSlonicWebSite.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SupperSlonicWebSite.Resources.Exceptions", typeof(Exceptions).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SupperSlonicDomain.Resources.Exceptions", typeof(Exceptions).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,38 +61,47 @@ namespace SupperSlonicWebSite.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Failed to retrieve external login info.
+        ///   Looks up a localized string similar to External login provider &apos;{0}&apos; is already registered for the user.
         /// </summary>
-        internal static string ExternalLoginNotFound {
+        internal static string ExternalLoginAlreadyExists {
             get {
-                return ResourceManager.GetString("ExternalLoginNotFound", resourceCulture);
+                return ResourceManager.GetString("ExternalLoginAlreadyExists", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [{0}]: Internal server error. Please try again later..
+        ///   Looks up a localized string similar to User with an email &apos;{0}&apos; already exists.
         /// </summary>
-        internal static string InternalServerError {
+        internal static string UserAlreadyRegistered {
             get {
-                return ResourceManager.GetString("InternalServerError", resourceCulture);
+                return ResourceManager.GetString("UserAlreadyRegistered", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The user name or password is incorrect.
+        ///   Looks up a localized string similar to User has already been verified.
         /// </summary>
-        internal static string InvalidGrant {
+        internal static string UserAlreadyVerified {
             get {
-                return ResourceManager.GetString("InvalidGrant", resourceCulture);
+                return ResourceManager.GetString("UserAlreadyVerified", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User&apos;s data has been changed, please sign-in again.
+        ///   Looks up a localized string similar to Specified user was not found.
         /// </summary>
-        internal static string UserDataChanged {
+        internal static string UserNotFound {
             get {
-                return ResourceManager.GetString("UserDataChanged", resourceCulture);
+                return ResourceManager.GetString("UserNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Verification codes didn&apos;t match.
+        /// </summary>
+        internal static string VerifyCodesDidntMatch {
+            get {
+                return ResourceManager.GetString("VerifyCodesDidntMatch", resourceCulture);
             }
         }
     }
