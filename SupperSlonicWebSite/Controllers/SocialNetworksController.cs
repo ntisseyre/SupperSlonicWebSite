@@ -17,5 +17,10 @@ namespace SupperSlonicWebSite.Controllers
         {
             return View();
         }
+
+        public ActionResult ExtAuthRequest()
+        {
+            return View();
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace SupperSlonicWebSite
         static Startup()
         {
             PublicClientId = "self";
-            ExternalAuthPageUrl = "ExtAuthRequest";
+            ExternalAuthPageUrl = "SocialNetworks/ExtAuthRequest";
             var applicationOAuthProvider = new ApplicationOAuthProvider(PublicClientId, ExternalAuthPageUrl);
             OAuthOptions = new OAuthAuthorizationServerOptions
             {

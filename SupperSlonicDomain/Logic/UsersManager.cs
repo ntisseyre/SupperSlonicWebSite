@@ -14,6 +14,7 @@ namespace SupperSlonicDomain.Logic
 
         public UsersManager()
         {
+            this.BaseDal = new BaseDAL();
             this.UsersDal = new UsersDal();
         }
 

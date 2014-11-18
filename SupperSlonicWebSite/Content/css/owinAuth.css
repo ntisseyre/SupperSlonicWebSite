@@ -1,10 +1,4 @@
-﻿body{
-    color:#999;text-align:center;font:16px/19px 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    background-color:black;
-}
-strong{color:#fff;font-weight:normal;}
-
-span.error{color:#EA2703}
+﻿span.error{color:#EA2703}
 
 div.logo {position:absolute;bottom:30px;right:20px;cursor:pointer}
 div.logo > img {border-radius: 60px;-moz-border-radius: 60px;}
@@ -12,9 +6,9 @@ div.logo > img {border-radius: 60px;-moz-border-radius: 60px;}
 /*====================== External Providers List ======================*/
 div#extProviders
 {
-    display:table;margin-left:200px;
+    display:table;
     border-collapse:separate;
-    border-spacing:40px;
+    border-spacing:20px;
 }
 
 div#extProviders > div
@@ -32,12 +26,10 @@ div#extProviders > div:hover > img
 /*====================== info ======================*/
 div#info
 {
-    display:none;
-    padding:10px;
+    display:none;border:1px solid transparent;
     text-align:left;
     border-radius:25px;-moz-border-radius:25px;
     min-width:240px;height:200px;
-    background-color:#303030;
 }
 
 div#info > div.user
@@ -77,9 +69,9 @@ span.href:hover{text-decoration:none;color:#fff;}
 /*====================== External Authentication Request page ======================*/
 div#extAuthRequestSending
 {
-    padding:10px;display:table;margin-top:100px;
-    background-color:#303030;vertical-align:middle;
-    border-radius: 25px;-moz-border-radius:25px;
+    padding:10px;display:table;margin: 20px auto;
+    background-color:#1E1E1E;vertical-align:middle;
+    border-radius:25px;-moz-border-radius:25px;
     min-width:330px;height:190px;
 }
 

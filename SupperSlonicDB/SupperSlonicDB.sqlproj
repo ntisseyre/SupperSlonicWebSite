@@ -65,5 +65,19 @@
     <Build Include="Tables\SourceCodeDownload.sql" />
     <Build Include="Procedures\spCreateSourceCodeDownload.sql" />
     <Build Include="Procedures\spGetDownloadsInfo.sql" />
+    <Build Include="Tables\User.sql" />
+    <Build Include="Tables\ExternalLoginProvider.sql" />
+    <Build Include="Tables\UserAvatar.sql" />
+    <Build Include="Tables\UserExternalLogin.sql" />
+    <Build Include="Procedures\spCreateUser.sql" />
+    <Build Include="Procedures\spCreateUserAvatar.sql" />
+    <Build Include="Procedures\spCreateUserExtLogin.sql" />
+    <Build Include="Procedures\spDeleteUserWithDependencies.sql" />
+    <Build Include="Procedures\spGetExternalUser.sql" />
+    <Build Include="Procedures\spGetUserAvatar.sql" />
+    <Build Include="Procedures\spGetUserByEmail.sql" />
+    <Build Include="Procedures\spGetUserById.sql" />
+    <Build Include="Procedures\spUpdateUser.sql" />
+    <Build Include="Procedures\spUpdateUserAvatar.sql" />
   </ItemGroup>
 </Project>
