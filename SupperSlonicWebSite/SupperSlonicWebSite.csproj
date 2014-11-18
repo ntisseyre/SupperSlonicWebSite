@@ -221,6 +221,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Content\css\downloadsInfo.css" />
     <Content Include="Content\css\helpspot.css" />
+    <Content Include="Content\css\owinAuth.css" />
     <Content Include="Content\css\webControls\colorPicker.css" />
     <Content Include="Content\css\webControls\colorPickerDemo.css" />
     <Content Include="Content\img\agileCalendar\calendarBuilder.jpg" />
@@ -242,6 +243,9 @@
     <Content Include="Content\img\emrWorkflow\startClusterStrategy.jpg" />
     <Content Include="Content\img\helpSpot\close.png" />
     <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\owinAuth\Facebook.png" />
+    <Content Include="Content\img\owinAuth\Google.png" />
+    <Content Include="Content\img\owinAuth\Microsoft.png" />
     <Content Include="Content\img\tabs\api.png" />
     <Content Include="Content\img\tabs\controller.png" />
     <Content Include="Content\img\tabs\deployment.png" />
@@ -277,7 +281,8 @@
     <Content Include="Content\img\weeklySchedule\serialization.jpg" />
     <Content Include="Content\img\weeklySchedule\usage.jpg" />
     <Content Include="Content\js\menu.js" />
-    <Content Include="Content\js\webControls\colorPicker.js" />
+    <Content Include="Content\js\owinAuth.js" />
+    <Content Include="Content\js\colorPicker.js" />
     <Content Include="Content\js\tabWidget.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
