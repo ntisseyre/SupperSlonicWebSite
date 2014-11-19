@@ -9,10 +9,7 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            getExternalProvidersList();
-
-            if (isTokenSet())
-                getUserInfo();
+            initOwinAuth();
         });
     </script>
 
@@ -20,7 +17,8 @@
 
 <h1 class="first" id="description">Demo</h1>
 
-<div id="extProviders"></div>
-<div id="info"></div>
-
+<div class="owinAuth">
+    <div id="extProviders"></div>
+    <div id="info"></div>
+</div>
 <div class="demo" style="width:422px"><img src="~/Content/img/underConstruction.jpg" alt="underConstruction" /></div>

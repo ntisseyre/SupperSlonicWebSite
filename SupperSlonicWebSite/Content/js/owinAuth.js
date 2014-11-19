@@ -1,4 +1,41 @@
-﻿/* Get a list of external providers */
+﻿function initOwinAuth() {
+
+    var hash = window.location.hash;
+    if (hash != "")
+    {
+        handleAuthProgress(hash);
+        return;
+    }
+
+    getExternalProvidersList();
+
+    if (isTokenSet()) {
+        getUserInfo();
+    }
+    else {
+        showMessage("Please, select any provider for the authentication");
+    }
+}
+
+function handleAuthProgress(hash)
+{
+    if (hash.indexOf('#url') == 0)
+    {
+        hash = hash.replace('#url=', '');
+        var provider = hash.split('=')[1].split('&')[0];
+        showAuthProgress(provider);
+
+        window.location = hash;
+    }
+    else if (hash.indexOf('#access_token') == 0) {
+        var hashValues = hash.split('=');
+
+        setToken(hashValues[2].split('&')[0], hashValues[1].split('&')[0]);
+        window.location = "OwinAuthentication";
+    }
+}
+
+/* Get a list of external providers */
 function getExternalProvidersList() {
     $.ajax({
         type: "GET",
@@ -10,8 +47,10 @@ function getExternalProvidersList() {
     });
 }
 
-function getExternalProvidersListCallback(data) {
+function getExternalProvidersListCallback(data)
+{
     var extProviders = $('#extProviders');
+    extProviders.hide();
 
     $.each(data, function (key, value) {
         var img = jQuery('<img/>', {
@@ -26,15 +65,16 @@ function getExternalProvidersListCallback(data) {
 
         img.appendTo(div);
         div.appendTo(extProviders);
+        extProviders.fadeIn(1000);
     });
 }
 
 /* Authenticate a user via an external provider */
-function extAuth(url) {
+function extAuth(url)
+{
     resetToken();
-    $('#info').hide();
-
-    window.location = "ExtAuthRequest#url=" + url;
+    window.location.hash = "#url=" + url;
+    location.reload(true);
 }
 
 function getUserInfo() {
@@ -127,14 +167,31 @@ function showMessage(message) {
         + message
         + "</div></div>";
 
-    $('#info').html(messageHtml);
+    var infoDiv = $('#info');
+    infoDiv.html(messageHtml);
+    infoDiv.fadeIn(1000);
+}
+
+function showAuthProgress(provider)
+{
+    var progressHtml = "<div class=\"extAuth\">"
+        + "<div><h1>Please wait,<br />while we are connecting the external provider...</h1></div>"
+        + "<div>"
+        + "<div><img src=\"../Content/img/logo96.png\" alt=\"supperslonic\" /></div>"
+        + "<div><img src=\"../Content/img/waiting.gif\" alt=\"waiting\" /></div>"
+        + "<div><img src=\"../Content/img/owinAuth/" + provider + ".png\" alt=\"" + provider + "\" /></div>"
+        + "</div></div>";
+
+    var infoDiv = $('#info');
+    infoDiv.html(progressHtml);
+    infoDiv.fadeIn(1000);
 }
 
 /* Generate a table with the user's information and available actions */
 function showUserInfo(userInfo) {
     var userInfoDiv = $('#info');
 
-    var info = "<div class=\"user\"><img src=\"" + userInfo["ava"] + "\" /></div>";
+    var info = "<div class=\"user\"><img src=\"/" + userInfo["ava"] + "\" /></div>";
     info += "<p>" + "<strong>Email:</strong> " + userInfo["email"] + "</p>";
     info += "<p>" + "<strong>Name:</strong> " + userInfo["name"] + "</p>";
     info += "<p>" + "<strong>Provider:</strong> " + userInfo["provider"] + "</p>";

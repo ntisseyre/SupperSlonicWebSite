@@ -243,6 +243,7 @@
     <Content Include="Content\img\emrWorkflow\startClusterStrategy.jpg" />
     <Content Include="Content\img\helpSpot\close.png" />
     <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\logo96.png" />
     <Content Include="Content\img\owinAuth\Facebook.png" />
     <Content Include="Content\img\owinAuth\Google.png" />
     <Content Include="Content\img\owinAuth\Microsoft.png" />
@@ -271,7 +272,7 @@
     <Content Include="Content\img\verticalTab\usage.jpg" />
     <Content Include="Content\img\verticalTab\view.jpg" />
     <Content Include="Content\img\tabs\view.png" />
-    <Content Include="Content\img\waiting.gif" />
+    <Content Include="Content\img\helpSpot\waiting.gif" />
     <Content Include="Content\img\web\tools.jpg" />
     <Content Include="Content\img\web\jQuery.jpg" />
     <Content Include="Content\img\weeklySchedule\timePickerModel.jpg" />
@@ -337,7 +338,6 @@
     <Content Include="Views\SocialNetworks\OwinAuthentication.cshtml" />
     <Content Include="Views\Shared\_MailLayout.cshtml" />
     <Content Include="Views\Shared\_NotificationLayout.cshtml" />
-    <Content Include="Views\SocialNetworks\ExtAuthRequest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\HelpSpot.htm" />
