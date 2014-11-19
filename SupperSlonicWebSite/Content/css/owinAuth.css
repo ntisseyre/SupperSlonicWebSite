@@ -74,10 +74,10 @@ div#info > div.extAuth
     background-color:white;margin-top:-12px;
     border-radius:25px;-moz-border-radius:25px;
 }
-div#info > div.extAuth > div{display:table;border-collapse:separate;width:475px;height:158px}
-div#info > div.extAuth > div:first-of-type{border-spacing:10px}
-div#info > div.extAuth > div:last-of-type{border-spacing:20px;}
-div#info > div.extAuth > div > h1{color:black;font-size:17px;margin:50px 0 30px 20px}
+div#info > div.extAuth > div{display:table;border-collapse:separate;width:475px}
+div#info > div.extAuth > div:first-of-type{border-spacing:0px;height:108px;}
+div#info > div.extAuth > div:last-of-type{border-spacing:20px;height:208px;}
+div#info > div.extAuth > div > h1{color:black;font-size:17px;margin:50px 0 0 20px}
 div#info > div.extAuth > div > div{display:table-cell;vertical-align:middle;text-align:center}
 div#info > div.extAuth > div > div:first-of-type > img{border-radius: 60px;-moz-border-radius: 60px;}
 
