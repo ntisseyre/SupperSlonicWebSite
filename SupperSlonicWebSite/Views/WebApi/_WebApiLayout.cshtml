@@ -1,0 +1,24 @@
+﻿<html>
+<head>
+    <title>SupperSlonic</title>
+    <link href="~/Content/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/css/helpspot.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>    
+    <script type="text/javascript" src="~/Content/js/tabWidget.js"></script>
+</head>
+<body>
+    <div id="body-bg">
+        <div id="body-wrap">
+            <div id="page" style="-moz-border-radius:5px;border-radius:5px">
+                <div id="header-logo"><a href="https://supperslonic.com">SupperSlonic</a></div>
+                <div id="content">
+                    <div class="code" style="display:inline-block">@RenderBody()</div>
+                </div> <!-- page -->
+            </div>
+        </div> <!-- body-wrap -->
+    </div> <!-- body-bg -->
+    @Html.Partial("HelpSpotWidget")
+</body>
+</html>

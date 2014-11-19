@@ -86,13 +86,13 @@ namespace SupperSlonicWebSite.Controllers
         [HttpGet]
         [AllowAnonymous]
         [Route("confirm")]
-        [ShowViewOnErrorAttribute(ControllerName = "EmailProvider", ViewName = "RegistrationConfirmError")]
+        [ShowViewOnErrorAttribute(ControllerName = "WebApi", ViewName = "RegistrationConfirmError")]
         public async Task<HttpResponseMessage> ConfirmRegistration(string email, Guid code)
         {
             var user = await this.UserProvider.CheckVerificationCodesAsync(email, code);
             this.EmailProvider.SendConfirmedAsync(user);
 
-            return this.View("EmailProvider", "RegistrationConfirmed", user);
+            return this.View("WebApi", "RegistrationConfirmed", user);
         }
 
         // DELETE api/account        

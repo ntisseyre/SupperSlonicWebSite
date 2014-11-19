@@ -133,7 +133,7 @@ namespace SupperSlonicDomain.Logic
         {
             return Task<User>.Factory.StartNew(() =>
             {
-                return this.BaseDal.Execute(IsolationLevel.Snapshot,
+                return this.BaseDal.Execute(IsolationLevel.Serializable, //Snapshot not allowed =(
                 (tran) =>
                 {
                     //Check user exists
@@ -159,7 +159,7 @@ namespace SupperSlonicDomain.Logic
         {
             return Task.Factory.StartNew(() =>
             {
-                this.BaseDal.Execute(IsolationLevel.Snapshot,
+                this.BaseDal.Execute(IsolationLevel.Serializable,  //Snapshot not allowed =(
                 (tran) =>
                 {
                     this.UsersDal.DeleteUserWithDependencies(tran, userId);

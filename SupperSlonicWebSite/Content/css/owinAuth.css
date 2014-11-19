@@ -1,9 +1,4 @@
-﻿span.error{color:#EA2703}
-
-div.logo {position:absolute;bottom:30px;right:20px;cursor:pointer}
-div.logo > img {border-radius: 60px;-moz-border-radius: 60px;}
-
-div.owinAuth
+﻿div.owinAuth
 {
     width:500px;height:340px;
     background-color:#181818;

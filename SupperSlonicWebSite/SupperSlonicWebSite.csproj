@@ -184,6 +184,7 @@
     <Compile Include="Utils\Providers\OAuthProviders\FacebookOAuthProvider.cs" />
     <Compile Include="Utils\Providers\OAuthProviders\GoogleOAuthProvider.cs" />
     <Compile Include="Utils\Providers\OAuthProviders\MicrosoftOAuthProvider.cs" />
+    <Compile Include="Utils\RazorLayouts.cs" />
     <Compile Include="Utils\Resources\Credentials.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -212,7 +213,6 @@
     <Compile Include="Utils\HttpHelper.cs" />
     <Compile Include="Utils\OwinHelper.cs" />
     <Compile Include="Utils\RandomOAuthStateGenerator.cs" />
-    <Compile Include="Utils\RazorLayouts.cs" />
     <Compile Include="Utils\ShowViewOnErrorAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -327,6 +327,10 @@
     <Content Include="Views\Shared\DownloadInfo.cshtml" />
     <Content Include="Views\Shared\ColorsGrid.cshtml" />
     <Content Include="Views\EmailProvider\HelpMe.cshtml" />
+    <Content Include="Views\EmailProvider\RegistrationConfirmation.cshtml" />
+    <Content Include="Views\WebApi\RegistrationConfirmError.cshtml" />
+    <Content Include="Views\EmailProvider\DeleteConfirmation.cshtml" />
+    <Content Include="Views\EmailProvider\RegistrationConfirmed.cshtml" />
     <None Include="Views\Shared\DisplayTemplates\TabWidget.cshtml" />
     <Content Include="Views\WebControls\Index.cshtml" />
     <Content Include="Views\WebControls\VerticalTabs.cshtml" />
@@ -337,7 +341,8 @@
     <Content Include="Views\SocialNetworks\Index.cshtml" />
     <Content Include="Views\SocialNetworks\OwinAuthentication.cshtml" />
     <Content Include="Views\Shared\_MailLayout.cshtml" />
-    <Content Include="Views\Shared\_NotificationLayout.cshtml" />
+    <Content Include="Views\WebApi\_WebApiLayout.cshtml" />
+    <Content Include="Views\WebApi\RegistrationConfirmed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\HelpSpot.htm" />

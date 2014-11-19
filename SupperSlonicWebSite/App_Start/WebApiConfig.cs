@@ -35,7 +35,8 @@ namespace SupperSlonicWebSite
             config.Filters.Add(new AuthorizeAndCheckAttribute());
 
             //Razor Engine layout support
-            RazorLayouts.AddNotificationLayout();
+            RazorLayouts.InitTemplates();
+            RazorLayouts.AddWebApiLayout();
         }
     }
 }
