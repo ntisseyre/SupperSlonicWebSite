@@ -126,7 +126,7 @@ namespace SupperSlonicWebSite.Providers
 
         public static string GetAvatarUrl(User user)
         {
-            return string.Format("api/account/avatar/{0}?anticache={1}", user.Id, Environment.TickCount);
+            return string.Format("/api/account/avatar/{0}?anticache={1}", user.Id, Environment.TickCount);
         }
     }
 }

@@ -175,7 +175,7 @@ function showMessage(message) {
 function showAuthProgress(provider)
 {
     var progressHtml = "<div class=\"extAuth\">"
-        + "<div><h1>Please wait,<br />while we are connecting the external provider...</h1></div>"
+        + "<div><h1>Please wait,<br />while we are connecting to the external provider...</h1></div>"
         + "<div>"
         + "<div><img src=\"../Content/img/logo96.png\" alt=\"supperslonic\" /></div>"
         + "<div><img src=\"../Content/img/waiting.gif\" alt=\"waiting\" /></div>"
@@ -191,7 +191,7 @@ function showAuthProgress(provider)
 function showUserInfo(userInfo) {
     var userInfoDiv = $('#info');
 
-    var info = "<div class=\"user\"><img src=\"/" + userInfo["ava"] + "\" /></div>";
+    var info = "<div class=\"user\"><img src=\"" + userInfo["ava"] + "\" /></div>";
     info += "<p>" + "<strong>Email:</strong> " + userInfo["email"] + "</p>";
     info += "<p>" + "<strong>Name:</strong> " + userInfo["name"] + "</p>";
     info += "<p>" + "<strong>Provider:</strong> " + userInfo["provider"] + "</p>";
