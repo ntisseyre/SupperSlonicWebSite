@@ -13,6 +13,8 @@ as
 
 begin
 	
+	exec [dbo].[spIncrementCounter] 1
+
 	insert into [dbo].[User] ([Email], [Password], [FullName], [CreatedDate], [UpdatedDate], [VerifyEmailCode])
 	values (@email, @password, @fullName, @createdDate, @updatedDate, @verifyEmailCode)
 

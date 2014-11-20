@@ -79,5 +79,7 @@
     <Build Include="Procedures\spGetUserById.sql" />
     <Build Include="Procedures\spUpdateUser.sql" />
     <Build Include="Procedures\spUpdateUserAvatar.sql" />
+    <Build Include="Tables\Counters.sql" />
+    <Build Include="Procedures\spIncrementCounter.sql" />
   </ItemGroup>
 </Project>
