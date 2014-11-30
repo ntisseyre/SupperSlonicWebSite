@@ -249,6 +249,7 @@
     <Content Include="Content\img\owinAuth\Microsoft.png" />
     <Content Include="Content\img\tabs\api.png" />
     <Content Include="Content\img\tabs\controller.png" />
+    <Content Include="Content\img\tabs\demo.png" />
     <Content Include="Content\img\tabs\deployment.png" />
     <Content Include="Content\img\tabs\description.png" />
     <Content Include="Content\img\download.png" />
@@ -265,6 +266,7 @@
     <Content Include="Content\img\helpSpot\submit.png" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\img\tableHeader.png" />
+    <Content Include="Content\img\tabs\owin.png" />
     <Content Include="Content\img\underConstruction.jpg" />
     <Content Include="Content\img\tabs\versioning.png" />
     <Content Include="Content\img\verticalTab\controller.jpg" />
@@ -272,7 +274,7 @@
     <Content Include="Content\img\verticalTab\usage.jpg" />
     <Content Include="Content\img\verticalTab\view.jpg" />
     <Content Include="Content\img\tabs\view.png" />
-    <Content Include="Content\img\helpSpot\waiting.gif" />
+    <Content Include="Content\img\waiting.gif" />
     <Content Include="Content\img\web\tools.jpg" />
     <Content Include="Content\img\web\jQuery.jpg" />
     <Content Include="Content\img\weeklySchedule\timePickerModel.jpg" />
@@ -331,6 +333,7 @@
     <Content Include="Views\WebApi\RegistrationConfirmError.cshtml" />
     <Content Include="Views\EmailProvider\DeleteConfirmation.cshtml" />
     <Content Include="Views\EmailProvider\RegistrationConfirmed.cshtml" />
+    <None Include="Properties\PublishProfiles\supperslonictest.pubxml" />
     <None Include="Views\Shared\DisplayTemplates\TabWidget.cshtml" />
     <Content Include="Views\WebControls\Index.cshtml" />
     <Content Include="Views\WebControls\VerticalTabs.cshtml" />

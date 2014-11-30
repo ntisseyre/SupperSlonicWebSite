@@ -1,4 +1,8 @@
-﻿@section CSS
+﻿@using SupperSlonicWebSite.Models;
+
+@model IList<TabWidgetModel>
+
+@section CSS
 {
     <link href="@Url.Content("~/Content/css/owinAuth.css")" rel="stylesheet" type="text/css" />
 }
@@ -15,10 +19,24 @@
 
 }
 
-<h1 class="first" id="description">Demo</h1>
+<h1 class="first" id="description">OWIN authentication via Social networks</h1>
+@Html.Partial("DownloadExampleWidget")
+<p>Here you can find an example of code that demonstrates the <strong>Token Based Authentication</strong> using external providers such as:</p>
+<ul class="check-list">
+    <li>Facebook;</li>
+    <li>Google;</li>
+    <li>Microsoft.</li>
+</ul>
 
+<h1 id="owin">Owin Middleware</h1>
+<p>The <a class="textLink" href="http://owin.org">Owin</a> Middleware modules are responsible for handling the authentication with external authentication providers (such as Google) and establishing an application session through a cookie. On all subsequent calls the application cookie middleware extracts the contents of the incoming application cookie and sets the claims identity of the current context.</p>
+
+<h1 class="first" id="demo">Demo</h1>
 <div class="owinAuth">
     <div id="extProviders"></div>
     <div id="info"></div>
 </div>
+
 <div class="demo" style="width:422px"><img src="~/Content/img/underConstruction.jpg" alt="underConstruction" /></div>
+
+@Html.DisplayForModel("TabWidgetsList")

@@ -167,9 +167,7 @@ function showMessage(message) {
         + message
         + "</div></div>";
 
-    var infoDiv = $('#info');
-    infoDiv.html(messageHtml);
-    infoDiv.fadeIn(1000);
+    focusAndShow(messageHtml);
 }
 
 function showAuthProgress(provider)
@@ -182,14 +180,11 @@ function showAuthProgress(provider)
         + "<div><img src=\"../Content/img/owinAuth/" + provider + ".png\" alt=\"" + provider + "\" /></div>"
         + "</div></div>";
 
-    var infoDiv = $('#info');
-    infoDiv.html(progressHtml);
-    infoDiv.fadeIn(1000);
+    focusAndShow(progressHtml);
 }
 
 /* Generate a table with the user's information and available actions */
 function showUserInfo(userInfo) {
-    var userInfoDiv = $('#info');
 
     var info = "<div class=\"user\"><img src=\"" + userInfo["ava"] + "\" /></div>";
     info += "<p>" + "<strong>Email:</strong> " + userInfo["email"] + "</p>";
@@ -215,8 +210,16 @@ function showUserInfo(userInfo) {
         info += generateActionLink("Register", "registering", "registerExternal");
     }
 
-    userInfoDiv.html(info);
-    userInfoDiv.fadeIn(1000);
+    focusAndShow(info);
+}
+
+function focusAndShow(htmlContent)
+{
+    $('html, body').animate({ scrollTop: $('div.owinAuth').offset().top }, 'slow');
+
+    var infoDiv = $('#info');
+    infoDiv.html(htmlContent);
+    infoDiv.fadeIn(1000);
 }
 
 function generateActionLink(text, activeText, actionName, style) {

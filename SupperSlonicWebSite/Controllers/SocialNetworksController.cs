@@ -1,7 +1,5 @@
-﻿using System;
+﻿using SupperSlonicWebSite.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace SupperSlonicWebSite.Controllers
@@ -15,7 +13,11 @@ namespace SupperSlonicWebSite.Controllers
 
         public ActionResult OwinAuthentication()
         {
-            return View();
+            List<TabWidgetModel> model = new List<TabWidgetModel>(4);
+            model.Add(new TabWidgetModel("description"));
+            model.Add(new TabWidgetModel("owin"));
+            model.Add(new TabWidgetModel("demo"));
+            return View(model);
         }
     }
 }
