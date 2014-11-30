@@ -15,8 +15,9 @@ namespace SupperSlonicWebSite.Controllers
         {
             List<TabWidgetModel> model = new List<TabWidgetModel>(4);
             model.Add(new TabWidgetModel("description"));
-            model.Add(new TabWidgetModel("owin"));
             model.Add(new TabWidgetModel("demo"));
+            model.Add(new TabWidgetModel("owin"));
+
             return View(model);
         }
     }
