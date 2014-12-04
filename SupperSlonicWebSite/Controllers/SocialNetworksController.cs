@@ -17,6 +17,9 @@ namespace SupperSlonicWebSite.Controllers
             model.Add(new TabWidgetModel("description"));
             model.Add(new TabWidgetModel("demo"));
             model.Add(new TabWidgetModel("owin"));
+            model.Add(new TabWidgetModel("facebook"));
+            model.Add(new TabWidgetModel("google"));
+            model.Add(new TabWidgetModel("microsoft"));
 
             return View(model);
         }

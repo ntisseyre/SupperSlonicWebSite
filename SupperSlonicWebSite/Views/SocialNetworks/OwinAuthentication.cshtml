@@ -37,6 +37,36 @@
 <h1 id="owin">Owin Middleware</h1>
 <p>The <a class="textLink" href="http://owin.org">Owin</a> Middleware modules are responsible for handling the authentication with external authentication providers (such as Google) and establishing an application session through a cookie. On all subsequent calls the application cookie middleware extracts the contents of the incoming application cookie and sets the claims identity of the current context.</p>
 
+<h1 id="facebook">Facebook Configuration</h1>
+<h1 id="google">Google Configuration</h1>
+<ol>
+    <li>Navigate to the <a class="textLink" href="https://console.developers.google.com/project">Google Developers Console</a>;</li>
+    <li>Click the <strong>Create Project</strong> button and enter a project name and ID (you can use the default values). In a few seconds the new project will be created and your browser will display the new projects page;</li>
+    <li>In the left tab, click <strong>APIs & Auth</strong>, and then click <strong>Consent screen</strong>:
+        <ul>
+            <li>Enter <strong>email address</strong>;</li>
+            <li>Enter <strong>product name</strong>:</li>
+        </ul>
+        <div class="code" style="width:700px;margin-top:-10px"><img src="~/Content/img/owinAuth/Google_consent_screen.png" alt="Google Consent screen" /></div>
+    </li>
+    <li>In the left tab, click <strong>APIs & Auth</strong>, and then click <strong>APIs</strong>:
+        <ul style="margin-bottom:0">
+            <li>Enable <strong>Google+ API</strong> to support user’s avatar access.</li>
+        </ul>
+    </li>
+    <li>In the left tab, click <strong>APIs & Auth</strong> and then click <strong>Credentials</strong>.</li>
+    <li>Click the <strong>Create New Client ID</strong> under OAuth:
+        <ul>
+            <li>In the <strong>Create Client ID</strong> dialog, keep the default <strong>Web application</strong> for the application type;</li>
+            <li>Set the Authorized JavaScript origins to the SSL URL of the service, for example: <strong>https://supperslonic.com/</strong>;</li>
+            <li>Set the Authorized redirect URI to: <strong>https://supperslonic.com/<u>signin-google</u></strong>.</li>
+        </ul>
+        <div class="code" style="width:475px;margin-top:-10px"><img src="~/Content/img/owinAuth/Google_client_id.png" alt="Google Client Id" /></div>
+    </li>
+    <li>Copy and paste the <strong>AppId</strong> and <strong>App Secret</strong> into the <strong>Credentials.resx</strong> file for Google.</li>
+</ol>
+
+<h1 id="microsoft">Microsoft Configuration</h1>
 <div class="demo" style="width:422px"><img src="~/Content/img/underConstruction.jpg" alt="underConstruction" /></div>
 
 @Html.DisplayForModel("TabWidgetsList")

@@ -245,6 +245,8 @@
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\logo96.png" />
     <Content Include="Content\img\owinAuth\Facebook.png" />
+    <Content Include="Content\img\owinAuth\Google_client_id.png" />
+    <Content Include="Content\img\owinAuth\Google_consent_screen.png" />
     <Content Include="Content\img\owinAuth\Google.png" />
     <Content Include="Content\img\owinAuth\Microsoft.png" />
     <Content Include="Content\img\tabs\api.png" />
@@ -255,11 +257,14 @@
     <Content Include="Content\img\download.png" />
     <Content Include="Content\img\dynamoDB\getLock.jpg" />
     <Content Include="Content\img\header.jpg" />
+    <Content Include="Content\img\tabs\facebook.png" />
+    <Content Include="Content\img\tabs\google.png" />
     <Content Include="Content\img\tabs\howToUse.png" />
     <Content Include="Content\img\idea.png" />
     <Content Include="Content\img\tabs\locking.png" />
     <Content Include="Content\img\dynamoDB\lockInProgress.jpg" />
     <Content Include="Content\img\me.jpg" />
+    <Content Include="Content\img\tabs\microsoft.png" />
     <Content Include="Content\img\tabs\model.png" />
     <Content Include="Content\img\helpSpot\questions.png" />
     <Content Include="Content\img\aws\cloudAPI.png" />

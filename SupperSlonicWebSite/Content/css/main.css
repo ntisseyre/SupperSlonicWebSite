@@ -11,6 +11,7 @@ a.textLink:active {background-color:transparent}
 h1,h2,h3,h4,h5,h6 {color:#fff;font-weight:normal;font-family:'Lucida Grande', 'Lucida Sans Unicode','Lucida Sans Regular','Trebuchet MS', Verdana, sans-serif;}
 h1 {font-size:18px;margin:30px 0 4px 0;}
 h1.first{margin-top:10px}
+p.header{color:#fff;font-weight:normal;margin-left:10px}
 strong{color:#fff;font-weight:normal;}
 
 span.error{color:#EA2703}
