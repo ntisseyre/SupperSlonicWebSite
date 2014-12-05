@@ -38,6 +38,8 @@
 <p>The <a class="textLink" href="http://owin.org">Owin</a> Middleware modules are responsible for handling the authentication with external authentication providers (such as Google) and establishing an application session through a cookie. On all subsequent calls the application cookie middleware extracts the contents of the incoming application cookie and sets the claims identity of the current context.</p>
 
 <h1 id="facebook">Facebook Configuration</h1>
+<div class="demo" style="width:422px"><img src="~/Content/img/underConstruction.jpg" alt="underConstruction" /></div>
+
 <h1 id="google">Google Configuration</h1>
 <ol>
     <li>Navigate to the <a class="textLink" href="https://console.developers.google.com/project">Google Developers Console</a>;</li>
@@ -67,6 +69,19 @@
 </ol>
 
 <h1 id="microsoft">Microsoft Configuration</h1>
-<div class="demo" style="width:422px"><img src="~/Content/img/underConstruction.jpg" alt="underConstruction" /></div>
+<ol>
+    <li>Navigate to the <a class="textLink" href="http://go.microsoft.com/fwlink/?LinkID=144070">Microsoft Developer Account</a>;</li>
+    <li>Press <strong>Create application</strong> reference;</li>
+    <li>In <strong>Basic information</strong> enter valid <strong>Application name</strong> service <strong>URLs</strong>:
+        <div class="code" style="width:659px"><img src="~/Content/img/owinAuth/Microsoft_basic_information.png" alt="Microsoft Basic Info" /></div>
+    </li>
+    <li>In <strong>API Settings</strong> select that it is a <strong>mobile application</strong> and enter a valid <strong>redirect URL</strong>:
+        <ul>
+            <li>Note to add the <strong><u>signin-microsoft</u></strong> to your <strong>Redirect URLs</strong>.</li>
+        </ul>
+        <div class="code" style="width:527px;margin-top:-10px"><img src="~/Content/img/owinAuth/Microsoft_api_settings.png" alt="Microsoft API Settings" /></div>
+    </li>
+    <li>In <strong>App Settings</strong> copy and paste the <strong>AppId</strong> and <strong>App Secret</strong> into the <strong>Credentials.resx</strong> file for Microsoft.</li>
+</ol>
 
 @Html.DisplayForModel("TabWidgetsList")
