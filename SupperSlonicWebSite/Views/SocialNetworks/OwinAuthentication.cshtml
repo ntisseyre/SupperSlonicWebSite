@@ -45,11 +45,11 @@ Each time a service receives a token, it tries to decrypt it with its <strong>II
 <p>To determine either it is an <strong>External Bearer token</strong> or a <strong>local</strong> one it checks the <strong>Issuer</strong> field of the claims. For a local one it must be always <strong>ClaimsIdentity.DefaultIssuer</strong>.<br />
 Note, that for the encryption OWIN uses the IIS machine key, that's why you must apply some custom solution for using the same token across several WEB-services.</p>
 <p>Here is how I build my Application Claims list:</p>
-<div class="code" style="width:680px;"><img src="~/Content/img/owinAuth/Claims.png" alt="claims list"/></div>
-<p>So, I can always get all this information from any token issued by my WEB-service.
-<strong>ClaimsMapper</strong> is an abstract strategy that knows how to map different data models to my claims list.</p>
+<div class="code" style="width:531px;float:left;margin-top:-5px"><img src="~/Content/img/owinAuth/Claims.png" alt="claims list"/></div>
+<p>So, I can always get all this information from any token issued by my WEB-service.</p>
+<p><strong>ClaimsMapper</strong> is an abstract strategy that knows how to map different data models to my claims list.</p>
 
-<h1>Authentication flows</h1>
+<h1 style="margin-top:520px">Authentication flows</h1>
 <p>An application has three different authentication flows:</p>
     <p>Section is under construction...</p>
 
