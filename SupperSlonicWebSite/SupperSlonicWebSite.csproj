@@ -257,6 +257,9 @@
     <Content Include="Content\img\owinAuth\Microsoft.png" />
     <Content Include="Content\img\owinAuth\Microsoft_api_settings.png" />
     <Content Include="Content\img\owinAuth\Microsoft_basic_information.png" />
+    <Content Include="Content\img\owinAuth\NotRegisteredExternalFlow.jpg" />
+    <Content Include="Content\img\owinAuth\RegisteredExternalFlow.jpg" />
+    <Content Include="Content\img\owinAuth\RegisteredLocal.jpg" />
     <Content Include="Content\img\tabs\api.png" />
     <Content Include="Content\img\tabs\controller.png" />
     <Content Include="Content\img\tabs\demo.png" />

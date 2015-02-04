@@ -49,9 +49,20 @@ Note, that for the encryption OWIN uses the IIS machine key, that's why you must
 <p>So, I can always get all this information from any token issued by my WEB-service.</p>
 <p><strong>ClaimsMapper</strong> is an abstract strategy that knows how to map different data models to my claims list.</p>
 
-<h1 style="margin-top:520px">Authentication flows</h1>
+<h1 style="margin-top:510px">Authentication flows</h1>
 <p>An application has three different authentication flows:</p>
-    <p>Section is under construction...</p>
+<ol>
+    <li>A <strong>new user</strong> is authorized through an <strong>external provider</strong>:
+        <div class="code" style="width:593px;"><img src="~/Content/img/owinAuth/NotRegisteredExternalFlow.jpg" alt="Not Registered External" /></div>
+         After an <strong>External Bearer token</strong> is issued, the user can register in the application using this token and then re-authorize again, to get a new token (Local Bearer).
+    </li>
+    <li style="margin-top:10px">An <strong>existing user</strong> is authorized through an <strong>external provider</strong>:
+        <div class="code" style="width:593px;"><img src="~/Content/img/owinAuth/RegisteredExternalFlow.jpg" alt="Not Registered External" /></div>
+    </li>
+    <li>An <strong>existing user</strong> is authorized through a <strong>login/password</strong>:
+        <div class="code" style="width:489px;"><img src="~/Content/img/owinAuth/RegisteredLocal.jpg" alt="Not Registered External" /></div>
+    </li>
+</ol>
 
 <h1 id="facebook">Facebook Configuration</h1>
 <ol>
