@@ -244,7 +244,13 @@
     <Content Include="Content\img\helpSpot\close.png" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\logo96.png" />
+    <Content Include="Content\img\owinAuth\Claims.png" />
     <Content Include="Content\img\owinAuth\Facebook.png" />
+    <Content Include="Content\img\owinAuth\Facebook_app_type.png" />
+    <Content Include="Content\img\owinAuth\Facebook_new_app.png" />
+    <Content Include="Content\img\owinAuth\Facebook_sandBox.png" />
+    <Content Include="Content\img\owinAuth\Facebook_settings.png" />
+    <Content Include="Content\img\owinAuth\Google_api_enabled.png" />
     <Content Include="Content\img\owinAuth\Google_client_id.png" />
     <Content Include="Content\img\owinAuth\Google_consent_screen.png" />
     <Content Include="Content\img\owinAuth\Google.png" />

@@ -37,8 +37,49 @@
 <h1 id="owin">Owin Middleware</h1>
 <p>The <a class="textLink" href="http://owin.org">Owin</a> Middleware modules are responsible for handling the authentication with external authentication providers (such as Google) and establishing an application session through a cookie. On all subsequent calls the application cookie middleware extracts the contents of the incoming application cookie and sets the claims identity of the current context.</p>
 
+<h1>What is a token?</h1>
+<p>A token is a string value that represents an encrypted list of <strong>System.Security.Claims</strong>. You can use any claims you like.
+My application has its own defined list of claims used across the project. Let's call them <strong>Application Claims</strong>.</p>
+<p><strong>Application Claims</strong> is a well-defined list of claims <strong>encrypted by OWIN into the issued token</strong>.
+Each time a service receives a token, it tries to decrypt it with its <strong>IIS machine key</strong> back into the list of claims and populate a <strong>User.Identity</strong> object.</p>
+<p>To determine either it is an <strong>External Bearer token</strong> or a <strong>local</strong> one it checks the <strong>Issuer</strong> field of the claims. For a local one it must be always <strong>ClaimsIdentity.DefaultIssuer</strong>.<br />
+Note, that for the encryption OWIN uses the IIS machine key, that's why you must apply some custom solution for using the same token across several WEB-services.</p>
+<p>Here is how I build my Application Claims list:</p>
+<div class="code" style="width:680px;"><img src="~/Content/img/owinAuth/Claims.png" alt="claims list"/></div>
+<p>So, I can always get all this information from any token issued by my WEB-service.
+<strong>ClaimsMapper</strong> is an abstract strategy that knows how to map different data models to my claims list.</p>
+
+<h1>Authentication flows</h1>
+<p>An application has three different authentication flows:</p>
+    <p>Section is under construction...</p>
+
 <h1 id="facebook">Facebook Configuration</h1>
-<div class="demo" style="width:422px"><img src="~/Content/img/underConstruction.jpg" alt="underConstruction" /></div>
+<ol>
+    <li>Navigate to the <a class="textLink" href="https://developers.facebook.com/apps">Facebook Developers Page</a> and log in by entering your Facebook credentials;</li>
+    <li>If you aren’t already registered as a Facebook developer, click Register as a Developer and follow the directions to register;</li>
+    <li>Under the <strong>My Apps</strong> tab, click <strong>+ Add a New App</strong> button:
+        <div class="code" style="width:600px;"><img src="~/Content/img/owinAuth/Facebook_new_app.png" alt="Facebook new app" /></div>
+    </li>
+    <li>Select a <strong>Website</strong> as an app platform:
+        <div class="code" style="width:500px;"><img src="~/Content/img/owinAuth/Facebook_app_type.png" alt="Facebook app type" /></div>
+    </li>
+    <li>Enter an <strong>App Name</strong> and <strong>Category</strong>, then click <strong>Create App</strong>.<br/>
+This must be unique across Facebook. The <strong>App Namespace</strong> is the part of the URL that your App will use to access the Facebook application for authentication (for example, https://apps.facebook.com/{App Namespace}). If you don't specify an <strong>App Namespace</strong>, the <strong>App ID</strong> will be used for the URL. The <strong>App ID</strong> is a long system-generated number that you will see in the next step.
+</li>
+    <li>On the <strong>Basic settings</strong> section of the page:
+        <ul>
+            <li>Enter <strong>Contact Email</strong>;</li>
+            <li>Enter <strong>Site URL</strong> that will send requests to Facebook.</li>
+        </ul>
+        <div class="code" style="width:750px;"><img src="~/Content/img/owinAuth/Facebook_settings.png" alt="Facebook settings" /></div>
+        Note that only you will be able to authenticate using the email alias you have registered. Other users and test accounts will not be able to register.<br />
+    You can grant test users access to the application under the <strong>Roles</strong> menu.<br />
+    For all other Facebook accounts your application <strong>must be approved</strong> by Facebook. For futher instructions please view <strong>Status & Review</strong> menu.
+    </li>
+    <li>To disable <strong>sandbox mode</strong> for you app go to the <strong>Status & Review</strong> menu on the left and select <strong>Yes</strong>:
+        <div class="code" style="width:750px;"><img src="~/Content/img/owinAuth/Facebook_sandBox.png" alt="Facebook settings" /></div>
+    </li>
+</ol>
 
 <h1 id="google">Google Configuration</h1>
 <ol>
@@ -52,9 +93,10 @@
         <div class="code" style="width:700px;margin-top:-10px"><img src="~/Content/img/owinAuth/Google_consent_screen.png" alt="Google Consent screen" /></div>
     </li>
     <li>In the left tab, click <strong>APIs & Auth</strong>, and then click <strong>APIs</strong>:
-        <ul style="margin-bottom:0">
-            <li>Enable <strong>Google+ API</strong> to support user’s avatar access.</li>
+        <ul>
+            <li>Enable <strong>Google+ API</strong> to support user’s avatar access:</li>
         </ul>
+        <div class="code" style="width:574px;margin-top:-10px"><img src="~/Content/img/owinAuth/Google_api_enabled.png" alt="Google+ API enabled" /></div>
     </li>
     <li>In the left tab, click <strong>APIs & Auth</strong> and then click <strong>Credentials</strong>.</li>
     <li>Click the <strong>Create New Client ID</strong> under OAuth:
