@@ -54,6 +54,14 @@ Note, that for the encryption OWIN uses the IIS machine key, that's why you must
 <p>All the information about a user received from an external provider (Facebook, Google e.t.c.) is encrypted in an <strong>external cookie</strong>.<br />
 Here is the description of the communication flow between an application and an external provider:
  </p>
+<ol>
+    <li>The User clicks the Facebook Login button and it will trigger a browser redirect to the authorization endpoint with a parameter response_type as token and redirect_uri as application URL.</li>
+    <li>The application knows that user wants to login as Facebook so it sends a challenge to the Facebook authentication middleware to modify the response as 302 and redirect browser to facebook.com.</li>
+    <li>The user signs in with her facebook account and which grants access to this application.</li>
+    <li>Facebook sends an HTTP 302 back and redirects the browser back to Facebook callback URL on server.</li>
+    <li>The OWIN Facebook authentication middleware asks for access token and user data from facebook.com.</li>
+    <li>The OWIN Facebook authentication middleware redirects the browser back to the authorization endpoint and converts the facebook data into claims and sets <strong>external sign in cookie</strong>.</li>
+</ol>
 
 <p>Once a user is authenticated an application has three different flows for issuing tokens:</p>
 <ol>
